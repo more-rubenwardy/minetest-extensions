@@ -5,7 +5,7 @@ $res = mysql_query("SELECT * FROM mods WHERE tags LIKE '%$query%' ORDER BY likes
 
 // Get projects loop
 while ($hash = mysql_fetch_assoc($res)){
-      echo "<tr><td><img width=16 height=16 src=\"topicicon_read.jpg\" /></td><td><a href=\"viewmod.php?id={$hash['id']}\">{$hash['name']}</a><br />by {$hash['owner']}</td>";
+      echo "<tr><td width=16><img width=16 height=16 src=\"topicicon_read.jpg\" /></td><td><a href=\"viewmod.php?id={$hash['ID']}\">{$hash['name']}</a><br />by {$hash['owner']}</td>";
       echo "<td>{$hash['likes']}</td>";
       echo "<td>{$hash['tags']}</td></tr>\n";
 
