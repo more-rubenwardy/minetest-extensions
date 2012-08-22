@@ -17,14 +17,20 @@
 <div style="background-color:transparent;text-align:left;margin-left:auto;margin-right:auto;position:relative;width:900px;height:1000px;">
 <!--The Header-->
 <img src="header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
+<div style="position:relative;left:5px;top:110px">
 
+<!--The content-->
+<?php
+  include "scripts/setup.php";
+  $query="mod";
+  include "scripts/loadmods.php";
+?>
+</div>
 
 <!--The footer-->
 
 
-
-<!--The content-->
-
 </div>
 </body>
 </html>
+

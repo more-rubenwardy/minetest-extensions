@@ -1,5 +1,5 @@
 <?php
-$session_start();
+session_start();
 
 $handle = mysql_pconnect("mysql.serversfree.com","u372522788_admin","password");
 
@@ -8,11 +8,8 @@ die("MySQL - Error connecting to the MySQL database");
 
 mysql_select_db("u372522788_minetest",$handle) or die("Error Switching DB");
 
-function checklogin($user,$pass,$handle){
-	$us= mysql_escape_string ($user);
-	$res = mysql_query("SELECT * FROM users WHERE name='$us'",$handle) or die("query error");
-	$row = mysql_fetch_row($res) or die("row error");
-	
+function authcheck($user,$pass,$handle){
+	$row=getUser($user);
 	if ($row[3]==$pass){
 		return 1;
 	}else{
@@ -20,7 +17,15 @@ function checklogin($user,$pass,$handle){
 	}
 }
 
+function is_logged_in(){
+         if ($_SESSION['auth']=="somerandomkey"){
+            return true;
+         }
+         return false;
+}
+
 function getUser($user){
+         $us= mysql_escape_string ($user);
 	$res = mysql_query("SELECT * FROM users WHERE name='$us'",$handle) or die("query error");
 	$row = mysql_fetch_row($res) or die("row error");
 	return $row;

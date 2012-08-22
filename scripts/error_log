@@ -1,0 +1,44 @@
+[22-Aug-2012 12:20:07] PHP Parse error:  syntax error, unexpected T_IF in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 4
+[22-Aug-2012 12:20:17] PHP Parse error:  syntax error, unexpected T_IF in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 4
+[22-Aug-2012 12:20:18] PHP Parse error:  syntax error, unexpected T_IF in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 4
+[22-Aug-2012 12:20:33] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:20:35] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:20:35] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:20:43] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:20:45] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:20:45] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:20:45] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:21:25] PHP Parse error:  syntax error, unexpected T_STRING in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 6
+[22-Aug-2012 12:21:34] PHP Parse error:  syntax error, unexpected ',', expecting '&' or T_VARIABLE in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 11
+[22-Aug-2012 12:21:52] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 12
+[22-Aug-2012 12:21:52] PHP Warning:  mysql_fetch_row(): supplied argument is not a valid MySQL result resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:22:33] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 12
+[22-Aug-2012 12:24:04] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:13] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:29] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:31] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:31] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:31] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:31] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:31] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:24:32] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 13
+[22-Aug-2012 12:33:14] PHP Fatal error:  Cannot redeclare checklogin() (previously declared in /home/u372522788/public_html/minetest/forum/scripts/setup.php:4) in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 33
+[22-Aug-2012 12:33:30] PHP Fatal error:  Cannot redeclare checklogin() (previously declared in /home/u372522788/public_html/minetest/forum/scripts/setup.php:4) in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 33
+[22-Aug-2012 12:33:35] PHP Parse error:  syntax error, unexpected '>', expecting T_STRING or T_VARIABLE or '$' in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 34
+[22-Aug-2012 12:33:49] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 12:34:36] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 12:35:26] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 12:35:27] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 12:35:42] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 12:35:43] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 13:59:29] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 14:00:28] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 14:00:29] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 14:00:30] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 14:00:42] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 14:00:42] PHP Warning:  mysql_fetch_row(): supplied argument is not a valid MySQL result resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 25
+[22-Aug-2012 14:01:26] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 14:01:28] PHP Warning:  mysql_query(): supplied argument is not a valid MySQL-Link resource in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 24
+[22-Aug-2012 16:17:05] PHP Fatal error:  Function name must be a string in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 2
+[22-Aug-2012 16:17:13] PHP Fatal error:  Function name must be a string in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 2
+[22-Aug-2012 16:32:41] PHP Fatal error:  Function name must be a string in /home/u372522788/public_html/minetest/forum/scripts/setup.php on line 2
