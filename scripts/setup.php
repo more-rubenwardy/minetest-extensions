@@ -1,4 +1,9 @@
 <?php
+function SQLerror($title,$msg){
+         echo "<h1>$title</h1>";
+         die("$msg");
+}
+
 session_start();
 
 $handle = mysql_pconnect("mysql.serversfree.com","u372522788_admin","password");
