@@ -13,6 +13,7 @@ CC BY-SA
  
 Database
 ========
+The database structure.
 
 USERS:
 
