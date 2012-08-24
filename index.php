@@ -21,7 +21,7 @@
 
      seperator(4);
      listSearch("deco","Block Adder Mods","Adds basic decorating blocks to the game (eg: moreblocks, homedecor)",0);
-     listSearch("fun","Fun Mods","Fun mods for the game (eg: Chess)",0);
+     listSearch("fun","Fun Mods","Fun mods for the game (eg: Chess, Mesecons)",0);
      listSearch("server","Server Interaction Mods","Mods ideal for servers (eg: antigrief, money)",0);
      listSearch("mobs","Mob Mods","Mods that add Mobs",0);
      listSearch("3d","3D Object Mods","Mods that use NodeBoxes",1);

@@ -10,11 +10,13 @@
 <meta name="copyright" content="Copyright &#xA9; to Andrew Ward">
 <meta http-equiv="Content-Language" content="en-gb">
 <meta name="robots" content="index,follow">
+<link rel="stylesheet" type="text/css" href="mainstyle.css" />
 <!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+</head>
 
 
 <body text="#000000" style="background-color:#ffffff; text-align:center; height:610px;">
-<div style="background-color:transparent;text-align:left;margin-left:auto;margin-right:auto;position:relative;width:900px;height:1000px;">
+<div style="background-color:transparent;text-align:left;margin-left:auto;margin-right:auto;position:relative;width:900px;">
 
 <!--The Header-->
 <img src="images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
