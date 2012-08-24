@@ -4,7 +4,8 @@ $page_title="Log In - Minetest Mods";
 include "scripts/pageheader.php";
 require_login();
 ?>
-
+Help: <a href="help/markup.php" target="_blank">Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
+<hr />
 <form method="post" action="<?php echo curPageURL();?>">
 <table width="100%">
 
@@ -42,8 +43,18 @@ require_login();
 </tr>
 
 <!--Tags-->
-<tr><td colspan="2"><center><b>Tags</b> Users use tags to search and find mods</center></td></tr>
+<tr><td colspan="2"><br /><br /><center><b>Tags</b> Users use tags to search and find mods</center></td></tr>
 
+<tr>
+<td>
+<input type="radio" name="mod_tag_type" value="mod"> Mod
+<input type="radio" name="mod_tag_type" value="modpack"> Mod Pack
+<input type="radio" name="mod_tag_type" value="texture"> Texture Pack
+</td>
+<td>
+Other keywords: <input type="text" size=30 name="mod_tag_msc">
+</td>
+</tr>
 
 </table>
 </form>
