@@ -14,7 +14,8 @@ CC BY-SA
 Database
 ========
 
-USERS
+USERS:
+
 *id   (int)
 *name
 *email
@@ -25,7 +26,8 @@ USERS
 *location
 *sig
 
-MOD
+MOD:
+
 *mod_id (int)
 *name
 *version
@@ -40,7 +42,8 @@ MOD
 *basename (the mod name, eg: "moreblocks")
 *date_released  (date)
 
-POSTS
+POSTS:
+
 *post_id (int)
 *Owner
 *Post
