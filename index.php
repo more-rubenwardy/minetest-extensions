@@ -24,19 +24,19 @@
      listSearch("fun","Fun Mods","Fun mods for the game (eg: Chess)",0);
      listSearch("server","Server Interaction Mods","Mods ideal for servers (eg: antigrief, money)",0);
      listSearch("mobs","Mob Mods","Mods that add Mobs",0);
-     listSearch("3d","3D Object Mods","Mods that use NodeBoxes",2);
+     listSearch("3d","3D Object Mods","Mods that use NodeBoxes",1);
 
      seperator(4);
-     listSearch("comic-txt","Comic Style","Cartoon Style Texture Packs",2);
-     listSearch("real-txt","Realistic","Realistic Styled Texture Packs",2);
-     listSearch("hd-txt","HD","HD Texture packs",2);
+     listSearch("comic-txt","Comic Style","Cartoon Style Texture Packs",0);
+     listSearch("real-txt","Realistic","Realistic Styled Texture Packs",0);
+     listSearch("hd-txt","HD","HD Texture packs",0);
 
      seperator(4);
      listSearch("0.4.2","0.4.2","for 0.4.2-rc1",2);
      listSearch("0.4.1","0.4.1","for 0.4 Stable",2);
-     listSearch("0.4","0.4","for 0.4",2);
+     listSearch("0.4","0.4","for 0.4",1);
      listSearch("0.3","0.3","for 0.3",0);
-     listSearch("old_minetest","Older","for older versions of minetest",2);
+     listSearch("old_minetest","Older","for older versions of minetest",0);
 
 ?>
 </div>
