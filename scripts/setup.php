@@ -1,4 +1,6 @@
 <?php
+$serverpath="http://multa.bugs3.com/minetest/forum";
+
 function SQLerror($title,$msg){
          echo "<h1>$title</h1>";
          die("$msg");

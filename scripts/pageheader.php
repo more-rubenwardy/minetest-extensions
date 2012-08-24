@@ -20,6 +20,14 @@
 
 <!--The Header-->
 <img src="images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
-<div style="position:relative;left:5px;top:110px">
 
-<!--Content-->
+<div id="userbar" style="text-align:right;position:relative;left:700px;top:50px;width:180px"><?php
+if (is_logged_in()){
+   echo $_SESSION['user']." - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
+}else{
+   echo "<a href=\"$serverpath/login.php\"><font color=\"#FFFFFF\"><u>Login</u></font></a>";
+}
+?></div>
+
+<!--Content Div-->
+<div style="position:relative;left:5px;top:110px">
