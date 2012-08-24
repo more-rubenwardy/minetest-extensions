@@ -53,7 +53,11 @@ function is_logged_in(){
 function getUser($user,$handle){
          $us= mysql_real_escape_string ($user);
 	 $res = mysql_query("SELECT * FROM users WHERE name='$us'",$handle) or die("query error");
-	 $row = mysql_fetch_row($res) or return 0;
+	 
+        if(mysql_num_rows($result)==0){
+          return 0;
+        }
+	 $row = mysql_fetch_row($res) or die("");
 	 return $row;
 }
 
