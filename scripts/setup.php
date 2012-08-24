@@ -40,13 +40,13 @@ function authcheck($user,$pass,$handle){
 }
 
 function login($user){
-         $_SESSION['auth']=="somerandomkey";
+         $_SESSION['auth']="somerandomkey";
 }
 
 function is_logged_in(){
          if ($_SESSION['auth']=="somerandomkey"){
             return true;
-         }                                                                                                         
+         }
          return false;
 }
 
@@ -54,7 +54,7 @@ function getUser($user,$handle){
          $us= mysql_real_escape_string ($user);
 	 $res = mysql_query("SELECT * FROM users WHERE name='$us'",$handle) or die("query error");
 	 
-        if(mysql_num_rows($result)==0){
+        if(mysql_num_rows($res)==0){
           return 0;
         }
 	 $row = mysql_fetch_row($res) or die("");

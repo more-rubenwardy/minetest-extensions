@@ -18,6 +18,10 @@ if (authcheck($user,$pass,$handle)==true){
    $message="Incorrect username/password";
 }
 
+if ($user=="" || $pass==""){
+  $message="Enter your login details or Sign Up";
+}
+
 $page_title="Log In - Minetest Mods";
 include "scripts/pageheader.php";
 echo "<p>$message</p>";
