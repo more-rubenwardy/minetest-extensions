@@ -26,26 +26,35 @@ function curPageURL() {
 }
 
 function authcheck($user,$pass,$handle){
-	$row=getUser($user);
+	$row=getUser($user,$handle);
+	if ($row==0){
+          return false;
+          }
+
+	//echo "'{$row[3]}' vs '$pass'";
 	if ($row[3]==$pass){
-		return 1;
+		return true;
 	}else{
-		return 0;
+		return false;
 	}
+}
+
+function login($user){
+         $_SESSION['auth']=="somerandomkey";
 }
 
 function is_logged_in(){
          if ($_SESSION['auth']=="somerandomkey"){
             return true;
-         }
+         }                                                                                                         
          return false;
 }
 
-function getUser($user){
-         $us= mysql_escape_string ($user);
-	$res = mysql_query("SELECT * FROM users WHERE name='$us'",$handle) or die("query error");
-	$row = mysql_fetch_row($res) or die("row error");
-	return $row;
+function getUser($user,$handle){
+         $us= mysql_real_escape_string ($user);
+	 $res = mysql_query("SELECT * FROM users WHERE name='$us'",$handle) or die("query error");
+	 $row = mysql_fetch_row($res) or return 0;
+	 return $row;
 }
 
 function require_login(){

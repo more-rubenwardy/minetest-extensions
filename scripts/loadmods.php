@@ -1,6 +1,6 @@
 <?php
 echo "<table width=\"100%\"><tr><th colspan=2>Mod Name</th><th>Populatity</th><th>Tags</th></tr>\n";
-$query= mysql_escape_string ($query);
+$query= mysql_real_escape_string ($query);
 $res = mysql_query("SELECT * FROM mods WHERE tags LIKE '%$query%' ORDER BY likes",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.tags for '$query'");
 
 // Get projects loop
