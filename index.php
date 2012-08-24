@@ -2,7 +2,7 @@
      include "scripts/setup.php";
 
      function listSearch($query,$title,$description,$num){
-              echo "<tr><td width=16><img width=16 height=16 src=\"topicicon_read.jpg\" /></td><td><a href=\"search.php?id=$query\">$title</a></td><td>$description</td><td>$num<td></tr>";
+              echo "<tr><td width=16><img width=16 height=16 src=\"images/topicicon_read.jpg\" /></td><td><a href=\"search.php?id=$query\">$title</a></td><td>$description</td><td>$num<td></tr>";
      }
      
      function seperator($cols){
