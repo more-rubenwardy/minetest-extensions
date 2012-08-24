@@ -42,6 +42,11 @@ MOD:
 * depend
 * basename (the mod name, eg: "moreblocks")
 * date_released  (date)
+* quality_total (int)
+* quality_voters (int)
+* usefullness_total (int)
+* cpu_total (int)
+* cpu_voters (int)
 
 POSTS:
 
