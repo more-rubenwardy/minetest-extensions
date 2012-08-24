@@ -41,6 +41,7 @@ function authcheck($user,$pass,$handle){
 
 function login($user){
          $_SESSION['auth']="somerandomkey";
+         $_SESSION['user']=$user;
 }
 
 function is_logged_in(){
