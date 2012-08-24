@@ -4,3 +4,6 @@
 [22-Aug-2012 18:45:37] PHP Parse error:  syntax error, unexpected T_LNUMBER, expecting ',' or ';' in /home/u372522788/public_html/minetest/forum/scripts/loadmods.php on line 2
 [22-Aug-2012 18:47:33] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/u372522788/public_html/minetest/forum/scripts/loadmods.php on line 8
 [22-Aug-2012 19:37:42] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/u372522788/public_html/minetest/forum/viewmod.php on line 9
+[23-Aug-2012 04:59:08] PHP Parse error:  syntax error, unexpected T_INCLUDE, expecting ',' or ';' in /home/u372522788/public_html/minetest/forum/viewmod.php on line 14
+[23-Aug-2012 05:02:56] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/u372522788/public_html/minetest/forum/viewmod.php on line 13
+[23-Aug-2012 05:03:09] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/u372522788/public_html/minetest/forum/viewmod.php on line 13
