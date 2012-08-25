@@ -17,9 +17,10 @@ To Do
 (Changes suggested by VannesaE - http://multa.bugs3.com/minetest/chat_with_VenessaE.txt)
 
 * (done)  list of mods, show license
-* More mods in demo
-* BBCode
-* Keep up-to-date
+* (done) More mods in demo
+* (done)BBCode
+* (work in progress) Keep up-to-date
+* user login
 
 Database
 ========
