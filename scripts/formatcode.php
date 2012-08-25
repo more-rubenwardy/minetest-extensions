@@ -24,6 +24,12 @@ $result=str_replace("[/u]","</u>",$result);
 $result=str_replace("[i]","<i>",$result);
 $result=str_replace("[/i]","</i>",$result);
 
+$result=str_replace("[list]","<ul>",$result);
+$result=str_replace("[/list]","</ul>",$result);
+
+$result=str_replace("[*]","<li>",$result);
+$result=str_replace("[/*]","</li>",$result);
+
 return $result;
 }
 ?>

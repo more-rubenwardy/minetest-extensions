@@ -18,8 +18,10 @@
      //List Categories
      listSearch("","All","All Items",$handle);
      listSearch("mod","All Mods","All Mods",$handle);
-     listSearch("modpack","All Mod Packs","All Mod Packs",$handle);
+     listSearch("mpack","All Mod Packs","All Mod Packs",$handle);
      listSearch("texture","All Texture Packs","All Texture Packs",$handle);
+     listSearch("sound","All Sound Packs and Sound Mods","All Texture Packs",$handle);
+
 
      seperator(4);
      listSearch("deco","Block Adder Mods","Adds basic decorating blocks to the game (eg: moreblocks, homedecor)",$handle);
@@ -27,6 +29,10 @@
      listSearch("server","Server Interaction Mods","Mods ideal for servers (eg: antigrief, money)",$handle);
      listSearch("mobs","Mob Mods","Mods that add Mobs",$handle);
      listSearch("3d","3D Object Mods","Mods that use NodeBoxes",$handle);
+     
+     seperator(4);
+     listSearch("envir","Enviroment Mods","Changes the map generator",$handle);
+     listSearch("biome","Biome Mods","Adds a new biome to the game",$handle);
 
      seperator(4);
      listSearch("comic-txt","Comic Style","Cartoon Style Texture Packs",$handle);
