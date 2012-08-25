@@ -17,9 +17,8 @@ modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this
    list of conditions and the following disclaimer. 
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
+2. Redistributions that are hosted on the website must retain the above copyright notice, this
+   list of conditions and the following disclaimer, and also the notice at the bottom of each page.
 3. This source code/software modified/unmodified must not be used for commercial use .
 4. The copyright owner has the right to change these conditions at anytime with/without notice.
 5. The copyright owner can issue an exception to these conditions.
