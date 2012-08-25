@@ -69,4 +69,10 @@ function require_login(){
             header("location: login.php?redir=".curPageURL());
          }
 }
+
+function getNoTopics($tag,$handle){
+         $qu = mysql_real_escape_string ($tag);
+         $res = mysql_query("SELECT * FROM mods WHERE tags LIKE '%$qu%' ORDER BY likes DESC",$handle);
+         return mysql_num_rows($res);
+}
 ?>
