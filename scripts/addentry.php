@@ -41,6 +41,9 @@ if ($owner=="")
 $date = date("F j, Y, g:i a");
 $tags = "$tags_type,$tags_msc,";
 
+if (entry_exists($name,$handle))
+   return 1;
+
 mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released)
 VALUES ('$name','$version','$owner','$desc','$tags',0,0,'$license','$file','$depend','$basename','$date')");
 

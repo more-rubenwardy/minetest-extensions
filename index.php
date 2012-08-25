@@ -25,13 +25,15 @@
      listSearch("mod","All Mods","All Mods",$handle);
      listSearch("mpack","All Mod Packs","All Mod Packs",$handle);
      listSearch("texture","All Texture Packs","All Texture Packs",$handle);
-     listSearch("sound","All Sound Packs and Sound Mods","All Texture Packs",$handle);
+     listSearch("sound","All Sound Packs","All Sound Packs and Sound Mods",$handle);
 
 
      seperator(4);
      listSearch("deco","Block Adder Mods","Adds basic decorating blocks to the game (eg: moreblocks, homedecor)",$handle);
      listSearch("fun","Fun Mods","Fun mods for the game (eg: Chess, Mesecons)",$handle);
      listSearch("server","Server Interaction Mods","Mods ideal for servers (eg: antigrief, money)",$handle);
+     listSearch("food","Food Mods","Mods that add food",$handle);
+     listSearch("growing","Growing Mods","Mods that add Plants",$handle);
      listSearch("mobs","Mob Mods","Mods that add Mobs",$handle);
      listSearch("3d","3D Object Mods","Mods that use NodeBoxes",$handle);
      
@@ -40,19 +42,19 @@
      listSearch("biome","Biome Mods","Adds a new biome to the game",$handle);
 
      seperator(4);
-     listSearch("comic-txt","Comic Style","Cartoon Style Texture Packs",$handle);
-     listSearch("real-txt","Realistic","Realistic Styled Texture Packs",$handle);
-     listSearch("hd-txt","HD","HD Texture packs",$handle);
+     listSearch("comic-txt","Comic Style Textures","Cartoon Style Texture Packs",$handle);
+     listSearch("real-txt","Realistic Textures","Realistic Styled Texture Packs",$handle);
+     listSearch("hd-txt","HD Textures","HD Texture packs",$handle);
 
      seperator(4);
      listSearch("0.4.2","0.4.2","for 0.4.2-rc1",$handle);
      listSearch("0.4.1","0.4.1","for 0.4 Stable",$handle);
      listSearch("0.4","0.4","for 0.4",$handle);
+     
+     echo "</table>";
      //listSearch("0.3","0.3","for 0.3",0);
      //listSearch("old_minetest","Older","for older versions of minetest",0);
 
+     include "scripts/pagefooter.php";
 ?>
-</div>
-</body>
-</html>
 

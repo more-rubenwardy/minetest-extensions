@@ -4,10 +4,12 @@ $page_title="Add a Mod";
 include "scripts/pageheader.php";
 require_login();
 
-include "scripts/addentry.php";
+if ((include('scripts/addentry.php'))==1){
+  echo "Entry already exists.<br /><br />";
+}
 
 ?>
-Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
+Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>. Not creating? Make sure you fill in all *ed sections.
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
 <?php
@@ -42,7 +44,7 @@ if (is_member_moderator($_SESSION['user'])==true){
 
 <!--Depends and Basename-->
 <tr>
-<td>Depends (seperated by ","): <input type="text" size="30" name="mod_dep" value="<?php echo $depend;?>"></td>
+<td>Depends (seperated by "," - no space): <input type="text" size="30" name="mod_dep" value="<?php echo $depend;?>"></td>
 <td>Mod Namespace: <input type="text" size="30" name="mod_base" value="<?php echo $basename;?>"></td>
 </tr>
 
@@ -52,11 +54,11 @@ if (is_member_moderator($_SESSION['user'])==true){
 <tr>
 <td>
 <input type="radio" name="mod_tag_type" value="mod"> Mod
-<input type="radio" name="mod_tag_type" value="modpack"> Mod Pack
+<input type="radio" name="mod_tag_type" value="mdpack"> Mod Pack
 <input type="radio" name="mod_tag_type" value="texture"> Texture Pack
 </td>
 <td>
-Other keywords: <input type="text" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
+Other Tags: <input type="text" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
 </td>
 </tr>
 
@@ -70,6 +72,7 @@ Other keywords: <input type="text" size=30 name="mod_tag_msc" value="<?php echo 
 
 </table>
 </form>
-</div>
-</body>
-</html>
+
+<?php
+     include "scripts/pagefooter.php";
+?>

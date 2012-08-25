@@ -14,13 +14,19 @@ $page_title="View mod - {$row[1]}";
 include "scripts/pageheader.php";
 include "scripts/formatcode.php";
 
-echo "<table width=\"100%\"><tr><td><a href=\"{$row[9]}\">Download</a></td><td>";
+if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$row[3]){
+$links="<a href=\"editentry.php?id=$id\">Edit</a>";
+}else{
+$links="";
+}
+
+echo "<table width=\"100%\"><tr bgcolor=\"#FFFFBD\"><td><a href=\"{$row[9]}\">Download</a></td><td>";
 echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$row[3]}\">{$row[3]}</a></h1></td>";
 echo "<td width=100>{$row[2]}</td></tr>";
-echo "<tr><td colspan=3>".formatbb($row[4])."</td><tr>";
+echo "<tr><td colspan=3><p>".formatbb($row[4])."</p></td><tr>";
+echo "<tr height=30 bgcolor=\"#FFFFBD\"><td colspan=3 style=\"text-align:right;\">$links&#32;&#32;&#32;&#32;</td></tr>";
 
 include "scripts/loadposts.php";
+
+include "scripts/pagefooter.php";
 ?>
-</div>
-</body>
-</html>

@@ -25,19 +25,21 @@
 if (is_logged_in()){
    echo $_SESSION['user']." - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
 }else{
-   echo "<a href=\"$serverpath/login.php\"><font color=\"#FFFFFF\"><u>Login</u></font></a>";
+   echo "<a href=\"$serverpath/login.php\"><font color=\"#FFFFFF\"><u>Login</u></font></a> - ";
+   echo "<a href=\"$serverpath/signup.php\"><font color=\"#FFFFFF\"><u>Sign Up</u></font></a>";
 }
-?></div>
+?></div>                                                                           
 
 <div id="userbar" style="text-align:left;position:relative;left:10px;top:55px;width:180px;height=30px;"><?php
-     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a>";
+     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a> - ";
+     echo "<a href=\"$serverpath/user.php\"><font color=\"#FFFFFF\"><u>User List</u></font></a>";
 ?></div>
 
-<div style="position:relative;left:570px;top:80px;width:400px;">
+<div style="position:relative;left:670px;top:80px;width:400px;">
 <form method="get" action="<?php echo $serverpath;?>/search.php">
-Search Mods: <input type="text" name="id"> <input type="submit" value="Search">
+<input type="text" name="id"> <input type="submit" value="Search">
 </form>
 </div>
 
 <!--Content Div-->
-<div style="position:relative;left:5px;top:110px;width:900px;">
+<div style="position:relative;left:5px;top:80px;width:900px;">

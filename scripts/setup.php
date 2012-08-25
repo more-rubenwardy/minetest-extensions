@@ -92,6 +92,9 @@ function addUser($user,$pass,$passcon,$email,$handle){
             return 0;
          }
          if ($pass==$passcon){
+           if (user_exists($user,$handle))
+              return 4;
+
             $pasw=sha1($pass);
             if ($pasw=="")
                return 3;
@@ -105,5 +108,18 @@ function addUser($user,$pass,$passcon,$email,$handle){
          }else{
                return 2;
          }
+}
+
+function user_exists($user,$handle){
+         $qu = mysql_real_escape_string ($user);
+         $res = mysql_query("SELECT * FROM users WHERE name='$qu'",$handle);
+         return mysql_num_rows($res);
+}
+
+
+function entry_exists($name,$handle){
+         $qu = mysql_real_escape_string ($name);
+         $res = mysql_query("SELECT * FROM mods WHERE name='$qu'",$handle);
+         return mysql_num_rows($res);
 }
 ?>

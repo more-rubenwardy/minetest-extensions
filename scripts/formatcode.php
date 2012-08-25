@@ -11,7 +11,8 @@ $result=str_replace("=url]","\">",$result);
 $result=str_replace("[/url]","</a>",$result);
 
 $result=str_replace("\n","<br />",$result);
-$result=str_replace("[tab]","&#41;",$result);
+$result=str_replace("\t","&#9;",$result);
+$result=str_replace("[tab]","&#9;",$result);
 
 $result=str_replace("[h]","<h1>",$result);
 $result=str_replace("[/h]","</h1>",$result);

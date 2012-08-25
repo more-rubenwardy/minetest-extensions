@@ -1,11 +1,10 @@
 <?php
      include "scripts/setup.php";
-     $page_title="Home - Minetest Mods";
-     include "scripts/pageheader.php";
      $query=$_GET['id'];
-     include "scripts/loadmods.php";
-?>
-</div>
-</body>
-</html>
+     $page_title="Search for $query";
+     include "scripts/pageheader.php";
 
+     include "scripts/loadmods.php";
+     
+     include "scripts/pagefooter.php";
+?>

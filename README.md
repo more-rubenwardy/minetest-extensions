@@ -20,10 +20,10 @@ To Do
 * (done) More mods in demo
 * (done)BBCode
 * (work in progress) Keep up-to-date
-* user creation
+* (done) user creation
 * Search mod names and descriptions
 * wrap desc text
-* edit posts
+* (almost done) edit posts
 
 Database
 ========
