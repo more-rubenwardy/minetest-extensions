@@ -2,8 +2,12 @@
 include "../scripts/setup.php";
 
 $id=$_GET['id'];
-$id= mysql_real_escape_string ($id);
-$res = mysql_query("SELECT * FROM mods WHERE mod_id='$id'",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
+
+if (is_numeric($id)==false){
+   SQLerror("error: Non Numeric Value","?id=$id is not allowed");
+}
+
+$res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
 $row = mysql_fetch_row($res) or die("row error");
 
 header("Content-type: text/plain");

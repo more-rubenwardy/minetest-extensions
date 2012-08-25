@@ -12,11 +12,12 @@ $row = mysql_fetch_row($res) or die("row error");
 $page_title="View mod - {$row[1]}";
 
 include "scripts/pageheader.php";
+include "scripts/formatcode.php";
 
-echo "<table width=\"100%\"><tr><td>";
+echo "<table width=\"100%\"><tr><td><a href=\"{$row[9]}\">Download</a></td><td>";
 echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$row[3]}\">{$row[3]}</a></h1></td>";
 echo "<td width=100>{$row[2]}</td></tr>";
-echo "<td colspan=2>{$row[4]}</td>";
+echo "<tr><td colspan=3>".formatbb($row[4])."</td><tr>";
 
 include "scripts/loadposts.php";
 ?>
