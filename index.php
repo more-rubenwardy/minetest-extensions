@@ -35,8 +35,8 @@
      listSearch("0.4.2","0.4.2","for 0.4.2-rc1",2);
      listSearch("0.4.1","0.4.1","for 0.4 Stable",2);
      listSearch("0.4","0.4","for 0.4",1);
-     listSearch("0.3","0.3","for 0.3",0);
-     listSearch("old_minetest","Older","for older versions of minetest",0);
+     //listSearch("0.3","0.3","for 0.3",0);
+     //listSearch("old_minetest","Older","for older versions of minetest",0);
 
 ?>
 </div>

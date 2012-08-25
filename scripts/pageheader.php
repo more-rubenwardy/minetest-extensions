@@ -10,7 +10,7 @@
 <meta name="copyright" content="Copyright &#xA9; to Andrew Ward">
 <meta http-equiv="Content-Language" content="en-gb">
 <meta name="robots" content="index,follow">
-<link rel="stylesheet" type="text/css" href="mainstyle.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $serverpath;?>/mainstyle.css" />
 <!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
 </head>
 
@@ -19,7 +19,7 @@
 <div style="background-color:transparent;text-align:left;margin-left:auto;margin-right:auto;position:relative;width:900px;">
 
 <!--The Header-->
-<img src="images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
+<img src="<?php echo $serverpath;?>/images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
 
 <div id="userbar" style="text-align:right;position:relative;left:700px;top:50px;width:180px"><?php
 if (is_logged_in()){

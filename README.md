@@ -10,7 +10,17 @@ License
 =======
 
 CC BY-SA
- 
+
+To Do
+=====
+
+(Changes suggested by VannesaE - http://multa.bugs3.com/minetest/chat_with_VenessaE.txt)
+
+* (done)  list of mods, show license
+* More mods in demo
+* BBCode
+* Keep up-to-date
+
 Database
 ========
 The database structure.
