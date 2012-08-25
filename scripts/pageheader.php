@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
 <meta name="Generator" content="Serif WebPlus X5 (13.0.3.029)">
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
-<title><?php echo $page_title ?></title>
+<title><?php echo $page_title ?> - Minetest Mods</title>
 <meta name="keywords" content="">
 <meta name="author" content="Andrew Ward">
 <meta name="copyright" content="Copyright &#xA9; to Andrew Ward">
@@ -21,13 +21,23 @@
 <!--The Header-->
 <img src="<?php echo $serverpath;?>/images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
 
-<div id="userbar" style="text-align:right;position:relative;left:700px;top:50px;width:180px"><?php
+<div id="userbar" style="text-align:right;position:relative;left:710px;top:70px;width:180px;height=30px;"><?php
 if (is_logged_in()){
    echo $_SESSION['user']." - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
 }else{
    echo "<a href=\"$serverpath/login.php\"><font color=\"#FFFFFF\"><u>Login</u></font></a>";
 }
 ?></div>
+
+<div id="userbar" style="text-align:left;position:relative;left:10px;top:55px;width:180px;height=30px;"><?php
+     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a>";
+?></div>
+
+<div style="position:relative;left:570px;top:80px;width:400px;">
+<form method="get" action="<?php echo $serverpath;?>/search.php">
+Search Mods: <input type="text" name="id"> <input type="submit" value="Search">
+</form>
+</div>
 
 <!--Content Div-->
 <div style="position:relative;left:5px;top:110px">
