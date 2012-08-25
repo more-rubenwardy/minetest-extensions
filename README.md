@@ -21,7 +21,7 @@ modification, are permitted provided that the following conditions are met:
    list of conditions and the following disclaimer, and also the notice at the bottom of each page.
 3. This source code/software modified/unmodified must not be used for commercial use .
 4. The copyright owner has the right to change these conditions at anytime with/without notice.
-5. The copyright owner can issue an exception to these conditions.
+5. The copyright owner can issue an exception to these conditions by giving specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
