@@ -1,5 +1,15 @@
 <?php
+
+//configuration
 $serverpath="http://multa.bugs3.com/minetest/forum";
+
+function is_member_moderator($user){
+         if ($user=="rubenwardy"){
+            return true;
+         }else{
+            return false;
+         }
+}
 
 function SQLerror($title,$msg){
          echo "<h1>$title</h1>";
@@ -28,13 +38,14 @@ function curPageURL() {
 }
 
 function authcheck($user,$pass,$handle){
+         $pasw = sha1($pass);
 	$row=getUser($user,$handle);
 	if ($row==0){
           return false;
           }
 
-	//echo "'{$row[3]}' vs '$pass'";
-	if ($row[3]==$pass){
+	//echo "'{$row[3]}' vs '$passw'";
+	if ($row[3]==$pasw){
 		return true;
 	}else{
 		return false;
@@ -74,5 +85,25 @@ function getNoTopics($tag,$handle){
          $qu = mysql_real_escape_string ($tag);
          $res = mysql_query("SELECT * FROM mods WHERE tags LIKE '%$qu%' ORDER BY likes DESC",$handle);
          return mysql_num_rows($res);
+}
+
+function addUser($user,$pass,$passcon,$email,$handle){
+         if ($user=="" || $pass=="" || $passcon=="" || $email==""){
+            return 0;
+         }
+         if ($pass==$passcon){
+            $pasw=sha1($pass);
+            if ($pasw=="")
+               return 3;
+
+            $res=mysql_query("INSERT INTO users (name,email,password) VALUES ('$user','$email','$pasw')");
+            if ($res==1){
+              return 1;
+            }else{
+              return 3;
+            }
+         }else{
+               return 2;
+         }
 }
 ?>

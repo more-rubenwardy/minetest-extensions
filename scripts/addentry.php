@@ -32,11 +32,19 @@ $depend=$_POST['mod_dep'];
 
 $basename=$_POST['mod_base'];
 
-//Load on_submit values 
-$owner=$_SESSION['user'];
+$owner=$_POST['user'];
+
+if ($owner=="")
+   $owner=$_SESSION['user'];
+
+//Load on_submit values
 $date = date("F j, Y, g:i a");
 $tags = "$tags_type,$tags_msc,";
 
 mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released)
 VALUES ('$name','$version','$owner','$desc','$tags',0,0,'$license','$file','$depend','$basename','$date')");
+
+$the_id=mysql_insert_id($handle);
+
+header("location: viewmod.php?id=$the_id");
 ?>

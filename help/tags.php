@@ -1,6 +1,6 @@
 <?php
 include "../scripts/setup.php";
-$title="Tags - Help - Minetest Mods";
+$title="Tags - Help";
 include "../scripts/pageheader.php";
 ?>
 

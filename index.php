@@ -11,8 +11,13 @@
        echo "<tr bgcolor=#00000 height=2><td colspan=$cols></td></tr>";
      }
 
-     $page_title="Home - Minetest Mods";
+     $page_title="Home";
      include "scripts/pageheader.php";
+
+     if (is_logged_in())
+        echo "<a href=\"addentry.php\">Add a Mod</a><br /><br />";
+     
+
      echo "<table width=\"100%\"><tr><th colspan=2>Category</th><th>Description</th><th>Mods</th></tr>";
 
      //List Categories

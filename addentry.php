@@ -1,15 +1,20 @@
 <?php
 include "scripts/setup.php";
-$page_title="Log In - Minetest Mods";
+$page_title="Add a Mod";
 include "scripts/pageheader.php";
 require_login();
 
-include "scripts/addentry.php"
+include "scripts/addentry.php";
 
 ?>
-Help: <a href="help/markup.php" target="_blank">Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
+Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
+<?php
+if (is_member_moderator($_SESSION['user'])==true){
+   echo "<p><input type=\"text\" name=\"user\" value=\"{$_SESSION['user']}\"></p>";
+}
+?>
 <table width="100%">
 
 <!--Tags, License, File, Depend, Basename-->

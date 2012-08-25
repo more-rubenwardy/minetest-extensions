@@ -5,7 +5,7 @@ $user=$_POST['user'];
 $pass=$_POST['pass'];
 $redir=$_GET['redir'];
 
-$message="Enter your login details or Sign Up";
+$message="";
 
 if (authcheck($user,$pass,$handle)==true){
    login($user);
@@ -19,7 +19,7 @@ if (authcheck($user,$pass,$handle)==true){
 }
 
 if ($user=="" || $pass==""){
-  $message="Enter your login details or Sign Up";
+  $message="Enter your login details or <a href=\"signup.php\">Sign Up</a>";
 }
 
 $page_title="Log In - Minetest Mods";

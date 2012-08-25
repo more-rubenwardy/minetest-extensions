@@ -40,4 +40,4 @@ Search Mods: <input type="text" name="id"> <input type="submit" value="Search">
 </div>
 
 <!--Content Div-->
-<div style="position:relative;left:5px;top:110px">
+<div style="position:relative;left:5px;top:110px;width:900px;">
