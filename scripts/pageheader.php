@@ -42,4 +42,4 @@ if (is_logged_in()){
 </div>
 
 <!--Content Div-->
-<div style="position:relative;left:5px;top:80px;width:900px;">
+<div style="position:relative;left:5px;top:80px;width:900px;text-wrap: suppress;">

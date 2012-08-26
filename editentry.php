@@ -23,17 +23,20 @@ SQLerror("Editing Denied","You do not own that entry, and you are not a moderato
 // Load Variables
 // --------------------------
 
-$name=$_POST['name'];
-if ($name=="")
+$do=true;
+$name=$_POST['mod_name'];
+if ($name==""){
+   $do=false;
    $name=$row[1];
+}
 
-$version=$_POST['version'];
+$version=$_POST['mod_version'];
 if ($version=="")
    $version=$row[2];
 
 $owner=$row[3];
 
-$desc=$_POST['desc'];
+$desc=$_POST['mod_desc'];
 if ($desc=="")
    $desc=$row[4];
 
@@ -54,8 +57,19 @@ if ($depend=="")
    $depend=$row[10];
 
 $basename=$_POST['mod_base'];
-$basename=$row[11];
+if ($basename=="")
+   $basename=$row[11];
 
+if ($do==true){
+  include "scripts/entry_adders_sql_safe.php";  mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
+  mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle);
+  mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle);
+  mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle);
+  mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle);
+  mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle);
+  mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle);
+  header("location: viewmod.php?id=$id");
+}
 // --------------------------
 // End of loading variable
 // --------------------------
@@ -63,8 +77,7 @@ $basename=$row[11];
 
 
 
-?><br />
-This form does not work yet<br />
+?>
 Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
