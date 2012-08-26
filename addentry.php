@@ -14,7 +14,7 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 <form method="post" action="<?php echo curPageURL();?>">
 <?php
 if (is_member_moderator($_SESSION['user'])==true){
-   echo "<p><input type=\"text\" name=\"user\" value=\"{$_SESSION['user']}\"></p>";
+   echo "<p>Owner is: <input type=\"text\" name=\"user\" value=\"{$_SESSION['user']}\"></p>";
 }
 ?>
 <table width="100%">
@@ -23,14 +23,14 @@ if (is_member_moderator($_SESSION['user'])==true){
 
 <!--Mod Name and Version-->
 <tr>
-<td width="60%">Mod Name: <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
-<td width="40%">Version: <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
+<td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
+<td width="40%">Version:* <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
 </tr>
 
 <!--Description-->
 <tr>
 <td colspan="2">
-<p><textarea name="mod_desc" cols="105" rows="15">
+<p>*<Br /><textarea name="mod_desc" cols="105" rows="15">
 <?php echo $desc;?>
 </textarea></p>
 </td>
@@ -38,7 +38,7 @@ if (is_member_moderator($_SESSION['user'])==true){
 
 <!--License and File-->
 <tr>
-<td>File URL: <input type="text" size="50" name="mod_file" value="<?php echo $file;?>"></td>
+<td>File URL*: <input type="text" size="50" name="mod_file" value="<?php echo $file;?>"></td>
 <td>License: <input type="text" size="30" name="mod_lic" value="<?php echo $license;?>"></td>
 </tr>
 
@@ -52,7 +52,7 @@ if (is_member_moderator($_SESSION['user'])==true){
 <tr><td colspan="2"><br /><br /><center><b>Tags</b> Users use tags to search and find mods</center></td></tr>
 
 <tr>
-<td>
+<td>*
 <input type="radio" name="mod_tag_type" value="mod"> Mod
 <input type="radio" name="mod_tag_type" value="mdpack"> Mod Pack
 <input type="radio" name="mod_tag_type" value="texture"> Texture Pack

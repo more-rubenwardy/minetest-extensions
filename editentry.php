@@ -63,7 +63,8 @@ $basename=$row[11];
 
 
 
-?>
+?><br />
+This form does not work yet<br />
 Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
