@@ -1,7 +1,9 @@
 Rubenwardy's Mod Forum
 ======================
  
-A php and mysgl forum for mods.
+A ruby on rails and mysgl forum for mods.
+
+Was previously php, but that moved to branches/php-version as ruby on rails is so much easier to use
 
 Also a mod database for Jeijas Ingame Mod Manager
 and Sfan's Python Mod Manager
