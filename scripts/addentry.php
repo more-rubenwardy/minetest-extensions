@@ -38,7 +38,7 @@ if ($owner=="")
    $owner=$_SESSION['user'];
 
 //Load on_submit values
-$date = date("F j, Y, g:i a");
+$date = date('Y-m-d H:i:s');
 $tags = "$tags_type,$tags_msc,";
 
 if (entry_exists($name,$handle))
