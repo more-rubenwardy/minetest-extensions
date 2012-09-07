@@ -15,7 +15,7 @@ include "scripts/pageheader.php";
 include "scripts/formatcode.php";
 
 if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$row[3]){
-$links="<a href=\"editentry.php?id=$id\">Edit</a>";
+$links="<a href=\"editentry.php?id=$id\">Edit</a> <a href=\"deleteentry.php?id=$id\">Delete</a>";
 }else{
 $links="";
 }
