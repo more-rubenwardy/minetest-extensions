@@ -40,16 +40,13 @@ either expressed or implied, of the FreeBSD Project.
 
 To Do
 =====
-
-(Changes suggested by VannesaE - http://multa.bugs3.com/minetest/chat_with_VenessaE.txt)
-
 * (done)  list of mods, show license
 * (done) More mods in demo
 * (done)BBCode
 * (work in progress) Keep up-to-date
 * (done) user creation
 * Search mod names and descriptions
-* wrap desc text
+* (done) wrap desc text
 * (almost done) edit posts
 
 Database

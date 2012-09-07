@@ -62,13 +62,21 @@ if ($basename=="")
 
 if ($do==true){
   include "scripts/entry_adders_sql_safe.php";  mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
-  mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle);
-  mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle);
-  mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle);
-  mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle);
-  mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle);
-  mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle);
+  /*echo "$name<br />";
+  echo "$desc<br />";
+  echo "$tags<br />";
+  echo "$license<br />";
+  echo "$file<br />";
+  echo "$depend<br />";
+  echo "$basename<br />";*/
+  mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle) or SQLerror("Error on desc","");
+  mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle)or SQLerror("Error on tags","");
+  mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle)or SQLerror("Error on license","");
+  mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle)or SQLerror("Error on file","");
+  mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle)or SQLerror("Error on depend","");
+  mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle)or SQLerror("Error on basename","");
   header("location: viewmod.php?id=$id");
+  die("");
 }
 // --------------------------
 // End of loading variable
@@ -87,7 +95,7 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 
 <!--Mod Name and Version-->
 <tr>
-<td width="60%">Mod Name: <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
+<td width="60%">Mod Name: <input type="text" size="50" name="mod_name" readonly="true" style="background-color:#EEEEEE;" value="<?php echo $name;?>"></td>
 <td width="40%">Version: <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
 </tr>
 
