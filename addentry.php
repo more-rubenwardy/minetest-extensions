@@ -30,8 +30,34 @@ if (is_member_moderator($_SESSION['user'])==true){
 <!--Description-->
 <tr>
 <td colspan="2">
-<p>*<Br /><textarea name="mod_desc" cols="105" rows="15">
-<?php echo $desc;?>
+<p>* Description<Br /><textarea name="mod_desc" cols="105" rows="25">
+<?php
+if ($desc==""){
+?>
+<!--This is a template on how you should layout mod pages.
+The description should feature all these things, but not necessarily in this order
+Delete these notes before adding the entry-->
+
+<!--Basic Description
+(this is a mod that does ...)-->
+
+<!--Screenshots-->
+[img]the_url_to_the_image[/img]
+
+<!--Advanced Description
+(How to use the mod, etc)-->
+
+<!--Links
+(Link to the forum post, GitHub, etc)-->
+
+[url=http://minetest.net/forum/viewtopic.php?id=2854=url]Forum Page[/url]
+
+
+<?php
+}else{
+   echo $desc;
+}
+?>
 </textarea></p>
 </td>
 </tr>
@@ -58,7 +84,7 @@ if (is_member_moderator($_SESSION['user'])==true){
 <input type="radio" name="mod_tag_type" value="texture"> Texture Pack
 </td>
 <td>
-Other Tags: <input type="text" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
+<a href="help/tags.php" target="_blank">Other Tags</a>: <input type="text" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
 </td>
 </tr>
 

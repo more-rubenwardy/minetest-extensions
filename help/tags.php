@@ -36,5 +36,5 @@ And make up your own for search box searching.
 * Which versions your mod/texture pack works on. You may add more than one of these tags
 
 <?php
-     include "scripts/pagefooter.php";
+     include "../scripts/pagefooter.php";
 ?>

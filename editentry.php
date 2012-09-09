@@ -40,7 +40,7 @@ $desc=$_POST['mod_desc'];
 if ($desc=="")
    $desc=$row[4];
 
-$tags=$_POST['mod_tag'];
+$tags=$_POST['mod_tags'];
 if ($tags=="")
    $tags = $row[7];
 
