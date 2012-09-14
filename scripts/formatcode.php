@@ -35,6 +35,9 @@ $result=str_replace("[/*]","</li>",$result);
 $result=str_replace("[code]","<p><code>",$result);
 $result=str_replace("[/code]","</code></p>",$result);
 
+$result=str_replace("[color=red]","<font color=\"#FF0000\">",$result);
+$result=str_replace("[/color]","</font>",$result);
+
 return $result;
 }
 ?>

@@ -1,7 +1,13 @@
 <?php
 include "scripts/setup.php";
+include "scripts/voters.php";
 
 $id=$_GET['id'];
+$act=$_GET['action'];
+
+if ($act=="like"){
+ likeMod($id,$_SESSION['user'],$handle);
+}
 
 if (is_numeric($id)==false){
    SQLerror("Non Integer","Non integers are not allowed in the id field. <br /> <a href=\"index.php\">Back to home</a>");
@@ -14,16 +20,19 @@ $page_title="View mod - {$row[1]}";
 include "scripts/pageheader.php";
 include "scripts/formatcode.php";
 
+
+
 if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$row[3]){
 $links="<a href=\"editentry.php?id=$id\">Edit</a> <a href=\"deleteentry.php?id=$id\">Delete</a>";
 }else{
 $links="";
 }
 
-echo "<table width=\"100%\"><tr bgcolor=\"#FFFFBD\"><td><a href=\"{$row[9]}\">Download</a></td><td>";
-echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$row[3]}\">{$row[3]}</a></h1></td>";
-echo "<td width=100>{$row[2]}</td></tr>";
-echo "<tr><td colspan=3><div style=\"width:900px;text-wrap: suppress;\"><p>".formatbb($row[4])."</p></div></td><tr>";
+echo "<table width=\"100%\"><tr bgcolor=\"#FFFFBD\"><td><a href=\"{$row[9]}\">Download</a></td><td>";    // Download Link
+echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$row[3]}\">{$row[3]}</a></h1></td>";     // Title and User Link
+echo "<td width=150>{$row[2]}</td></tr>";                                                               // Version
+echo "<tr><td colspan=2><div style=\"width:900px;text-wrap: suppress;\"><p>".formatbb($row[4])."</p></div></td>"; // Description
+echo "<td><a href=\"viewmod.php?id=$id&action=like\">+</a></td></tr>";   // Likes
 echo "<tr height=30 bgcolor=\"#FFFFBD\"><td colspan=3 style=\"text-align:right;\">$links&#32;&#32;&#32;&#32;</td></tr>";
 
 include "scripts/loadposts.php";

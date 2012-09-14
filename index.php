@@ -8,7 +8,7 @@
      }
      
      function seperator($cols){
-       echo "<tr bgcolor=#00000 height=2><td colspan=$cols></td></tr>";
+       echo "<tr style=\"background-color:#000000;\" height=2><td colspan=$cols></td></tr>";
      }
 
      $page_title="Home";
@@ -30,11 +30,13 @@
 
      seperator(4);
      listSearch("deco","Block Adder Mods","Adds basic decorating blocks to the game (eg: moreblocks, homedecor)",$handle);
-     listSearch("fun","Fun Mods","Fun mods for the game (eg: Chess, Mesecons)",$handle);
-     listSearch("server","Server Interaction Mods","Mods ideal for servers (eg: antigrief, money)",$handle);
+     listSearch("tech","Technical Mods","Technical Mods (eg: Mesecons, Technic)",$handle);
+     listSearch("fun","Experimental Mods","Experimental mods for the game (eg: Chess, Mesecons, Carts)",$handle);
+     listSearch("server","Server Interaction Mods","Mods ideal for servers (low lag, tools)(eg: antigrief, money)",$handle);
      listSearch("food","Food Mods","Mods that add food",$handle);
      listSearch("growing","Growing Mods","Mods that add Plants",$handle);
      listSearch("mobs","Mob Mods","Mods that add Mobs",$handle);
+     listSearch("util","Utility Mods","Mods that add new feature and actons to the game (eg: bones,falling_items,throwing)",$handle);
      listSearch("3d","3D Object Mods","Mods that use NodeBoxes",$handle);
      
      seperator(4);

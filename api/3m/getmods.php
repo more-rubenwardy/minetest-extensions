@@ -10,7 +10,12 @@ header("Content-type: text/plain");
 
 // Get projects loop
 while ($hash = mysql_fetch_assoc($res)){
-      echo "{$hash['name']}\n";
+      echo "{{$hash['name']}}\n";
+      echo "[server]\n";
+      echo "multa.bugs3.com\n";
+      echo "[modinfo]\n";
+      echo "minetest/forum/api/3m/getmodbyname?id={$hash['name']}\n";
+      echo "{end}\n\n";
 }
 
 die("");
