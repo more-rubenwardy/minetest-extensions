@@ -12,7 +12,7 @@ $mmmarr = mysql_fetch_array($mmmres);
 
 echo "{{$row['basename']}}\n";
 echo "[description]\n";
-echo "{$row['desc']}\n";
+echo "{$row['description']}\n";
 echo "[release]\n";
 echo "{$mmmres['rel']}\n";
 echo "[deps]\n";
