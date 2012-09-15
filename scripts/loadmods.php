@@ -12,8 +12,15 @@ while ($hash = mysql_fetch_assoc($res)){
       }else{
          $bgcolor="#FFFFBD";
       }
-
-      echo "<tr bgcolor=\"$bgcolor\"><td width=16><img width=16 height=16 src=\"images/topicicon_read.jpg\" /></td><td><a href=\"viewmod.php?id={$hash['mod_id']}\">{$hash['name']}</a><br />by {$hash['owner']}</td>";
+      
+      // Owner name from id (by Phitherek_)
+      $q = mysql_query("SELECT name FROM users WHERE id=".$hash['owner']);
+      $qr = mysql_fetch_array($q);
+      // End of Phitherek_' s code
+      
+      // Owner name instead of id (by Phitherek_)
+      echo "<tr bgcolor=\"$bgcolor\"><td width=16><img width=16 height=16 src=\"images/topicicon_read.jpg\" /></td><td><a href=\"viewmod.php?id={$hash['mod_id']}\">{$hash['name']}</a><br />by {$qr['name']}</td>";
+      // End of Phitherek_' s change
       echo "<td>{$hash['likes']}</td>";
       echo "<td>{$hash['tags']}</td>";
       echo "<td>{$hash['license']}</td></tr>\n";
