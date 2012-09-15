@@ -24,7 +24,10 @@ if (is_member_moderator($_SESSION['user'])==true){
 <!--Mod Name and Version-->
 <tr>
 <td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
-<td width="40%">Version:* <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
+<!-- 3m release (by Phitherek_) -->
+<td width="20%">Version:* <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
+<td width="20%">3m Release:* <input type="text" size="30" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
+<!-- End of Phitherek_' s change -->
 </tr>
 
 <!--Description-->
@@ -64,6 +67,12 @@ Delete these notes before adding the entry-->
 
 <!--License and File-->
 <tr>
+<!--3m Repotype (by Phitherek_)-->
+<td>3m Repotype: <select name="mmmrt" size="1">
+<option value="archive" selected>Archive</option>
+<option value="git">Git</option>
+</select></td>
+<!--End of Phitherek_' s code-->
 <td>File URL*: <input type="text" size="50" name="mod_file" value="<?php echo $file;?>"></td>
 <td>License: <input type="text" size="30" name="mod_lic" value="<?php echo $license;?>"></td>
 </tr>

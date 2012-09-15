@@ -1,15 +1,14 @@
 Rubenwardy's Mod Forum
 ======================
  
-A php and mysgl forum for mods.
+A php and mysql forum for mods.
 
-Also a mod database for Jeijas Ingame Mod Manager
-and Sfan's Python Mod Manager
+Also a mod database for Jeija' s Ingame Mod Manager, Sfan's Python Mod Manager and Phitherek_' s 3m Minetest Mod Manager
 
 License
 =======
 
-Copyright (c) 2012, Andrew "Rubenwardy" Ward
+Copyright (c) 2012, Andrew "Rubenwardy" Ward and Piotr "Phitherek_" Żurek
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -53,44 +52,77 @@ Database
 ========
 The database structure.
 
-USERS:
+mysql> show tables;
++-----------------------------+
+| Tables_in_minetest_forum_db |
++-----------------------------+
+| 3m_specific                 |
+| mods                        |
+| posts                       |
+| users                       |
++-----------------------------+
+4 rows in set (0.00 sec)
 
-* id   (int)
-* name
-* email
-* password
-* level  (int)
-* stars
-* avatar
-* location
-* sig
+mysql> describe users;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| id       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name     | varchar(100) | YES  |     | NULL    |                |
+| email    | varchar(300) | YES  |     | NULL    |                |
+| password | varchar(500) | YES  |     | NULL    |                |
+| level    | int(11)      | YES  |     | NULL    |                |
+| stars    | int(11)      | YES  |     | NULL    |                |
+| avatar   | int(11)      | YES  |     | NULL    |                |
+| location | varchar(50)  | YES  |     | NULL    |                |
+| sig      | varchar(500) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)
 
-MOD:
+mysql> describe mods;
++-------------------+--------------+------+-----+---------+----------------+
+| Field             | Type         | Null | Key | Default | Extra          |
++-------------------+--------------+------+-----+---------+----------------+
+| mod_id            | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name              | varchar(100) | YES  |     | NULL    |                |
+| version           | varchar(20)  | YES  |     | NULL    |                |
+| owner             | int(11)      | YES  |     | NULL    |                |
+| description       | varchar(500) | YES  |     | NULL    |                |
+| likes             | int(11)      | YES  |     | NULL    |                |
+| dislikes          | int(11)      | YES  |     | NULL    |                |
+| tags              | varchar(100) | YES  |     | NULL    |                |
+| license           | varchar(10)  | YES  |     | NULL    |                |
+| file              | varchar(500) | YES  |     | NULL    |                |
+| depend            | varchar(500) | YES  |     | NULL    |                |
+| basename          | varchar(100) | YES  |     | NULL    |                |
+| date_released     | date         | YES  |     | NULL    |                |
+| quality_total     | int(11)      | YES  |     | NULL    |                |
+| quality_voters    | int(11)      | YES  |     | NULL    |                |
+| usefullness_total | int(11)      | YES  |     | NULL    |                |
+| cpu_total         | int(11)      | YES  |     | NULL    |                |
+| cpu_voters        | int(11)      | YES  |     | NULL    |                |
++-------------------+--------------+------+-----+---------+----------------+
+18 rows in set (0.01 sec)
 
-* mod_id (int)
-* name
-* version
-* owner
-* description
-* likes    (int)
-* dislikes  (int)
-* tags
-* license
-* file
-* depend
-* basename (the mod name, eg: "moreblocks")
-* date_released  (date)
-* quality_total (int)
-* quality_voters (int)
-* usefullness_total (int)
-* cpu_total (int)
-* cpu_voters (int)
+mysql> describe posts;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| post_id  | int(11)      | NO   | PRI | NULL    | auto_increment |
+| owner    | int(11)      | YES  |     | NULL    |                |
+| post     | varchar(500) | YES  |     | NULL    |                |
+| topic    | int(11)      | YES  |     | NULL    |                |
+| likes    | int(11)      | YES  |     | NULL    |                |
+| dislikes | int(11)      | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
 
-POSTS:
-
-* post_id (int)
-* Owner
-* Post
-* Topic (int)
-* Like  (int)
-* Dislike (int)
+mysql> describe 3m_specific;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int(11)     | NO   | PRI | NULL    |       |
+| rel      | int(11)     | YES  |     | NULL    |       |
+| repotype | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
