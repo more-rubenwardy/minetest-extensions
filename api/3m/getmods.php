@@ -15,7 +15,7 @@ while ($hash = mysql_fetch_assoc($res)){
       echo "multa.bugs3.com\n";
       echo "[modinfo]\n";
       echo "minetest/forum/api/3m/getmodbyname?id={$hash['basename']}\n";
-      echo "{end}\n\n";
+      echo "{end}\n";
 }
 
 die("");
