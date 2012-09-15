@@ -8,4 +8,6 @@ $license=mysql_real_escape_string($license);
 $file=mysql_real_escape_string($file);
 $depend=mysql_real_escape_string($depend);
 $basename=mysql_real_escape_string($basename);
+$mmmrt=mysql_real_escape_string($mmmrt);
+$mmmrel=mysql_real_escape_string($mmmrel);
 ?>

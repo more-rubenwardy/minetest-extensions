@@ -8,7 +8,7 @@ if ((include('scripts/addentry.php'))==1){
   echo "Entry already exists.<br /><br />";
 }
 
-?>
+?> 
 Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>. Not creating? Make sure you fill in all *ed sections.
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
@@ -27,7 +27,7 @@ if (is_member_moderator($_SESSION['user'])==true){
 <!-- 3m release (by Phitherek_) -->
 <td width="40%">
 <table width="100%"><tr><td>Version:* <input type="text" size="10" name="mod_version" value="<?php echo $version;?>"></td><td>
-3m Release:* <input type="text" size="10" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
+3m Release: <input type="text" size="10" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
 <!-- End of Phitherek_ s change -->
 </table>
 </td>

@@ -16,10 +16,8 @@ $row = mysql_fetch_row($res) or die("row error");
 // Owner name instead of id, 3m_specific (by Phitherek_)
 $owr = mysql_query("SELECT name FROM users WHERE id=".$row[3], $handle);
 $owar = mysql_fetch_array($owr);
-$mmmres = mysql_query("SELECT * FROM 3m_specific WHERE id=".$id, $handle);
-$mmmarr = mysql_fetch_array($mmmres);
 // End of Phitherek_' s code
-if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$row[3]){
+if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$owar['name'] || $_SESSION['user']==$row[3]){
 }else{
 SQLerror("Editing Denied","You do not own that entry, and you are not a moderator");
 }
@@ -42,7 +40,7 @@ if ($version=="")
 //3m release (by Phitherek_)
 $mmmrel=$_POST['mmmrel'];
 if($mmmrel=="") {
-$mmmrel=$mmmarr['rel'];	
+$mmmrel=$row[21];
 }
 //End of Phitherek_' s code
 
@@ -65,7 +63,7 @@ if ($license=="")
 // 3m repotype (by Phitherek_)
 $mmmrt=$_POST['mmmrt'];
 if($mmmrt =="") {
-$mmmrt = $mmmarr['repotype'];	
+$mmmrt = $row[19];
 }
 // End of Phitherek_' s code
 
@@ -82,22 +80,16 @@ if ($basename=="")
    $basename=$row[11];
 
 if ($do==true){
-  include "scripts/entry_adders_sql_safe.php";  mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
+  include "scripts/entry_adders_sql_safe.php";
+  mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
   // 3m release (by Phitherek_)
-  mysql_query("UPDATE 3m_specific SET rel='$mmmrel' WHERE id='$id'",$handle) or SQLerror("Error on 3m_specific:rel","");
+  mysql_query("UPDATE mods SET 3m_rele='$mmmrel' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:rel","");
   // End of Phitherek_' s code
-  /*echo "$name<br />";
-  echo "$desc<br />";
-  echo "$tags<br />";
-  echo "$license<br />";
-  echo "$file<br />";
-  echo "$depend<br />";
-  echo "$basename<br />";*/
   mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle) or SQLerror("Error on desc","");
   mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle)or SQLerror("Error on tags","");
   mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle)or SQLerror("Error on license","");
   // 3m repotype (by Phitherek_)
-  mysql_query("UPDATE 3m_specific SET repotype='$mmmrt' WHERE id='$id'",$handle) or SQLerror("Error on 3m_specific:repotype","");
+  mysql_query("UPDATE mods SET repotype='$mmmrt' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:repotype","");
   // End of Phitherek_' s code
   mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle)or SQLerror("Error on file","");
   mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle)or SQLerror("Error on depend","");
@@ -105,7 +97,7 @@ if ($do==true){
   header("location: viewmod.php?id=$id");
   die("");
 }
-// --------------------------
+// --------------------------     
 // End of loading variable
 // --------------------------
 
@@ -122,12 +114,15 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 
 <!--Mod Name and Version-->
 <tr>
-<td width="60%">Mod Name: <input type="text" size="50" name="mod_name" readonly="true" style="background-color:#EEEEEE;" value="<?php echo $name;?>"></td>
+<td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
 <!-- 3m release (by Phitherek_) -->
-<td width="20%">Version: <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
-<td width="20%">3m Release: <input type="text" size="30" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
-<!-- End of Phitherek_' s change -->
-</tr>
+<td width="40%">
+<table width="100%"><tr><td>Version:* <input type="text" size="10" name="mod_version" value="<?php echo $version;?>"></td><td>
+3m Release: <input type="text" size="10" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
+<!-- End of Phitherek_ s change -->
+</table>
+</td>
+<tr>
 
 <!--Description-->
 <tr>
@@ -145,9 +140,11 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 <option value="archive" <?php if($mmmrt=="archive") echo "selected"; ?>>Archive</option>
 <option value="git" <?php if($mmmrt=="git") echo "selected"; ?>>Git</option>
 </select></td>
-<!--End of Phitherek_' s code-->
+<!--End of Phitherek_ s code-->
 <td>File URL: <input type="text" size="50" name="mod_file" value="<?php echo $file;?>"></td>
-<td>License: <input type="text" size="30" name="mod_lic" value="<?php echo $license;?>"></td>
+</tr>
+<tr>
+<td colspan=2><br />License: <input type="text" size="60" name="mod_lic" value="<?php echo $license;?>"><br /><br /></td>
 </tr>
 
 <!--Depends and Basename-->
