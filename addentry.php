@@ -25,13 +25,15 @@ if (is_member_moderator($_SESSION['user'])==true){
 <tr>
 <td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
 <!-- 3m release (by Phitherek_) -->
-<td width="20%">Version:* <input type="text" size="30" name="mod_version" value="<?php echo $version;?>"></td>
-<td width="20%">3m Release:* <input type="text" size="30" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
-<!-- End of Phitherek_' s change -->
-</tr>
+<td width="40%">
+<table width="100%"><tr><td>Version:* <input type="text" size="10" name="mod_version" value="<?php echo $version;?>"></td><td>
+3m Release:* <input type="text" size="10" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
+<!-- End of Phitherek_ s change -->
+</table>
+</td>
+<tr>
 
 <!--Description-->
-<tr>
 <td colspan="2">
 <p>* Description<Br /><textarea name="mod_desc" cols="105" rows="25">
 <?php
@@ -72,9 +74,15 @@ Delete these notes before adding the entry-->
 <option value="archive" selected>Archive</option>
 <option value="git">Git</option>
 </select></td>
-<!--End of Phitherek_' s code-->
+<!--End of Phitherek_ s code-->
 <td>File URL*: <input type="text" size="50" name="mod_file" value="<?php echo $file;?>"></td>
-<td>License: <input type="text" size="30" name="mod_lic" value="<?php echo $license;?>"></td>
+</tr>
+<tr>
+<td colspan=2>
+<br />
+License: <input type="text" size="60" name="mod_lic" value="<?php echo $license;?>">
+<br /><br />
+</td>
 </tr>
 
 <!--Depends and Basename-->

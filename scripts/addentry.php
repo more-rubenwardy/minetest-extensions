@@ -12,7 +12,7 @@ if ($version=="")
 //3m release (by Phitherek_)
 $mmmrel=$_POST['mmmrel'];
 if ($mmrel=="")
-	return 0;
+	$mmrel=1;
 //End of Phitherek_' s code
 
 $desc=$_POST['mod_desc'];
@@ -29,6 +29,7 @@ if ($tags_msc=="")
    return 0;
 
 $license=$_POST['mod_lic'];
+
 //3m repotype
 $mmmrt=$_POST['mmmrt'];
 if($mmmrt=="")
@@ -60,15 +61,11 @@ $tags = "$tags_type,$tags_msc,";
 if (entry_exists($name,$handle))
    return 1;
 //Substitute owner with ownerid (by Phitherek_)
-mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released)
-VALUES ('$name','$version',$ownerid,'$desc','$tags',0,0,'$license','$file','$depend','$basename','$date')");
+mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released,repotype,3m_rele)
+VALUES ('$name','$version',$ownerid,'$desc','$tags',0,0,'$license','$file','$depend','$basename','$date','$mmmrt','$mmmrel')");
 //End of Phitherek_' s change
 
 $the_id=mysql_insert_id($handle);
-
-//3m specific adding (by Phitherek_)
-mysql_query("INSERT INTO 3m_specific VALUES($the_id,$mmmrel,'$mmmrt')");
-//End of Phitherek_' s code
 
 header("location: viewmod.php?id=$the_id");
 ?>
