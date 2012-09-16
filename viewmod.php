@@ -43,7 +43,11 @@ echo "<table width=\"100%\"><tr bgcolor=\"#FFFFBD\"><td><a href=\"{$row[9]}\">Do
 echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$owner}\">{$owner}</a></h1></td>";     // Title and User Link
 echo "<td width=150>{$row[2]}</td></tr>";                                                               // Version
 echo "<tr><td colspan=2><div style=\"width:900px;text-wrap: suppress;\"><p>".formatbb($row[4])."</p></div></td>"; // Description
+if (is_logged_in()==true){
 echo "<td><a href=\"viewmod.php?id=$id&action=like\">+</a></td></tr>";   // Likes
+}else{
+  echo "<td></td></tr>";   // Likes
+}
 echo "<tr height=30 bgcolor=\"#FFFFBD\"><td colspan=3 style=\"text-align:right;\">$links&#32;&#32;&#32;&#32;</td></tr>";
 
 include "scripts/loadposts.php";
