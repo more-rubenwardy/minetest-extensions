@@ -13,7 +13,7 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
 <?php
-if (is_member_moderator($_SESSION['user'])==true){
+if (is_member_moderator($_SESSION['user'],$handle)==true){
    echo "<p>Owner is: <input type=\"text\" name=\"user\" value=\"{$_SESSION['user']}\"></p>";
 }
 ?>

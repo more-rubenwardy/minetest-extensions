@@ -8,7 +8,11 @@ Also a mod database for Jeija' s Ingame Mod Manager, Sfan's Python Mod Manager a
 License
 =======
 
-Copyright (c) 2012, Andrew "Rubenwardy" Ward and Piotr "Phitherek_" Żurek
+This project is Copyright (c) 2012, Andrew "Rubenwardy" Ward.
+
+Some sections of code and the 3m api is Copyright (c) 2012 to Piotr "Phitherek_" Żurek
+
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

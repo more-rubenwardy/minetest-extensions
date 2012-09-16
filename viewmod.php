@@ -18,16 +18,20 @@ $row = mysql_fetch_row($res) or die("row error");
 $page_title="View mod - {$row[1]}";
 
 // Substitute owner ID with owner name (by Phitherek_):
+if (is_numeric($row[3])==true){
 $r = mysql_query("SELECT name FROM users WHERE id=".$row[3],$handle) or SQLerror("MySQL Query Error","Error on getting owner name from users");
 $ra = mysql_fetch_array($r);
 $owner = $ra['name'];
+}else{
+  $owner = $row[3];
+}
 // End of Phitherek_' s code
 include "scripts/pageheader.php";
 include "scripts/formatcode.php";
 
 
 
-if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$row[3]){
+if (is_member_moderator($_SESSION['user'],$handle) || $_SESSION['user']==$row[3]){
 //3m Release Increasing (by Phitherek_)
 $links="<a href=\"editentry.php?id=$id\">Edit</a> <a href=\"3mrelinc.php?id=$id\">Increase 3m Release</a> <a href=\"deleteentry.php?id=$id\">Delete</a>";
 //End of Phitherek_' s change

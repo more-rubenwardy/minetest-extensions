@@ -3,8 +3,13 @@
 //configuration
 $serverpath="http://multa.bugs3.com/minetest/forum";
 
-function is_member_moderator($user){
-         if ($user=="rubenwardy"){
+function is_member_moderator($user,$handle){
+         $user_p=getUser($user,$handle);
+         if (!$user_p){
+           echo "user read error";
+         }
+
+         if ($user_p[4]==2){
             return true;
          }else{
             return false;

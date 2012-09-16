@@ -17,7 +17,7 @@ $row = mysql_fetch_row($res) or die("row error");
 $owr = mysql_query("SELECT name FROM users WHERE id=".$row[3], $handle);
 $owar = mysql_fetch_array($owr);
 // End of Phitherek_' s code
-if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$owar['name'] || $_SESSION['user']==$row[3]){
+if (is_member_moderator($_SESSION['user'],$handle) || $_SESSION['user']==$owar['name'] || $_SESSION['user']==$row[3]){
 }else{
 SQLerror("Editing Denied","You do not own that entry, and you are not a moderator");
 }

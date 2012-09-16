@@ -14,8 +14,11 @@ while ($hash = mysql_fetch_assoc($res)){
       }
       
       // Owner name from id (by Phitherek_)
+      $q=0;
       $q = mysql_query("SELECT name FROM users WHERE id=".$hash['owner']);
-      $qr = mysql_fetch_array($q);
+      if ($q){
+      $qr = mysql_fetch_array($q) or print("");
+      }
       // End of Phitherek_' s code
       
       // Owner name instead of id (by Phitherek_)
