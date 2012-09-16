@@ -1,12 +1,6 @@
 <?php
      include "scripts/setup.php";
 
-     function listSearch($query,$title,$description,$handle){
-              echo "<tr><td width=16><img width=16 height=16 src=\"images/topicicon_read.jpg\" /></td><td><a href=\"search.php?id=$query\">$title</a></td><td>$description</td>";
-              $num=getNoTopics($query,$handle);
-              echo "<td>$num<td></tr>";
-     }
-     
      function seperator($cols){
        echo "<tr style=\"background-color:#000000;\" height=2><td colspan=$cols></td></tr>";
      }
@@ -15,48 +9,15 @@
      include "scripts/pageheader.php";
 
      if (is_logged_in())
-        echo "<a href=\"addentry.php\">Add a Mod</a><br /><br />";
-     
+        echo "<a href=\"addentry.php\">Add an entry</a><br /><br />";
+?>
+        This page is being developed. See <a href="listing.php">here</a> to look for mods.
 
-     echo "<table width=\"100%\"><tr><th colspan=2>Category</th><th>Description</th><th>Mods</th></tr>";
-
-     //List Categories
-     listSearch("","All","All Items",$handle);
-     listSearch("mod","All Mods","All Mods",$handle);
-     listSearch("mpack","All Mod Packs","All Mod Packs",$handle);
-     listSearch("texture","All Texture Packs","All Texture Packs",$handle);
-     listSearch("sound","All Sound Packs","All Sound Packs and Sound Mods",$handle);
+     <table width=100%>
+     </table>
 
 
-     seperator(4);
-     listSearch("deco","Block Adder Mods","Adds basic decorating blocks to the game (eg: moreblocks, homedecor)",$handle);
-     listSearch("tech","Technical Mods","Technical Mods (eg: Mesecons, Technic)",$handle);
-     listSearch("fun","Experimental Mods","Experimental mods for the game (eg: Chess, Mesecons, Carts)",$handle);
-     listSearch("server","Server Interaction Mods","Mods ideal for servers (low lag, tools)(eg: antigrief, money)",$handle);
-     listSearch("food","Food Mods","Mods that add food",$handle);
-     listSearch("growing","Growing Mods","Mods that add Plants",$handle);
-     listSearch("mobs","Mob Mods","Mods that add Mobs",$handle);
-     listSearch("util","Utility Mods","Mods that add new feature and actons to the game (eg: bones,falling_items,throwing)",$handle);
-     listSearch("3d","3D Object Mods","Mods that use NodeBoxes",$handle);
-     
-     seperator(4);
-     listSearch("envir","Enviroment Mods","Changes the map generator",$handle);
-     listSearch("biome","Biome Mods","Adds a new biome to the game",$handle);
-
-     seperator(4);
-     listSearch("comic-txt","Comic Style Textures","Cartoon Style Texture Packs",$handle);
-     listSearch("real-txt","Realistic Textures","Realistic Styled Texture Packs",$handle);
-     listSearch("hd-txt","HD Textures","HD Texture packs",$handle);
-
-     seperator(4);
-     listSearch("0.4.2","0.4.2","for 0.4.2-rc1",$handle);
-     listSearch("0.4.1","0.4.1","for 0.4 Stable",$handle);
-     listSearch("0.4","0.4","for 0.4",$handle);
-     
-     echo "</table>";
-     //listSearch("0.3","0.3","for 0.3",0);
-     //listSearch("old_minetest","Older","for older versions of minetest",0);
-
+<?php
      include "scripts/pagefooter.php";
 ?>
 
