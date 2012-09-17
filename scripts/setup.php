@@ -1,7 +1,5 @@
 <?php
-
-//configuration
-$serverpath="http://multa.bugs3.com/minetest/forum";
+include "scripts/settings.conf";
 
 function is_member_moderator($user,$handle){
          $user_p=getUser($user,$handle);
@@ -23,7 +21,7 @@ function SQLerror($title,$msg){
 
 session_start();
 
-$handle = mysql_pconnect("mysql.serversfree.com","u372522788_admin","password");
+$handle = mysql_pconnect($sql_url,$sql_user,$sql_pass);
 
 if (!$handle)
 die("MySQL - Error connecting to the MySQL database");
