@@ -42,7 +42,7 @@ body {margin: 0px; padding: 0px;}
     <area shape="rect" coords="0,50,2,176" href="listing.php?id=texture" alt="">
 </map>
 <a href="search.php?id=sound"><img src="images/wp5533b116.gif" width="326" height="125" border="0" alt="" usemap="#map0" style="position:absolute;left:325px;top:212px;"></a>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 <?php
      include "scripts/pagefooter.php";

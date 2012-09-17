@@ -51,6 +51,10 @@ $owner=$owar['name'];
 $desc=$_POST['mod_desc'];
 if ($desc=="")
    $desc=$row[4];
+   
+$overview=$_POST['mod_ov'];
+if ($overview=="")
+   $overview = $row[22];
 
 $tags=$_POST['mod_tags'];
 if ($tags=="")
@@ -85,6 +89,7 @@ if ($do==true){
   // 3m release (by Phitherek_)
   mysql_query("UPDATE mods SET 3m_rele='$mmmrel' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:rel","");
   // End of Phitherek_' s code
+  mysql_query("UPDATE mods SET overview='$overview' WHERE name='$name'",$handle)or SQLerror("Error on overview","");
   mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle) or SQLerror("Error on desc","");
   mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle)or SQLerror("Error on tags","");
   mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle)or SQLerror("Error on license","");
@@ -94,6 +99,7 @@ if ($do==true){
   mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle)or SQLerror("Error on file","");
   mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle)or SQLerror("Error on depend","");
   mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle)or SQLerror("Error on basename","");
+
   header("location: viewmod.php?id=$id");
   die("");
 }
@@ -123,6 +129,14 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 </table>
 </td>
 <tr>
+
+<!--Overview-->
+<tr>
+<td colspan="2">
+<br />
+Overview:* <input type="text" size=100 name="mod_ov" value="<?php echo $overview;?>">
+</td>
+</tr>
 
 <!--Description-->
 <tr>

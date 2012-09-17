@@ -32,10 +32,16 @@ if (is_member_moderator($_SESSION['user'],$handle)==true){
 </table>
 </td>
 <tr>
+<td colspan="2">
+<br />
+Overview:* <input type="text" size=100 name="mod_ov" value="<?php echo $overview;?>">
+</td>
+</tr>
+<tr>
 
 <!--Description-->
 <td colspan="2">
-<p>* Description<Br /><textarea name="mod_desc" cols="105" rows="25">
+<p>Description:* <Br /><textarea name="mod_desc" cols="105" rows="25">
 <?php
 if ($desc==""){
 ?>

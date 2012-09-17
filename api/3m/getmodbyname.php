@@ -10,7 +10,7 @@ $row = mysql_fetch_array($res) or die("error");
 
 echo "{{$row['basename']}}\n";
 echo "[description]\n";
-echo "{$row['description']}\n";
+echo "{$row['overview']}\n";
 echo "[release]\n";
 echo "{$row['3m_rele']}\n";
 echo "[deps]\n";

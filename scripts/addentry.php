@@ -18,6 +18,10 @@ if ($mmrel=="")
 $desc=$_POST['mod_desc'];
 if ($desc=="")
    return 0;
+   
+$overview=$_POST['mod_ov'];
+if ($overview=="")
+   return 0;
 
 //Tag
 $tags_type=$_POST['mod_tag_type'];
@@ -61,8 +65,8 @@ $tags = "$tags_type,$tags_msc,";
 if (entry_exists($name,$handle))
    return 1;
 //Substitute owner with ownerid (by Phitherek_)
-mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released,repotype,3m_rele)
-VALUES ('$name','$version',$ownerid,'$desc','$tags',0,0,'$license','$file','$depend','$basename','$date','$mmmrt','$mmmrel')");
+mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released,repotype,3m_rele,overview)
+VALUES ('$name','$version',$ownerid,'$desc','$tags',0,0,'$license','$file','$depend','$basename','$date','$mmmrt','$mmmrel','$overview')");
 //End of Phitherek_' s change
 
 $the_id=mysql_insert_id($handle);
