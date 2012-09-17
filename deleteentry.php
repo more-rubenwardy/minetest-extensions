@@ -33,9 +33,6 @@ if ($name==""){
 if ($do==true){
   $name=mysql_real_escape_string($name);
    mysql_query("DELETE FROM mods WHERE name='$name'",$handle) or SQLerror("MySQL Query Error","Error finding entry $name");
-   // 3m specific removal (by Phitherek_)
-   mysql_query("DELETE FROM 3m_specific WHERE id=".$id, $handle);
-   // End of Phitherek_' s code
    header("location: index.php");
 }
 ?>
