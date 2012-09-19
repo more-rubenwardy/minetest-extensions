@@ -1,5 +1,5 @@
 <?php
-include "scripts/settings.conf";
+include "settings.conf";
 
 function is_member_moderator($user,$handle){
          $user_p=getUser($user,$handle);
@@ -124,5 +124,13 @@ function entry_exists($name,$handle){
          $qu = mysql_real_escape_string ($name);
          $res = mysql_query("SELECT * FROM mods WHERE name='$qu'",$handle);
          return mysql_num_rows($res);
+}
+
+function entry_read($id,$handle){
+return false;
+}
+
+function cat_read($tag,$handle){
+return false;
 }
 ?>
