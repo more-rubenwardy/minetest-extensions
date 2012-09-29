@@ -23,29 +23,27 @@ if (is_member_moderator($_SESSION['user'],$handle)==true){
 
 <!--Mod Name and Version-->
 <tr>
-<td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
+<td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" placeholder="The name of this entry" value="<?php echo $name;?>"></td>
 <!-- 3m release (by Phitherek_) -->
 <td width="40%">
-<table width="100%"><tr><td>Version:* <input type="text" size="10" name="mod_version" value="<?php echo $version;?>"></td><td>
-3m Release: <input type="text" size="10" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
+<table width="100%"><tr><td>Version:* <input type="text" size="10" placeholder="This entries version (ie: 1.0 or git)" name="mod_version" value="<?php echo $version;?>"></td><td>
+3m Release: <input type="text" size="10" name="mmmrel" placeholder="3m Version id. Whole numbers" value="<?php echo $mmmrel;?>"></td>
 <!-- End of Phitherek_ s change -->
 </table>
 </td>
 <tr>
 <td colspan="2">
 <br />
-Overview:* <input type="text" size=100 name="mod_ov" value="<?php echo $overview;?>">
+Overview:* <input type="text" size=100 name="mod_ov" placeholder="a short one line explanation of this entry" value="<?php echo $overview;?>">
 </td>
 </tr>
 <tr>
 
 <!--Description-->
 <td colspan="2">
-<p>Description:* <Br /><textarea name="mod_desc" cols="105" rows="25">
-<?php
+<p>Description:* <Br /><textarea name="mod_desc" cols="105" placeholder="The Entries Description. See help > description mark up link at top of page. this is like an article" rows="25"><?php
 if ($desc==""){
-?>
-<!--This is a template on how you should layout mod pages.
+?><!--This is a template on how you should layout mod pages.
 The description should feature all these things, but not necessarily in this order
 Delete these notes before adding the entry-->
 
@@ -61,15 +59,11 @@ Delete these notes before adding the entry-->
 <!--Links
 (Link to the forum post, GitHub, etc)-->
 
-[url=http://minetest.net/forum/viewtopic.php?id=2854=url]Forum Page[/url]
-
-
-<?php
+[url=http://minetest.net/forum/viewtopic.php?id=2854=url]Forum Page[/url]<?php
 }else{
    echo $desc;
 }
-?>
-</textarea></p>
+?></textarea></p>
 </td>
 </tr>
 
@@ -81,20 +75,20 @@ Delete these notes before adding the entry-->
 <option value="git">Git</option>
 </select></td>
 <!--End of Phitherek_ s code-->
-<td>File URL*: <input type="text" size="50" name="mod_file" value="<?php echo $file;?>"></td>
+<td>File URL*: <input type="text" size="50" name="mod_file" placeholder="Web address to the GitHub page or archive (.zip, etc)" value="<?php echo $file;?>"></td>
 </tr>
 <tr>
 <td colspan=2>
 <br />
-License: <input type="text" size="60" name="mod_lic" value="<?php echo $license;?>">
+License: <input type="text" size="60" placeholder="The entries license." name="mod_lic" value="<?php echo $license;?>">
 <br /><br />
 </td>
 </tr>
 
 <!--Depends and Basename-->
 <tr>
-<td>Depends (seperated by "," - no space): <input type="text" size="30" name="mod_dep" value="<?php echo $depend;?>"></td>
-<td>Mod Namespace: <input type="text" size="30" name="mod_base" value="<?php echo $basename;?>"></td>
+<td>Depends: <input type="text" placeholder="default,bucket - Separated by a comma ','. blank for no dependency" size="70" name="mod_dep" value="<?php echo $depend;?>"></td>
+<td>Mod Namespace: <input type="text" placeholder="Mod folder to be placed in" size="30" name="mod_base" value="<?php echo $basename;?>"></td>
 </tr>
 
 <!--Tags-->
@@ -107,7 +101,7 @@ License: <input type="text" size="60" name="mod_lic" value="<?php echo $license;
 <input type="radio" name="mod_tag_type" value="texture"> Texture Pack
 </td>
 <td>
-<a href="help/tags.php" target="_blank">Other Tags</a>: <input type="text" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
+<a href="help/tags.php" target="_blank">Other Tags</a>: <input type="text" placeholder="separated by commas" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
 </td>
 </tr>
 

@@ -1,10 +1,11 @@
 <?php
 include "settings.conf";
 
+
 function is_member_moderator($user,$handle){
          $user_p=getUser($user,$handle);
          if (!$user_p){
-           echo "user read error";
+            return 0;
          }
 
          if ($user_p[4]==2){
@@ -21,10 +22,10 @@ function SQLerror($title,$msg){
 
 session_start();
 
-$handle = mysql_pconnect($sql_url,$sql_user,$sql_pass);
+$handle = mysql_pconnect($sql_url,$sql_user,$sql_pass) or SQLerror("MySQL Database", "Error connecting to the MySQL database");
 
-if (!$handle)
-die("MySQL - Error connecting to the MySQL database");
+if (!$handle || $handle==0)
+SQLerror("MySQL Database", "Error connecting to the MySQL database");
 
 mysql_select_db("u372522788_minetest",$handle) or die("Error Switching DB");
 
@@ -113,6 +114,13 @@ function addUser($user,$pass,$passcon,$email,$handle){
          }
 }
 
+function getUserId($user,$handle){
+      $qu = mysql_real_escape_string ($user);
+      $res = mysql_query("SELECT * FROM users WHERE name='$qu'",$handle);
+      $row = mysql_fetch_row($res) or die("row error");
+      return $row[0];
+}
+
 function user_exists($user,$handle){
          $qu = mysql_real_escape_string ($user);
          $res = mysql_query("SELECT * FROM users WHERE name='$qu'",$handle);
@@ -130,7 +138,8 @@ function entry_read($id,$handle){
 return false;
 }
 
-function cat_read($tag,$handle){
+function cat_read($id,$handle){
 return false;
 }
+
 ?>

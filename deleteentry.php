@@ -1,6 +1,7 @@
 <?php
 include "scripts/setup.php";
 $page_title="Edit a Mod";
+
 require_login();
 
 $id=$_GET['id'];
@@ -14,7 +15,7 @@ include "scripts/pageheader.php";
 $res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error finding entry $id");
 $row = mysql_fetch_row($res) or die("row error");
 
-if (is_member_moderator($_SESSION['user']) || $_SESSION['user']==$row[3]){
+if (is_member_moderator($_SESSION['user'],$handle) || $_SESSION['user']==$row[3]){
 }else{
 SQLerror("Deleting Denied","You do not own that entry, and you are not a moderator");
 }

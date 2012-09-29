@@ -32,7 +32,7 @@ include "scripts/formatcode.php";
 
 if (is_member_moderator($_SESSION['user'],$handle)){
 $links="<a href=\"admin.php?mode=owner&id=$id\">Change Owner</a> - <a href=\"editentry.php?id=$id\">Edit</a> <a href=\"3mrelinc.php?id=$id\">Increase 3m Release</a> <a href=\"deleteentry.php?id=$id\">Delete</a>";
-}elseif ($_SESSION['user']==$row[3]){
+}elseif (getUserId($_SESSION['user'],$handle)==$row[3]){
 $links="<a href=\"editentry.php?id=$id\">Edit</a> <a href=\"3mrelinc.php?id=$id\">Increase 3m Release</a> <a href=\"deleteentry.php?id=$id\">Delete</a>";
 }else{
 $links="";

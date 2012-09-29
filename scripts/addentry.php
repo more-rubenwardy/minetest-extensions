@@ -1,4 +1,7 @@
 <?php
+$mmmrel=$_POST['mmmrel'];
+if ($mmmrel=="")
+	$mmmrel=1;
 
 // Load Posted Values
 $name=$_POST['mod_name'];
@@ -10,9 +13,7 @@ if ($version=="")
    return 0;
 
 //3m release (by Phitherek_)
-$mmmrel=$_POST['mmmrel'];
-if ($mmrel=="")
-	$mmrel=1;
+
 //End of Phitherek_' s code
 
 $desc=$_POST['mod_desc'];
