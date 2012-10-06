@@ -12,7 +12,6 @@ This project is Copyright (c) 2012, Andrew "Rubenwardy" Ward.
 
 Some sections of code and the 3m api is Copyright (c) 2012 to Piotr "Phitherek_" Żurek
 
-
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -52,8 +51,8 @@ To Do
 * (done) wrap desc text
 * (almost done) edit posts
 
-Database
-========
+Database and Setting this up
+============================
 The database structure.
 
-See the wiki on github
+See the wiki on github: https://github.com/downloads/rubenwardy/minetest-forum/wiki
