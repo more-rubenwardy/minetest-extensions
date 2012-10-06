@@ -40,17 +40,6 @@ The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies, 
 either expressed or implied, of the FreeBSD Project.
 
-To Do
-=====
-* (done)  list of mods, show license
-* (done) More mods in demo
-* (done)BBCode
-* (work in progress) Keep up-to-date
-* (done) user creation
-* Search mod names and descriptions
-* (done) wrap desc text
-* (almost done) edit posts
-
 Database and Setting this up
 ============================
 The database structure.
