@@ -27,7 +27,8 @@ while ($hash = mysql_fetch_assoc($res)){
       // Owner name instead of id (by Phitherek_)
       echo "<tr bgcolor=\"$bgcolor\"><td width=16><img width=16 height=16 src=\"images/topicicon_read.jpg\" /></td><td><a href=\"viewmod.php?id={$hash['mod_id']}\">{$hash['name']}</a><br />by $name</td>";
       // End of Phitherek_' s change
-      echo "<td>{$hash['overview']}</td>";
+      $overview=str_replace("\\'","'",$hash['overview']);
+      echo "<td>$overview</td>";
       echo "<td>{$hash['tags']}</td>";
       echo "<td>{$hash['likes']}</td></tr>\n";
 

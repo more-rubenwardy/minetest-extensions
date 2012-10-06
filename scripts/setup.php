@@ -117,7 +117,11 @@ function addUser($user,$pass,$passcon,$email,$handle){
 function getUserId($user,$handle){
       $qu = mysql_real_escape_string ($user);
       $res = mysql_query("SELECT * FROM users WHERE name='$qu'",$handle);
-      $row = mysql_fetch_row($res) or die("row error");
+      $row = mysql_fetch_row($res);
+
+	if (!$row)
+		return false;
+
       return $row[0];
 }
 

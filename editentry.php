@@ -49,12 +49,14 @@ $owner=$owar['name'];
 // End of Phitherek_' s change
 
 $desc=$_POST['mod_desc'];
-if ($desc=="")
-   $desc=$row[4];
+if ($desc==""){
+  echo "getting desc<br />";
+   $desc=str_replace("\\'","'",$row[4]);
+}
    
 $overview=$_POST['mod_ov'];
 if ($overview=="")
-   $overview = $row[22];
+   $overview = str_replace("\\'","'",$row[22]);
 
 $tags=$_POST['mod_tags'];
 if ($tags=="")
@@ -84,7 +86,7 @@ if ($basename=="")
    $basename=$row[11];
 
 if ($do==true){
-  include "scripts/entry_adders_sql_safe.php";
+    include "scripts/entry_adders_sql_safe.php";
   mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
   // 3m release (by Phitherek_)
   mysql_query("UPDATE mods SET 3m_rele='$mmmrel' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:rel","");

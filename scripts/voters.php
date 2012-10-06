@@ -7,7 +7,11 @@ function likeMod($id,$user,$handle){
   }
 
 $res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
-$row = mysql_fetch_row($res) or die("row error");
+$row = mysql_fetch_row($res);
+
+if (!$row)
+	return false;
+
 $user_d = getUser($user,$handle);
 
 if (!$user_d){
@@ -31,7 +35,11 @@ function changeLikes($id,$user,$amount,$handle){
   echo "\n\n\n function changeLikes($id,$user,$amount,$handle) is executing\n";
 
   $res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
-  $row = mysql_fetch_row($res) or die("row error");
+  $row = mysql_fetch_row($res);
+	
+if (!$row)
+	return false;
+
   $user_d = getUser($user,$handle);
 
   if (!$user_d){
@@ -56,7 +64,11 @@ function changeDislikes($id,$user,$amount,$handle){
   echo "\n\n\n function changeDislikes($id,$user,$amount,$handle) is executing\n";
 
   $res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
-  $row = mysql_fetch_row($res) or die("row error");
+  $row = mysql_fetch_row($res);
+
+if (!$row)
+	return false;
+
   $user_d = getUser($user,$handle);
 
   if (!$user_d){

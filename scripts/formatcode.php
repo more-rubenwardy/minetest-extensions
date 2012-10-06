@@ -2,6 +2,8 @@
 function formatbb($input){
 $result=$input;
 
+$result=str_replace("\\'","'",$result);
+
 $result=str_replace("[img]","<img style=\"max-width:900px;\" src=\"",$result);
 $result=str_replace("[/img]","\" />",$result);
 $result=str_replace("[/img-enforce]","\" />",$result);
@@ -32,7 +34,7 @@ $result=str_replace("[/list]","</ul>",$result);
 $result=str_replace("[*]","<li>",$result);
 $result=str_replace("[/*]","</li>",$result);
 
-$result=str_replace("[code]","<p><code>",$result);
+$result=str_replace("[code]","<p><code style=\"border:solid;\">",$result);
 $result=str_replace("[/code]","</code></p>",$result);
 
 $result=str_replace("[color=red]","<font color=\"#FF0000\">",$result);

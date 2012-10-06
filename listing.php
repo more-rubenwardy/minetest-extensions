@@ -68,10 +68,11 @@
      listSearch("hd-txt","HD Textures","HD Texture packs",$handle);
      }
 
-     seperator(4);
-     listSearch("0.4.2","0.4.2","for 0.4.2-rc1",$handle);
-     listSearch("0.4.1","0.4.1","for 0.4 Stable",$handle);
-     listSearch("0.4","0.4","for 0.4",$handle);
+     /*seperator(4);
+     listSearch("0.4.3","0.4.3","for 0.4.3 stable",$handle);
+     listSearch("0.4.2","0.4.2","for 0.4.2",$handle);
+     listSearch("0.4.1","0.4.1","for 0.4 stable",$handle);
+     listSearch("0.4","0.4","for 0.4",$handle);*/
      
      echo "</table>";
      //listSearch("0.3","0.3","for 0.3",0);

@@ -9,7 +9,7 @@ if ((include('scripts/addentry.php'))==1){
 }
 
 ?> 
-Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>. Not creating? Make sure you fill in all *ed sections.
+Help: <a href="help/entries.php" target="_blank">Guidelines and Tutorial</a> <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>. Not creating? Make sure you fill in all *ed sections.
 <hr />
 <form method="post" action="<?php echo curPageURL();?>">
 <?php
@@ -23,7 +23,8 @@ if (is_member_moderator($_SESSION['user'],$handle)==true){
 
 <!--Mod Name and Version-->
 <tr>
-<td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" placeholder="The name of this entry" value="<?php echo $name;?>"></td>
+<table width="100%"><tr>
+<td width="60%">Mod Name:* <input type="text" size="35" name="mod_name" placeholder="The name of this entry" value="<?php echo $name;?>"></td>
 <!-- 3m release (by Phitherek_) -->
 <td width="40%">
 <table width="100%"><tr><td>Version:* <input type="text" size="10" placeholder="This entries version (ie: 1.0 or git)" name="mod_version" value="<?php echo $version;?>"></td><td>
@@ -31,10 +32,11 @@ if (is_member_moderator($_SESSION['user'],$handle)==true){
 <!-- End of Phitherek_ s change -->
 </table>
 </td>
+</tr></table>
 <tr>
 <td colspan="2">
 <br />
-Overview:* <input type="text" size=100 name="mod_ov" placeholder="a short one line explanation of this entry" value="<?php echo $overview;?>">
+Overview:* <input type="text" size="70" name="mod_ov" placeholder="a short one line explanation of this entry" value="<?php echo $overview;?>">
 </td>
 </tr>
 <tr>
@@ -69,14 +71,17 @@ Delete these notes before adding the entry-->
 
 <!--License and File-->
 <tr>
+<table width="100%"><tr>
 <!--3m Repotype (by Phitherek_)-->
-<td>3m Repotype: <select name="mmmrt" size="1">
+<td><a href="help/entries.php#download">Type</a>: <select name="mmmrt" size="1">
 <option value="archive" selected>Archive</option>
 <option value="git">Git</option>
 </select></td>
 <!--End of Phitherek_ s code-->
 <td>File URL*: <input type="text" size="50" name="mod_file" placeholder="Web address to the GitHub page or archive (.zip, etc)" value="<?php echo $file;?>"></td>
+</tr></table>
 </tr>
+
 <tr>
 <td colspan=2>
 <br />
@@ -87,22 +92,33 @@ License: <input type="text" size="60" placeholder="The entries license." name="m
 
 <!--Depends and Basename-->
 <tr>
-<td>Depends: <input type="text" placeholder="default,bucket - Separated by a comma ','. blank for no dependency" size="70" name="mod_dep" value="<?php echo $depend;?>"></td>
+<table width="100%"><tr>
+<td>Depends: <input type="text" placeholder="default,bucket - Separated by a comma ','. blank for no dependency" size="45" name="mod_dep" value="<?php echo $depend;?>"></td>
 <td>Mod Namespace: <input type="text" placeholder="Mod folder to be placed in" size="30" name="mod_base" value="<?php echo $basename;?>"></td>
+</tr>
+</table>
 </tr>
 
 <!--Tags-->
 <tr><td colspan="2"><br /><br /><center><b>Tags</b> Users use tags to search and find mods</center></td></tr>
 
 <tr>
+<table width="100%"><tr>
 <td>*
 <input type="radio" name="mod_tag_type" value="mod"> Mod
 <input type="radio" name="mod_tag_type" value="mdpack"> Mod Pack
 <input type="radio" name="mod_tag_type" value="texture"> Texture Pack
 </td>
 <td>
-<a href="help/tags.php" target="_blank">Other Tags</a>: <input type="text" placeholder="separated by commas" size=30 name="mod_tag_msc" value="<?php echo $tags_msc;?>">
+<a href="help/tags.php" target="_blank">Other Tags</a>: <input type="text" placeholder="separated by commas" size=30 name="mod_tag_msc" value="<?php 
+if ($tags_msc==""){
+echo "0.4,0.4.1,0.4.2,0.4.3";
+}else{
+echo $tags_msc;
+}
+?>">
 </td>
+</tr></table>
 </tr>
 
 <tr>

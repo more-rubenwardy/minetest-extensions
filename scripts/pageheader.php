@@ -35,9 +35,9 @@ if (is_logged_in()){
      echo "<a href=\"$serverpath/user.php\"><font color=\"#FFFFFF\"><u>User List</u></font></a>";
 ?></div>
 
-<div style="position:relative;left:670px;top:70px;width:400px;">
+<div style="position:relative;left:500px;top:70px;width:400px;text-align:right;">
 <form method="get" action="<?php echo $serverpath;?>/search.php">
-<input type="text" name="id"> <input type="submit" value="Search">
+<input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
 </form>
 </div>
 
