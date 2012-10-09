@@ -22,7 +22,7 @@ if ($res==3)
    $message="Account Creation Failed";
    
 if ($res==4)
-   $message="User already exists";
+   $message="User already exists.<br />If you did not create an account, then it is likely an admin did to add your entry. Ask an admin for your password";
 ?>
 <table><tr><td width="50%">
 <?php
@@ -42,7 +42,7 @@ Vote on which mod, mod pack, texture pack or sound pack is the best
 <h3>Add a Mod</h3>
 Add a mod, mod pack, texture pack or sound pack to this database
 <h3>Secure</h3>
-Your password is safe with SHA-1 encrypton.
+Your password is safe with SHA-1 encrypton, and we will never share your email address or other details
 </td></tr>
 </table>
 
