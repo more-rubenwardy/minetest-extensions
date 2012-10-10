@@ -37,6 +37,7 @@ if (is_logged_in()){
 
 <div style="position:relative;left:500px;top:70px;width:400px;text-align:right;">
 <form method="get" action="<?php echo $serverpath;?>/search.php">
+<input type="hidden" name="mode" value="sb">
 <input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
 </form>
 </div>

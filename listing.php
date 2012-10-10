@@ -34,7 +34,7 @@
      listSearch("","All","All Items in order of popularity",$handle);
      if ($id=="mod" || $id==""){
      listSearch("mod","All Mods","All Mods in order of popularity",$handle);
-     listSearch("mpack","All Mod Packs","All Mod Packs in order of popularity",$handle);
+     listSearch("modpack","All Mod Packs","All Mod Packs in order of popularity",$handle);
      }
 
      if ($id=="texture" || $id=="")

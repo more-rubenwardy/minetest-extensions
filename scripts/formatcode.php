@@ -4,7 +4,7 @@ $result=$input;
 
 $result=str_replace("\\'","'",$result);
 
-$result=str_replace("[img]","<img style=\"max-width:900px;\" src=\"",$result);
+$result=str_replace("[img]","<img style=\"max-width:850px;\" src=\"",$result);
 $result=str_replace("[/img]","\" />",$result);
 $result=str_replace("[/img-enforce]","\" />",$result);
 
@@ -38,6 +38,8 @@ $result=str_replace("[code]","<p><code style=\"border:solid;\">",$result);
 $result=str_replace("[/code]","</code></p>",$result);
 
 $result=str_replace("[color=red]","<font color=\"#FF0000\">",$result);
+$result=str_replace("[color=green]","<font color=\"#00FF0000\">",$result);
+$result=str_replace("[color=blue]","<font color=\"#000000FF\">",$result);
 $result=str_replace("[/color]","</font>",$result);
 
 return $result;

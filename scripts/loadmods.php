@@ -1,7 +1,20 @@
 <?php
 echo "<table width=\"100%\"><tr><th colspan=2>Mod Name</th><th>Description</th><th width=200>Tags</th><th>Likes</th></tr>\n";
 $query= mysql_real_escape_string ($query);
-$res = mysql_query("SELECT * FROM mods WHERE tags LIKE '%$query%' ORDER BY likes DESC",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.tags for '$query'");
+
+if ($mode=="tags"){
+   $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%'";
+}else if ($mode=="sb"){
+  if (is_numeric($query)==true){
+    echo "<!--is numeric-->";
+     $qu_str="SELECT * FROM mods WHERE owner=$query";
+  }else{
+     $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' OR name LIKE '%$query%'";
+  }
+}
+
+
+$res = mysql_query($qu_str." ORDER BY likes DESC",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.tags for '$query'");
 
 $alternate=1;
 // Get projects loop

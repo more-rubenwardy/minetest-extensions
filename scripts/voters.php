@@ -30,6 +30,23 @@ if (strstr($user_d[5],$row[1].",")){
 echo "\n\nend of execution-->\n\n\n";
 }
 
+function checkLike($user,$id,$col,$handle){
+if (is_numeric($id)==false){
+    echo "<!--[Error]: is not numeric-->\n";
+     return 0;
+}
+
+$res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
+$row = mysql_fetch_row($res);
+$user_d = getUser($user,$handle);
+
+if (!$user_d){
+  return 0;
+}
+
+return strstr($user_d[$col],$row[1].",");
+}
+
 
 function changeLikes($id,$user,$amount,$handle){
   echo "\n\n\n function changeLikes($id,$user,$amount,$handle) is executing\n";

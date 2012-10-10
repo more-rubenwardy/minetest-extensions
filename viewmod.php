@@ -45,18 +45,23 @@ $links="";
 }
 
 
-echo "<table width=\"100%\"><tr><td>";
-echo "<table width=\"100%\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"{$row[9]}\">Download</a></td>";
+echo "<table width=\"900\"><tr><td>";
+echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"{$row[9]}\">Download</a></td>";
 
 echo "<td width=\"650\">";    // Download Link
 echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$owner}\" target=\"_blank\">{$owner}</a></h1></td>";  // Title and User Link
 
-echo "<td width=150>{$row[2]}</td></tr></table></td></tr>"; // Version
+echo "<td width=\"25\">{$row[2]}</td></tr></table></td></tr>"; // Version
 
-echo "<tr><td><table width=\"100%\"><tr><td colspan=2><div style=\"width:900px;text-wrap: suppress;\"><p>".formatbb($row[4])."</p></div></td>"; // Description
+echo "<tr><td><table width=\"900\"><tr><td><div style=\"width:870px;text-wrap: suppress;\"><p>".formatbb($row[4])."</p></div></td>"; // Description
 
 if (is_logged_in()==true){
-  echo "<td><a href=\"viewmod.php?id=$id&action=like\">+</a></td></tr>";   // Likes
+  $like_ext="";
+  if (checkLike($_SESSION['user'],$id,5,$handle)==true)
+     $like_ext="_high";
+
+  $dislike_ext="";
+  echo "<td width=\"25\" style=\"vertical-align:top;\"><a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like_ext.png\" alt=\"like\" /></a><br /><br /><a href=\"viewmod.php?id=$id&action=dislike\"><img src=\"images/dislike_mod$dislike_ext.png\" alt=\"dislike\" /></a></td></tr>";   // Likes
 }else{
   echo "<td></td></tr>";   // Likes
 }
