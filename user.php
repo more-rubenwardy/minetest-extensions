@@ -27,9 +27,32 @@ while ($hash = mysql_fetch_assoc($res)){
   }
   $res = mysql_query("SELECT * FROM users WHERE id=$id",$handle) or SQLerror("MySQL Query Error","Error on getting database.users");
   $hash = mysql_fetch_assoc($res);
+  
+  switch($hash['level'])
+  {
+  case 0:
+  	$level=" normal member";
+  	break;
+  case 1:
+ 	$level=" vertified member";
+  	break;
+  case 2:
+  	$level="n admin";
+  	break;
+  }
+  
   echo "<h1>{$hash['name']}</h1>";
-  echo "{$hash['name']} is a level {$hash['level']} member.";
-  echo "<p><a href=\"search.php?id=$id&mode=sb\">View {$hash['name']}'s mods</a></p>";
+  echo "{$hash['name']} is a{$level}.";
+  echo "<br /><p><a href=\"user.php\">Back to User List</a></p><br />";
+  
+  $query=$id;
+  $mode="sb";
+     if ($mode=="")
+        $mode="tags";
+
+
+     include "scripts/loadmods.php";
+     
 }
 
 include "scripts/pagefooter.php";

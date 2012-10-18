@@ -49,7 +49,7 @@ echo "<table width=\"900\"><tr><td>";
 echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"{$row[9]}\">Download</a></td>";
 
 echo "<td width=\"650\">";    // Download Link
-echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?name={$owner}\" target=\"_blank\">{$owner}</a></h1></td>";  // Title and User Link
+echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}</a></h1></td>";  // Title and User Link
 
 echo "<td width=\"25\">{$row[2]}</td></tr></table></td></tr>"; // Version
 

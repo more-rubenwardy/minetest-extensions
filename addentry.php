@@ -8,9 +8,10 @@ if ((include('scripts/addentry.php'))==1){
   echo "Entry already exists.<br /><br />";
 }
 
-?> 
+?>
 Help: <a href="help/entries.php" target="_blank">Guidelines and Tutorial</a> <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>. Not creating? Make sure you fill in all *ed sections.
 <hr />
+<font color="#FF0000"><?php echo $message; ?></font>
 <form method="post" action="<?php echo curPageURL();?>">
 <?php
 if (is_member_moderator($_SESSION['user'],$handle)==true){

@@ -10,7 +10,11 @@ $message="";
 if (authcheck($user,$pass,$handle)==true){
    login($user);
    if ($redir==""){
+     if ($pass=="temp_pass"){
+       header("location: user_password.php?auto=true&redir=user_email.php");
+     }else{
       header("location: index.php");
+     }
    }else{
       header("location: $redir");
    }

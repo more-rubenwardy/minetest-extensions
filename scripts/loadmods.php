@@ -18,7 +18,10 @@ $res = mysql_query($qu_str." ORDER BY likes DESC",$handle) or SQLerror("MySQL Qu
 
 $alternate=1;
 // Get projects loop
+$is_result=false;
 while ($hash = mysql_fetch_assoc($res)){
+
+      $is_result=true;
   
       if ($alternate==0){
          $bgcolor="#FFFFFF";
@@ -47,5 +50,10 @@ while ($hash = mysql_fetch_assoc($res)){
 
       $alternate=1-$alternate;
 }
+
+if ($is_result==false){
+echo "<tr><td colspan=5><center><i>no search results found</i></center></td></tr>";
+}
+
 echo "</table>";
 ?>

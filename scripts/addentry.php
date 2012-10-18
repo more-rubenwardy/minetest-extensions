@@ -8,6 +8,11 @@ $name=$_POST['mod_name'];
 if ($name=="")
    return 0;
 
+if (strstr($name,"'")==true){
+  $message="The name field may not contain '";
+   return 0;
+}
+
 $version=$_POST['mod_version'];
 if ($version=="")
    return 0;

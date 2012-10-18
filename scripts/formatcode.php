@@ -8,7 +8,7 @@ $result=str_replace("[img]","<img style=\"max-width:850px;\" src=\"",$result);
 $result=str_replace("[/img]","\" />",$result);
 $result=str_replace("[/img-enforce]","\" />",$result);
 
-$result=str_replace("[url=","<a href=\"",$result);
+$result=str_replace("[url=","<a target=\"_blank\" href=\"",$result);
 $result=str_replace("=url]","\">",$result);
 $result=str_replace("[/url]","</a>",$result);
 
