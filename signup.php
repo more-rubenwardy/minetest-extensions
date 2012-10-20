@@ -12,8 +12,10 @@ $message="Enter your details below.";
 
 $res=addUser($user,$pass,$passcon,$email,$handle);
 
-if ($res==1)
-   header("location: login.php");
+if ($res==1){
+   login($user);
+   header("location: reg_complete.php");
+}
    
 if ($res==2)
    $message="Passwords do not match";

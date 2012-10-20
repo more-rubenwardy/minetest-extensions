@@ -10,8 +10,8 @@
      function seperator($cols){
        echo "<tr style=\"background-color:#000000;\" height=2><td colspan=$cols></td></tr>";
      }
-
-     $page_title="Home";
+     $id=$_GET['id'];
+     $page_title="Categories in $id";
      include "scripts/pageheader.php";
      
      $id=$_GET['id'];
@@ -35,6 +35,7 @@
      if ($id=="mod" || $id==""){
      listSearch("mod","All Mods","All Mods in order of popularity",$handle);
      listSearch("modpack","All Mod Packs","All Mod Packs in order of popularity",$handle);
+     listSearch("code","All C++ Code Mods","All C++ Code Mods in order of popularity",$handle);
      }
 
      if ($id=="texture" || $id=="")

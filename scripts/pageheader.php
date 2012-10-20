@@ -21,7 +21,9 @@
 <!--The Header-->
 <img src="<?php echo $serverpath;?>/images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
 
-<div id="userbar" style="text-align:right;position:relative;left:710px;top:70px;width:180px;height=30px;"><?php
+<div id="slogan" style="text-align:right;position:relative;left:250px;top:60px;width:400px;height=20px;">Mods - Texture Packs - Sound Packs - Code Mods</div>
+
+<div id="userbar" style="text-align:right;position:relative;left:710px;top:55px;width:180px;height=30px;"><?php
 if (is_logged_in()){
    echo $_SESSION['user']." - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
 }else{
@@ -30,7 +32,7 @@ if (is_logged_in()){
 }
 ?></div>                                                                           
 
-<div id="userbar" style="text-align:left;position:relative;left:10px;top:55px;width:180px;height=30px;"><?php
+<div id="userbar" style="text-align:left;position:relative;left:10px;top:35px;width:180px;height=30px;"><?php
      echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a> - ";
      echo "<a href=\"$serverpath/user.php\"><font color=\"#FFFFFF\"><u>User List</u></font></a>";
 ?></div>
