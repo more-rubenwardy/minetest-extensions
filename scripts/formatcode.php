@@ -3,6 +3,10 @@ function formatbb($input){
 $result=$input;
 
 $result=str_replace("\\'","'",$result);
+$result=str_replace("\\'","'",$result);
+$result=str_replace("\\'","'",$result);
+$result=str_replace("\\'","'",$result);
+$result=str_replace("\\'","'",$result);
 
 $result=str_replace("[img]","<img style=\"max-width:850px;\" src=\"",$result);
 $result=str_replace("[/img]","\" />",$result);

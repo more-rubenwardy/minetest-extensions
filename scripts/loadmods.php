@@ -40,8 +40,13 @@ while ($hash = mysql_fetch_assoc($res)){
       }
       // End of Phitherek_' s code
 
+      $image="images/topicicon_read.jpg";
+      
+      if ($hash['icon'])
+          $image="icon/".$hash['icon'];
+
       // Owner name instead of id (by Phitherek_)
-      echo "<tr bgcolor=\"$bgcolor\"><td width=16><img width=16 height=16 src=\"images/topicicon_read.jpg\" /></td><td><a href=\"viewmod.php?id={$hash['mod_id']}\">{$hash['name']}</a><br />by $name</td>";
+      echo "<tr bgcolor=\"$bgcolor\"><td width=16><img width=16 height=16 src=\"$image\" /></td><td><a href=\"viewmod.php?id={$hash['mod_id']}\">{$hash['name']}</a><br />by $name</td>";
       // End of Phitherek_' s change
       $overview=str_replace("\\'","'",$hash['overview']);
       echo "<td>$overview</td>";

@@ -25,7 +25,7 @@
 
 <div id="userbar" style="text-align:right;position:relative;left:710px;top:55px;width:180px;height=30px;"><?php
 if (is_logged_in()){
-   echo $_SESSION['user']." - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
+   echo "<a href=\"$serverpath/user.php?id=".getUserId($_SESSION['user'],$handle)."\"><font color=\"#FFFFFF\"><u>".$_SESSION['user']."</u></font></a> - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
 }else{
    echo "<a href=\"$serverpath/login.php\"><font color=\"#FFFFFF\"><u>Login</u></font></a> - ";
    echo "<a href=\"$serverpath/signup.php\"><font color=\"#FFFFFF\"><u>Sign Up</u></font></a>";
