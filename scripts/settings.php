@@ -18,6 +18,7 @@ $serverpath="http://multa.bugs3.com/minetest/forum"; // The base url to the mod 
 $sql_url="mysql.serversfree.com"; // The URL to the MySql Server
 $sql_user="u372522788_admin"; // The username for the MySql Server
 $sql_pass="password"; // The password for the MySql Server
+$sql_db="u372522788_minetest";
 
 
 // Email Address Settings

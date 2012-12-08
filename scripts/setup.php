@@ -1,5 +1,5 @@
 <?php
-include "settings.conf";
+include "settings.php";
 
 
 function is_member_moderator($user,$handle){
@@ -27,7 +27,7 @@ $handle = mysql_pconnect($sql_url,$sql_user,$sql_pass) or SQLerror("MySQL Databa
 if (!$handle || $handle==0)
 SQLerror("MySQL Database", "Error connecting to the MySQL database");
 
-mysql_select_db("u372522788_minetest",$handle) or die("Error Switching DB");
+mysql_select_db($sql_db,$handle) or die("Error Switching DB");
 
 function curPageURL() {
  $pageURL = 'http';
@@ -144,6 +144,21 @@ return false;
 
 function cat_read($id,$handle){
 return false;
+}
+
+function getDownload($mod){
+if ($mod[19]=="git"){
+   return $mod[9]."/zipball/master";
+}else if ($mod[19]=="archive"){
+  if (strstr($mod[7],"code")==true){
+   return "code_mod.php?url=".$mod[9];
+  }else{
+    return $mod[9];
+  }
+}else{
+}
+
+return "";
 }
 
 ?>

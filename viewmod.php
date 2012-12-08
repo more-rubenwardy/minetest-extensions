@@ -13,14 +13,21 @@ if ($act=="like"){
  likeMod($id,$_SESSION['user'],$handle);
 }
 
+$res=0;
+$gen_num=0;
 
-if (is_numeric($id)==false){
-   SQLerror("Non Integer","Non integers are not allowed in the id field. <br /> <a href=\"index.php\">Back to home</a>");
+if ($id=="random"){
+	$gen_num= rand(0,getNoTopics("",$handle));
+	$res = mysql_query("SELECT * FROM mods LIMIT $gen_num, 1",$handle);
+}else if (is_numeric($id)){
+	$res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
+}else{
+	SQLerror("Non Integer","Non integers are not allowed in the id field. <br /> <a href=\"index.php\">Back to home</a>");
 }
 
-$res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
-$row = mysql_fetch_row($res) or SQLerror("Row Error","No results where found for a mod with the id $id");
+$row = mysql_fetch_row($res) or SQLerror("Row Error","No results where found for a mod with the id $gen_num");
 $page_title="View mod - {$row[1]}";
+$id=$row[0];
 
 
 // Substitute owner ID with owner name (by Phitherek_):
@@ -46,7 +53,7 @@ $links="";
 
 
 echo "<table width=\"900\"><tr><td>\n";
-echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"{$row[9]}\">Download</a></td>\n";
+echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"".getDownload($row)."\">Download</a></td>\n";
 
 echo "<td width=\"650\">\n";    // Download Link
 echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}</a></h1></td>\n";  // Title and User Link
@@ -61,7 +68,7 @@ if (is_logged_in()==true){
      $like_ext="_high";
 
   $dislike_ext="";
-  echo "<td width=\"25\" style=\"vertical-align:top;\"><a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like_ext.png\" alt=\"like\" /></a><br /><br /><a href=\"viewmod.php?id=$id&action=dislike\"><img src=\"images/dislike_mod$dislike_ext.png\" alt=\"dislike\" /></a></td></tr>";   // Likes
+  echo "<td width=\"25\" style=\"vertical-align:top;\"><a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like_ext.png\" alt=\"like\" /></a></td></tr>";   // Likes
 }else{
   echo "<td></td></tr>";   // Likes
 }
@@ -71,7 +78,7 @@ echo "<tr height=30 bgcolor=\"#FFFFBD\"><td style=\"text-align:right;\">$links&#
 
 if (!($row[23]=="")){
 echo "<tr><td><br />Recommended Mods<br /></td></tr><tr></tr><tr height=\"80\"><td>\n";
-echo "<table height=\"80\"><tr>";
+echo "<table height=\"80\"><tr>\n";
 
 $rec=explode(",",$row[23]);
 
@@ -85,7 +92,7 @@ for ($i=0;$i<count($rec);$i++){
        if ($row_i[20])
           $image="icon/".$row_i[20];
 
-       echo "<td style=\"text-align:center;\"><a href=\"viewmod.php?id=$id_i\"><img height=100 width=100 src=\"$image\" title=\"{$row_i[1]}\" /></a><br /><b>{$row_i[1]}</b></td>";
+       echo "<td style=\"text-align:center;\"><a href=\"viewmod.php?id=$id_i\"><img height=100 width=100 src=\"$image\" title=\"{$row_i[1]}\" /></a><br /><b>{$row_i[1]}</b></td>\n";
     }
 }
 

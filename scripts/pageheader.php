@@ -2,10 +2,9 @@
 <html lang="en-gb">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
-<meta name="Generator" content="Serif WebPlus X5 (13.0.3.029)">
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
 <title><?php echo $page_title ?> - Minetest Mods</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="minetest,mods,extension,community,download,listing,manager,mod,easy,rate,add">
 <meta name="author" content="Andrew Ward">
 <meta name="copyright" content="Copyright &#xA9; to Andrew Ward">
 <meta http-equiv="Content-Language" content="en-gb">
@@ -34,6 +33,7 @@ if (is_logged_in()){
 
 <div id="userbar" style="text-align:left;position:relative;left:10px;top:35px;width:180px;height=30px;"><?php
      echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a> - ";
+     echo "<a href=\"$serverpath/help/about.php\"><font color=\"#FFFFFF\"><u>About</u></font></a> - ";
      echo "<a href=\"$serverpath/user.php\"><font color=\"#FFFFFF\"><u>User List</u></font></a>";
 ?></div>
 

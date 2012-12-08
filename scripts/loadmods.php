@@ -9,7 +9,7 @@ if ($mode=="tags"){
     echo "<!--is numeric-->";
      $qu_str="SELECT * FROM mods WHERE owner=$query";
   }else{
-     $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' OR name LIKE '%$query%'";
+     $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' OR name LIKE '%$query%' OR overview LIKE '%$query%'";
   }
 }
 

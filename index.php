@@ -9,7 +9,10 @@
      include "scripts/pageheader.php";
 
      if (is_logged_in())
-        echo "<a href=\"addentry.php\">Add an entry</a><br /><br />";
+        echo "<a href=\"addentry.php\">Add an entry</a> - ";
+      
+     echo "<a href=\"listing.php\">Index of Entries</a> - <a href=\"viewmod.php?id=random\">Random Extension</a><br /><br />";
+     
 ?>
 
 <style type="text/css">
@@ -45,6 +48,16 @@ body {margin: 0px; padding: 0px;}
 
 
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<h2>Welcome to Minetest Extensions</h2>
+<?php
+/*if ($_SESSION['msg']==0){
+$_SESSION['msg']=1;
+echo "<p><b>Help us be telling us what you think about this interface! <a href=\"http://tinyurl.com/mtmdfrm\">Tell us</a></b></p>";
+}*/
+?>
+<p><b>Help us by telling us what you think about this interface! <a href=\"http://tinyurl.com/mtmdfrm\">Tell us</a></b></p>
+Minetest Mods, Texture packs and Sound Packs! All the things that customise Minetest perfectly for you!
+
 
 <?php
      include "scripts/pagefooter.php";
