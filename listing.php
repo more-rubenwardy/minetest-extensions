@@ -29,8 +29,10 @@
         }else{
           $mtype=" ".$mtype;
         }
-        echo "<a href=\"addentry.php\">Add a$mtype</a><br /><br />";
+        echo "<a href=\"addentry.php\">Add a$mtype</a> - ";
      }
+     
+     echo "<a href=\"listing.php\">Index of Entries</a> - <a href=\"viewmod.php?id=random\">Random Extension</a><br /><br />";
 
 
      echo "<table width=\"100%\"><tr><th colspan=2>Category</th><th>Description</th><th>Mods</th></tr>";

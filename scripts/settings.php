@@ -27,4 +27,6 @@ $sql_db="u372522788_minetest";
 $require_email=true; // Require Email Address
 $emailver_mod=true; // Require Email Vertification to post
 $emailver_login=false;  // Require Email Vertification to log in
+
+$mt_lock_down=false; // if true, only admins can access forum
 ?>

@@ -1,6 +1,7 @@
 <?php
 include "settings.php";
 
+session_start();
 
 function is_member_moderator($user,$handle){
          $user_p=getUser($user,$handle);
@@ -20,7 +21,6 @@ function SQLerror($title,$msg){
          die("$msg");
 }
 
-session_start();
 
 $handle = mysql_pconnect($sql_url,$sql_user,$sql_pass) or SQLerror("MySQL Database", "Error connecting to the MySQL database");
 
@@ -28,6 +28,14 @@ if (!$handle || $handle==0)
 SQLerror("MySQL Database", "Error connecting to the MySQL database");
 
 mysql_select_db($sql_db,$handle) or die("Error Switching DB");
+
+
+if ($mt_lock_down==true){
+  if (is_logged_in()==false || is_member_moderator($_SESSION['user'],$handle)==false){
+    SQLerror("Minetest Extensions","Sorry, but Minetest Extensions has been locked down for editing");
+  }
+}
+
 
 function curPageURL() {
  $pageURL = 'http';

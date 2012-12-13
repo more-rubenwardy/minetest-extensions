@@ -1,6 +1,38 @@
-<p>
-<img src="<?php echo $serverpath;?>/images/footer.png" width="900" height="50" border="0" alt="" style="left:0px;">
+<!-- footer -->
+	</div> <!-- .constrain -->
+	<div style="clear: both;"></div>
+</div> <!-- content -->
+
+<div id="footer">
+	<div class="constrain">
+	</div>
+	<div class="footerlogo">
+		<img src="http://minetest.net/images/minetest-icon-120_gray_translucent.png" alt="logo">
+		<span>
+			<ul class="footermainlist">
+				<li class="the_li">
+					Minetest
+				</li>
+				<li>
+					IRC Channels:
+					<ul>
+						<li>#minetest @ Freenode</li>
+					</ul>
+				</li>
+				<li>
+				       Minetest Extensions by: Andrew "rubenwardy" Ward<br>
+					Website by: Perttu Ahola, celeron55 @ IRCnet, Freenode, gmail.com
+				</li>
+				<li>
+					Powered by
+					<a href="http://freedns.afraid.org">FreeDNS</a>,
+					<a href="http://emblica.org/">Emblica.org</a>
+				</li>
+			</ul>
+		</span>
+	</div>
 </div>
+
 </body>
 
 <!-- Piwik -->
@@ -17,3 +49,7 @@ piwikTracker.enableLinkTracking();
 <!-- End Piwik Tracking Code -->
 
 </html>
+
+<?php
+  die("");
+?>

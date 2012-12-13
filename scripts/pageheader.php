@@ -1,48 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en-gb">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fi">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
-<title><?php echo $page_title ?> - Minetest Mods</title>
-<meta name="keywords" content="minetest,mods,extension,community,download,listing,manager,mod,easy,rate,add">
-<meta name="author" content="Andrew Ward">
-<meta name="copyright" content="Copyright &#xA9; to Andrew Ward">
-<meta http-equiv="Content-Language" content="en-gb">
-<meta name="robots" content="index,follow">
-<link rel="stylesheet" type="text/css" href="<?php echo $serverpath;?>/mainstyle.css" />
-<!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+	<meta name="keywords" content="minetest minetest-c55" />
+	<meta name="description" content="Minetest (minetest-c55): An open source Infiniminer/Minecraft style game" />
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<link rel="stylesheet" href="http://minetest.net/style_v2.css" type="text/css" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="bookmark icon" href="/favicon.ico" />
+	<title><?php echo $page_title;?> - Minetest Extensions</title>
+
+<style>
+.inbar_login {
+	float: right;
+}
+</style>
 </head>
 
+<body>
 
-<body text="#000000" style="background-color:#ffffff; text-align:center; height:610px;">
-<div style="background-color:transparent;text-align:left;margin-left:auto;margin-right:auto;position:relative;width:900px;">
-
-<!--The Header-->
-<img src="<?php echo $serverpath;?>/images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
-
-<div id="slogan" style="text-align:right;position:relative;left:250px;top:60px;width:400px;height=20px;">Mods - Texture Packs - Sound Packs - Code Mods</div>
-
-<div id="userbar" style="text-align:right;position:relative;left:710px;top:55px;width:180px;height=30px;"><?php
-if (is_logged_in()){
-   echo "<a href=\"$serverpath/user.php?id=".getUserId($_SESSION['user'],$handle)."\"><font color=\"#FFFFFF\"><u>".$_SESSION['user']."</u></font></a> - <a href=\"$serverpath/logout.php\"><font color=\"#FFFFFF\"><u>Log Out</u></font></a>";
+<div id="navbar" class="navbar">
+	<div class="constrain">
+		<span class="inbar_main">
+			<ul>
+				<li class="navlink_normal"><a href="http://minetest.net/index.php">About</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/news.php">News</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/download.php">Download</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/contribute.php">Contribute</a></li>
+			</ul>
+		</span>
+		<span class="inbar_separator">
+			|
+		</span>
+		<span class="inbar_other">
+			<ul>
+				<!--<li class="navlink_special"><a href="http://c55.me/blog">Blog</a></li>
+				<li class="navlink_special"><a href="http://wiki.minetest.com/wiki/">Wiki</a></li>
+				<li class="navlink_special"><a href="http://minetest.net/forum/">Forum</a></li>
+				<li class="navlink_special"><a href="https://github.com/celeron55/minetest">Github</a></li>
+				<li class="navlink_special"><a href="http://api.minetest.net/">API</a></li>-->
+				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/index.php">Home</a></li>
+				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/user.php">User List</a></li>
+			</ul>
+		</span>
+		<span class="inbar_login">
+			<ul>
+<?php
+if (is_logged_in()==true){
+echo "<li class=\"navlink_special\"><a href=\"user.php?id={$_SESSION['user']}\">{$_SESSION['user']}</a></li>";
+echo "<li class=\"navlink_special\"><a href=\"logout.php\">Log Out</a></li>";
 }else{
-   echo "<a href=\"$serverpath/login.php\"><font color=\"#FFFFFF\"><u>Login</u></font></a> - ";
-   echo "<a href=\"$serverpath/signup.php\"><font color=\"#FFFFFF\"><u>Sign Up</u></font></a>";
+?>
+				<li class="navlink_special"><a href="login.php">Login</a></li>
+				<li class="navlink_special"><a href="signup.php">Sign Up</a></li>
+<?php
 }
-?></div>                                                                           
-
-<div id="userbar" style="text-align:left;position:relative;left:10px;top:35px;width:180px;height=30px;"><?php
-     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a> - ";
-     echo "<a href=\"$serverpath/help/about.php\"><font color=\"#FFFFFF\"><u>About</u></font></a> - ";
-     echo "<a href=\"$serverpath/user.php\"><font color=\"#FFFFFF\"><u>User List</u></font></a>";
-?></div>
-
-<div style="position:relative;left:500px;top:70px;width:400px;text-align:right;">
-<form method="get" action="<?php echo $serverpath;?>/search.php">
-<input type="hidden" name="mode" value="sb">
-<input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
-</form>
+?>
+			</ul>
+		</span>
+	</div>
+</div>
+<div class="navbarbottom1">
 </div>
 
-<!--Content Div-->
-<div style="position:relative;left:5px;top:80px;width:900px;text-wrap: suppress;">
+<div id="logo">
+	<div class="constrain">
+		<img src="http://minetest.net/images/minetest-icon-120.png" alt="logo" id="logoimage">
+		<span class="bigheader">
+			<h1>Minetest</h1>
+			<h2>Extensions</h2>
+		</span>
+	</div>
+</div>
+
+<div id="content">
+	<div class="constrain">
+		<div style="clear: both;"></div>

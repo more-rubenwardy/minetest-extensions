@@ -40,7 +40,6 @@ $owner = $ra['name'];
 }
 // End of Phitherek_' s code
 include "scripts/pageheader.php";
-include "scripts/formatcode.php";
 
 
 if (is_member_moderator($_SESSION['user'],$handle)){
@@ -60,7 +59,19 @@ echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}
 
 echo "<td width=\"25\">{$row[2]}</td></tr></table></td></tr>\n"; // Version
 
-echo "<tr><td><table width=\"900\"><tr><td><div style=\"width:870px;text-wrap: suppress;\"><p>".formatbb($row[4])."</p></div></td>\n"; // Description
+echo "<tr><td><table width=\"900\"><tr><td><div style=\"width:870px;text-wrap: suppress;\"><p>";
+
+require_once('scripts/formatcode.php');
+// load Recruiting Parsers' file
+$parser = new parser;
+// start Recruiting Parser...
+// output $text using all arguments available
+//$p_text=$parser->p($row[4], 1, 1, 0, 0, 0, 1, "");
+$parsed = $parser->p($row[4],1);
+
+echo $parsed;
+
+echo "</p></div></td>\n"; // Description
 
 if (is_logged_in()==true){
   $like_ext="";
