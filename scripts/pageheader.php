@@ -3,16 +3,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fi">
 <head>
 	<meta name="keywords" content="minetest minetest-c55" />
-	<meta name="description" content="Minetest (minetest-c55): An open source Infiniminer/Minecraft style game" />
+	<meta name="description" content="<?php
+          if ($page_description=="")
+             $page_description="Minetest (minetest-c55): An open source Infiniminer/Minecraft style game";
+             
+          echo $page_description;
+        ?>" />
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 	<link rel="stylesheet" href="http://minetest.net/style_v2.css" type="text/css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="bookmark icon" href="/favicon.ico" />
-	<title><?php echo $page_title;?> - Minetest Extensions</title>
+	<title><?php echo $page_title;?> - Minetest Mods</title>
 
 <style>
 .inbar_login {
 	float: right;
+}
+
+#notice_bar {
+	/*text-align: center;*/
+	/*background: url("images/logo1.png") center top no-repeat;*/
+	/*background: url("images/minetest-icon-120.png") left top no-repeat;*/
+	background: #FACF73;
+	color: #000000;
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0px;
+	padding: 1em 0 1em 0;
+	border: 0px;
 }
 </style>
 </head>
@@ -66,12 +85,43 @@ echo "<li class=\"navlink_special\"><a href=\"logout.php\">Log Out</a></li>";
 <div id="logo">
 	<div class="constrain">
 		<img src="http://minetest.net/images/minetest-icon-120.png" alt="logo" id="logoimage">
+		<div style="float:right;vertical-align:top;">
+		     <form method="get" action="<?php echo $serverpath;?>/search.php">
+                          <input type="hidden" name="mode" value="sb">
+                          <input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
+                    </form>
+		</div>
 		<span class="bigheader">
-			<h1>Minetest</h1>
-			<h2>Extensions</h2>
+			<h1>Minetest Mods</h1>
+			<h2>Customise Minetest perfectly for you</h2>
 		</span>
+
 	</div>
 </div>
+  <?php
+if ($_SESSION['msg']==0){
+$_SESSION['msg']=1;
+?>
+<script type="text/javascript">
+function togglePrivInfo() {
+	toggle('notice_bar');
+}
+function toggle(id) {
+	var element = document.getElementById(id);
+	var display = (element.style.display === 'none') ? '' : 'none';
+	element.style.display = display;
+}
+</script>
+<div id="notice_bar" style="display: block;">
+	<div class="constrain">
+                <div style="float:right;"><a onClick="javascript:togglePrivInfo()"><u>Close</u></a></div>
+                <b>Noticed any bugs? Any ideas to make this easier? We want your opinion!</b><br>
+		Help us by telling us what you think about this interface. <a href="http://tinyurl.com/mtmdfrm">Tell us</a>
+        </div>
+</div>
+<?php
+}
+?>
 
 <div id="content">
 	<div class="constrain">

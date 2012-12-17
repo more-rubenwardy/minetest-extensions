@@ -1,5 +1,5 @@
 <?php
-include "settings.php";
+require_once "settings.php";
 
 session_start();
 

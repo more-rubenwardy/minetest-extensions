@@ -17,22 +17,16 @@
 
 
 <h2>Welcome to Minetest Extensions</h2>
-<?php
-/*if ($_SESSION['msg']==0){
-$_SESSION['msg']=1;
-echo "<p><b>Help us be telling us what you think about this interface! <a href=\"http://tinyurl.com/mtmdfrm\">Tell us</a></b></p>";
-}*/
-?>
 <p><b>Help us by telling us what you think about this interface! <a href="http://tinyurl.com/mtmdfrm">Tell us</a></b></p>
 Minetest Mods, Texture packs and Sound Packs! All the things that customise Minetest perfectly for you!
 
-<p>
+<p><font size=6>
 <ul>
-<li><a href="listing.php?id=mod">Mods</a></li>
-<li><a href="listing.php?id=texture">Textures</a></li>
-<li><a href="search.php?id=sound">Sounds</a></li>
+<li><a href="listing.php?id=mod"><font color="#0000FF">Mods</font></a></li>
+<li><a href="listing.php?id=texture"><font color="#0000FF">Textures</font></a></li>
+<li><a href="search.php?id=sound"><font color="#0000FF">Sounds</font></a></li>
 </ul>
-</p>
+</font></p>
 
 
 <?php

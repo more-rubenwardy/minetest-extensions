@@ -39,6 +39,9 @@ $owner = $ra['name'];
   $owner = $row[3];
 }
 // End of Phitherek_' s code
+
+
+$page_description=$row[22];
 include "scripts/pageheader.php";
 
 

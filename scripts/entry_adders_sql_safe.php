@@ -11,4 +11,7 @@ $basename=mysql_real_escape_string($basename);
 $mmmrt=mysql_real_escape_string($mmmrt);
 $mmmrel=mysql_real_escape_string($mmmrel);
 $overview=mysql_real_escape_string(str_replace("'","",str_replace("\"","",$overview)));
+
+$tags_type=mysql_real_escape_string($tags_type);
+$tags_msc=mysql_real_escape_string($tags_msc);
 ?>

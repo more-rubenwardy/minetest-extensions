@@ -70,7 +70,7 @@ Delete these notes before adding the entry-->
 </td>
 </tr>
 
-<!--License and File-->
+<!--Type and File-->
 <tr>
 <table width="100%"><tr>
 <!--3m Repotype (by Phitherek_)-->
