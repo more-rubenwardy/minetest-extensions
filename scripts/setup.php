@@ -32,7 +32,8 @@ mysql_select_db($sql_db,$handle) or die("Error Switching DB");
 
 if ($mt_lock_down==true){
   if (is_logged_in()==false || is_member_moderator($_SESSION['user'],$handle)==false){
-    SQLerror("Minetest Extensions","Sorry, but Minetest Extensions has been locked down for editing");
+    echo "<style>body{\nfont-family:arial;\n}</style>";
+    SQLerror("Minetest Extensions","Sorry, but Minetest Extensions has been locked down for editing. <p><b>$mt_lock_msg</b></p>");
   }
 }
 

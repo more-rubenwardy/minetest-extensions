@@ -27,7 +27,6 @@
 	background: #FACF73;
 	color: #000000;
 	display: block;
-	height: 30px;
 	width: auto;
 	margin: 0px;
 	padding: 1em 0 1em 0;
@@ -98,10 +97,6 @@ echo "<li class=\"navlink_special\"><a href=\"logout.php\">Log Out</a></li>";
 
 	</div>
 </div>
-  <?php
-if ($_SESSION['msg']==0){
-$_SESSION['msg']=1;
-?>
 <script type="text/javascript">
 function togglePrivInfo() {
 	toggle('notice_bar');
@@ -112,15 +107,9 @@ function toggle(id) {
 	element.style.display = display;
 }
 </script>
-<div id="notice_bar" style="display: block;">
-	<div class="constrain">
-                <div style="float:right;"><a onClick="javascript:togglePrivInfo()"><u>Close</u></a></div>
-                <b>Noticed any bugs? Any ideas to make this easier? We want your opinion!</b><br>
-		Help us by telling us what you think about this interface. <a href="http://tinyurl.com/mtmdfrm">Tell us</a>
-        </div>
-</div>
+
 <?php
-}
+  include_once "messages.php";
 ?>
 
 <div id="content">

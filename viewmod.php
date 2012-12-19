@@ -25,7 +25,7 @@ if ($id=="random"){
 	SQLerror("Non Integer","Non integers are not allowed in the id field. <br /> <a href=\"index.php\">Back to home</a>");
 }
 
-$row = mysql_fetch_row($res) or SQLerror("Row Error","No results where found for a mod with the id $gen_num");
+$row = mysql_fetch_array($res) or SQLerror("Row Error","No results where found for a mod with the id $gen_num");
 $page_title="View mod - {$row[1]}";
 $id=$row[0];
 
@@ -40,7 +40,6 @@ $owner = $ra['name'];
 }
 // End of Phitherek_' s code
 
-
 $page_description=$row[22];
 include "scripts/pageheader.php";
 
@@ -53,16 +52,42 @@ $links="<a href=\"editentry.php?id=$id\">Edit</a> <a href=\"3mrelinc.php?id=$id\
 $links="";
 }
 
+echo "<div width=\"900\" style=\"background-color:#E8E8E8;text-align:center;\">";
 
-echo "<table width=\"900\"><tr><td>\n";
-echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"".getDownload($row)."\">Download</a></td>\n";
 
-echo "<td width=\"650\">\n";    // Download Link
-echo "<h1 align=center>{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}</a></h1></td>\n";  // Title and User Link
 
-echo "<td width=\"25\">{$row[2]}</td></tr></table></td></tr>\n"; // Version
+echo "<table width=\"700\" align=\"center\">\n";
+echo "<tr><th colspan=3 width=\"650\">\n";
+echo "<h1 style=\"margin: 0;padding:0;\">{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}</a></h1></th></tr>\n";  // Title and User Link
 
-echo "<tr><td><table width=\"900\"><tr><td><div style=\"width:870px;text-wrap: suppress;\"><p>";
+echo "<tr>";
+echo "<td width=\"33%\"><b>Download:</b> <a href=\"".getDownload($row)."\">Latest</a></td>";
+echo "<td width=\"33%\"><b>Version:</b> {$row['version']}</td>\n"; // Version
+echo "<td width=\"33%\"><b>License:</b> {$row['license']}</td>\n"; // Version echo "</tr>";
+
+echo "<tr id=\"extra_info\">";
+
+echo "<td><b>3M Release:</b> {$row['3m_rele']}</td>";
+echo "<td><b>Tags:</b> {$row['tags']}</td>";
+echo "<td><b>Depends:</b> {$row['depends']}</td>";
+
+echo "</tr><tr><td colspan=3>";
+
+include_once "scripts/recommend.php";
+
+echo "</td></tr>";
+echo "</table>";
+
+echo "</div>";
+
+?>
+<script type="text/javascript">
+function toggleCode() {
+	toggle('extra_info');
+}
+toggleCode();
+</script>
+<?php
 
 require_once('scripts/formatcode.php');
 // load Recruiting Parsers' file
@@ -72,46 +97,22 @@ $parser = new parser;
 //$p_text=$parser->p($row[4], 1, 1, 0, 0, 0, 1, "");
 $parsed = $parser->p($row[4],1);
 
-echo $parsed;
+echo "<div style=\"float:right;text-align:right;\">";
 
-echo "</p></div></td>\n"; // Description
+echo "<a onClick=\"javascript:toggleCode();\"><u>Show/Hide More</u></a><br>";
 
 if (is_logged_in()==true){
   $like_ext="";
   if (checkLike($_SESSION['user'],$id,5,$handle)==true)
      $like_ext="_high";
 
-  $dislike_ext="";
-  echo "<td width=\"25\" style=\"vertical-align:top;\"><a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like_ext.png\" alt=\"like\" /></a></td></tr>";   // Likes
-}else{
-  echo "<td></td></tr>";   // Likes
-}
-echo "</table></td></tr>\n";
-
-echo "<tr height=30 bgcolor=\"#FFFFBD\"><td style=\"text-align:right;\">$links&#32;&#32;&#32;&#32;</td></tr>\n";
-
-if (!($row[23]=="")){
-echo "<tr><td><br />Recommended Mods<br /></td></tr><tr></tr><tr height=\"80\"><td>\n";
-echo "<table height=\"80\"><tr>\n";
-
-$rec=explode(",",$row[23]);
-
-for ($i=0;$i<count($rec);$i++){
-    $id_i = $rec[$i];
-    if (is_numeric($id)){
-       $mod_i = mysql_query("SELECT * FROM mods WHERE mod_id=$id_i",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id_i'");
-       $row_i = mysql_fetch_row($mod_i) or SQLerror("Row Error","No results where found for a mod with the id $id_i");
-       $image = "images/topicicon_read.jpg";
-       
-       if ($row_i[20])
-          $image="icon/".$row_i[20];
-
-       echo "<td style=\"text-align:center;\"><a href=\"viewmod.php?id=$id_i\"><img height=100 width=100 src=\"$image\" title=\"{$row_i[1]}\" /></a><br /><b>{$row_i[1]}</b></td>\n";
-    }
+echo "<a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like_ext.png\" alt=\"like\" /></a>";
 }
 
-echo "</tr></table></td></tr>";
-}
+echo "</div>";   // Likes
+echo $parsed;
+
+echo "<p><div>$links&#32;&#32;&#32;&#32;</div></p>\n";
 
 include "scripts/loadposts.php";
 

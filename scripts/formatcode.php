@@ -581,7 +581,7 @@ class parser {
 
 		25 => '[sup]',
 
-		26 => '[/sup]'
+		26 => '[/sup]',
 
 	);
 
@@ -1146,7 +1146,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 	$s = preg_replace("#\[youtube\](.*)\[\/youtube\]#Ui", "<object width=\"425\" height=\"350\"><embed src=\"http://www.youtube.com/v/$1\" type=\"application/x-shockwave-flash\" width=\"425\" height=\"350\"></embed></object>", $s);
 
 	
-
+         $s = preg_replace("#\[quote\]#i", "\"", $s);
 	
 
 	if (PHP_VERSION >= 5) {
