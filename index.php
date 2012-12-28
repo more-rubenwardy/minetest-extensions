@@ -16,7 +16,7 @@
 ?>
 
 
-<h2>Welcome to Minetest Extensions</h2>
+<h2>Welcome to Minetest Mods</h2>
 <p><b>Help us by telling us what you think about this interface! <a href="http://tinyurl.com/mtmdfrm">Tell us</a></b></p>
 Minetest Mods, Texture packs and Sound Packs! All the things that customise Minetest perfectly for you!
 

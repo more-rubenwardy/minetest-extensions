@@ -5,7 +5,7 @@
 	<meta name="keywords" content="minetest minetest-c55" />
 	<meta name="description" content="<?php
           if ($page_description=="")
-             $page_description="Minetest (minetest-c55): An open source Infiniminer/Minecraft style game";
+             $page_description="Minetest (minetest-c55) Extensions: Find mods, texture and sound packs to add content to your game.";
              
           echo $page_description;
         ?>" />
@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="http://minetest.net/style_v2.css" type="text/css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="bookmark icon" href="/favicon.ico" />
-	<title><?php echo $page_title;?> - Minetest Mods</title>
+	<title><?php echo $page_title;?> - Minetest Extensions</title>
 
 <style>
 .inbar_login {
@@ -59,6 +59,11 @@
 				<li class="navlink_special"><a href="http://api.minetest.net/">API</a></li>-->
 				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/index.php">Home</a></li>
 				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/user.php">User List</a></li>
+				<?php
+				if (is_logged_in()){
+                                   echo "<li class=\"navlink_normal\"><a href=\"$serverpath/addentry.php\">Add a Mod</a></li>";
+                                 }
+                                 ?>
 			</ul>
 		</span>
 		<span class="inbar_login">
@@ -91,8 +96,8 @@ echo "<li class=\"navlink_special\"><a href=\"logout.php\">Log Out</a></li>";
                     </form>
 		</div>
 		<span class="bigheader">
-			<h1>Minetest Mods</h1>
-			<h2>Customise Minetest perfectly for you</h2>
+			<h1>Minetest Extensions</h1>
+			<h2>Mods, Texture Packs and Sound Packs.</h2>
 		</span>
 
 	</div>

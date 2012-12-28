@@ -10,7 +10,7 @@ echo "</div></div>";
 
 if ($_SESSION['msg']==0){
    $_SESSION['msg']=1;
-   printNotice("Noticed any bugs? Any ideas to make this easier? We want your opinion!","Help us by telling us what you think about this interface. <a href=\"http://tinyurl.com/mtmdfrm\">Tell us</a>");
+   printNotice("Noticed any bugs? Any ideas to make this easier? We want your opinion!","Help us by telling us what you think about this interface. <a href=\"http://tinyurl.com/mtmdfrm\">Tell us</a><p>For developers: <a href=\"https://github.com/rubenwardy/minetest-forum/wiki/The-APIs\">Minetest Mods API</a>");
 }
 
 if ($_SESSION['user']=="RAPHAEL"){

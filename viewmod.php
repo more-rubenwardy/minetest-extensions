@@ -52,26 +52,35 @@ $links="<a href=\"editentry.php?id=$id\">Edit</a> <a href=\"3mrelinc.php?id=$id\
 $links="";
 }
 
-echo "<div width=\"900\" style=\"background-color:#E8E8E8;text-align:center;\">";
+echo "<div width=\"900\" style=\"background-color:#E8E8E8;text-align:left;\">";
 
 
 
-echo "<table width=\"700\" align=\"center\">\n";
+echo "<table style=\"max-width:700px;\" align=\"center\">\n";
 echo "<tr><th colspan=3 width=\"650\">\n";
-echo "<h1 style=\"margin: 0;padding:0;\">{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}</a></h1></th></tr>\n";  // Title and User Link
+echo "<h1 style=\"margin: 0;padding:0;text-align:center;\">{$row[1]} - by <a href=\"user.php?id={$row[3]}\">{$owner}</a></h1></th></tr>\n";  // Title and User Link
 
 echo "<tr>";
 echo "<td width=\"33%\"><b>Download:</b> <a href=\"".getDownload($row)."\">Latest</a></td>";
 echo "<td width=\"33%\"><b>Version:</b> {$row['version']}</td>\n"; // Version
-echo "<td width=\"33%\"><b>License:</b> {$row['license']}</td>\n"; // Version echo "</tr>";
+echo "<td width=\"33%\"><b>Name:</b> {$row['basename']}</td>\n"; // Version
 
 echo "<tr id=\"extra_info\">";
 
+echo "<td><b>Download Type:</b> {$row['repotype']}</td>";
 echo "<td><b>3M Release:</b> {$row['3m_rele']}</td>";
-echo "<td><b>Tags:</b> {$row['tags']}</td>";
-echo "<td><b>Depends:</b> {$row['depends']}</td>";
+echo "<td><b>License:</b> {$row['license']}</td>";
 
-echo "</tr><tr><td colspan=3>";
+echo "</tr>";
+
+echo "<tr id=\"extra_info_2\">";
+
+echo "<td colspan=2><b>Tags:</b> {$row['tags']}</td>";
+echo "<td><b>Depends:</b> {$row['depend']}</td>";
+
+echo "</tr>";
+
+echo "<tr><td colspan=3>";
 
 include_once "scripts/recommend.php";
 
@@ -84,6 +93,7 @@ echo "</div>";
 <script type="text/javascript">
 function toggleCode() {
 	toggle('extra_info');
+	toggle('extra_info_2');
 }
 toggleCode();
 </script>
@@ -99,7 +109,7 @@ $parsed = $parser->p($row[4],1);
 
 echo "<div style=\"float:right;text-align:right;\">";
 
-echo "<a onClick=\"javascript:toggleCode();\"><u>Show/Hide More</u></a><br>";
+echo "<a href=\"#\" onClick=\"javascript:toggleCode();\"><u>Show/Hide More</u></a><br>";
 
 if (is_logged_in()==true){
   $like_ext="";
@@ -110,9 +120,11 @@ echo "<a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like
 }
 
 echo "</div>";   // Likes
-echo $parsed;
 
-echo "<p><div>$links&#32;&#32;&#32;&#32;</div></p>\n";
+
+echo "<p>$parsed</p>";
+
+echo "<div width=\"900\" style=\"background-color:#E8E8E8;text-align:center;height:32px;line-height:32px;\">$links&#32;&#32;&#32;&#32;</div>\n";
 
 include "scripts/loadposts.php";
 

@@ -1,6 +1,8 @@
+
 <?php
 if (!($row[23]=="")){
-echo "<center><table><tr><td><b>Recommended Mods</b><br /></td></tr>\n";
+echo "<b>Perfect companions for this mod</b><br>";
+echo "<center><table>\n";
 echo "<tr>\n";
 
 $rec=explode(",",$row[23]);
@@ -19,5 +21,5 @@ for ($i=0;$i<count($rec);$i++){
     }
 }
 
-echo "</tr></table></center></td></tr>";
+echo "</tr></table></center>";
 }
