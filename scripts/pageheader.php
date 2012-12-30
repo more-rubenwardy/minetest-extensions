@@ -60,7 +60,7 @@
 				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/index.php">Home</a></li>
 				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/user.php">User List</a></li>
 				<?php
-				if (is_logged_in()){
+				if ($forum_user['username']!="Guest"){
                                    echo "<li class=\"navlink_normal\"><a href=\"$serverpath/addentry.php\">Add a Mod</a></li>";
                                  }
                                  ?>
@@ -69,9 +69,9 @@
 		<span class="inbar_login">
 			<ul>
 <?php
-if (is_logged_in()==true){
-echo "<li class=\"navlink_special\"><a href=\"user.php?id={$_SESSION['user']}\">{$_SESSION['user']}</a></li>";
-echo "<li class=\"navlink_special\"><a href=\"logout.php\">Log Out</a></li>";
+if ($forum_user['username']!="Guest"){
+echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."profile.php?id={$forum_user['id']}\">{$forum_user['username']}</a></li>";
+echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."login.php?action=out&id={$forum_user['id']}\">Log Out</a></li>";
 }else{
 ?>
 				<li class="navlink_special"><a href="login.php">Login</a></li>

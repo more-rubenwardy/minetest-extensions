@@ -170,4 +170,21 @@ if ($mod[19]=="git"){
 return "";
 }
 
+if ($pun_decl==false){
+$pun_decl=true;
+//define('FORUM_QUIET_VISIT', 1);
+//define('FORUM_TURN_OFF_MAINT', 1);
+define('FORUM_DISABLE_CSRF_CONFIRM', 1);
+define('FORUM_ROOT', '../forum/');
+require FORUM_ROOT.'include/common.php';
+}
+
+if ($forum_user['username']!="Guest"){
+   if (user_exists($forum_user['username'],$handle)==false){
+     addUser($forum_user['username'],"x","x",$forum_user['email'],$handle);
+   }
+   login($forum_user['username']);
+}
+
+
 ?>

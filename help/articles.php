@@ -1,4 +1,12 @@
 <?php
+
+$pun_decl=true;
+//define('FORUM_QUIET_VISIT', 1);
+//define('FORUM_TURN_OFF_MAINT', 1);
+define('FORUM_DISABLE_CSRF_CONFIRM', 1);
+define('FORUM_ROOT', '../../forum/');
+require FORUM_ROOT.'include/common.php';
+
 include "../scripts/setup.php";
 $page_title="Articles - Help";
 include "../scripts/pageheader.php";
