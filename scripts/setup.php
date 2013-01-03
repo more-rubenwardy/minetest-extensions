@@ -184,6 +184,9 @@ if ($forum_user['username']!="Guest"){
      addUser($forum_user['username'],"x","x",$forum_user['email'],$handle);
    }
    login($forum_user['username']);
+}else{
+   $_SESSION['user']=="";
+   $_SESSION['auth']=="";
 }
 
 
