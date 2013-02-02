@@ -20,7 +20,7 @@
 					</ul>
 				</li>
 				<li>
-				       Minetest Mods by: Andrew "rubenwardy" Ward<br>
+				       Minetest Extensions by: Andrew "rubenwardy" Ward<br>
 					Website by: Perttu Ahola, celeron55 @ IRCnet, Freenode, gmail.com
 				</li>
 				<li>

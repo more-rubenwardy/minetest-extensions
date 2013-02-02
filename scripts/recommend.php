@@ -1,11 +1,17 @@
 
 <?php
 if (!($row[23]=="")){
-echo "<b>Perfect companions for this mod</b><br>";
-echo "<center><table>\n";
+
+    echo "<div class='bar_title'>\n";
+    echo "Recommended\n";
+    echo "</div>\n";
+
+echo "<table>\n";
 echo "<tr>\n";
 
 $rec=explode(",",$row[23]);
+
+$count=0;
 
 for ($i=0;$i<count($rec);$i++){
     $id_i = $rec[$i];
@@ -18,6 +24,13 @@ for ($i=0;$i<count($rec);$i++){
           $image="icon/".$row_i[20];
 
        echo "<td style=\"text-align:center;\"><a href=\"viewmod.php?id=$id_i\"><img height=64 width=64 src=\"$image\" title=\"{$row_i[1]}\" /></a><br /><b>{$row_i[1]}</b></td>\n";
+
+        $count++;
+
+        if ($count>2){
+            $count=0;
+            echo "</tr><tr>";
+        }
     }
 }
 

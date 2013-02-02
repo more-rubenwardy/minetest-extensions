@@ -10,7 +10,8 @@
           echo $page_description;
         ?>" />
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-	<link rel="stylesheet" href="http://minetest.net/style_v2.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo $serverpath;?>/mineteststyle.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $serverpath;?>/style.css" type="text/css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="bookmark icon" href="/favicon.ico" />
 	<title><?php echo $page_title;?> - Minetest Extensions</title>
@@ -21,9 +22,6 @@
 }
 
 #notice_bar {
-	/*text-align: center;*/
-	/*background: url("images/logo1.png") center top no-repeat;*/
-	/*background: url("images/minetest-icon-120.png") left top no-repeat;*/
 	background: #FACF73;
 	color: #000000;
 	display: block;
@@ -31,6 +29,12 @@
 	margin: 0px;
 	padding: 1em 0 1em 0;
 	border: 0px;
+}
+
+#review td
+{
+    vertical-align:top;
+    padding-left:10px;
 }
 </style>
 </head>
@@ -73,10 +77,8 @@ if ($forum_user['username']!="Guest"){
 echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."profile.php?id={$forum_user['id']}\">{$forum_user['username']}</a></li>";
 echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."login.php?action=out&id={$forum_user['id']}\">Log Out</a></li>";
 }else{
-?>
-				<li class="navlink_special"><a href="login.php">Login</a></li>
-				<li class="navlink_special"><a href="signup.php">Sign Up</a></li>
-<?php
+echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."login.php\">Login</a></li>";
+echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."register.php\">Register</a></li>";
 }
 ?>
 			</ul>
@@ -92,12 +94,13 @@ echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."login.php?action=out
 		<div style="float:right;vertical-align:top;">
 		     <form method="get" action="<?php echo $serverpath;?>/search.php">
                           <input type="hidden" name="mode" value="sb">
-                          <input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
+                          <input type="text" placeholder="search for something" name="id" size=11> <input type="submit" value="Search">
                     </form>
 		</div>
 		<span class="bigheader">
 			<h1>Minetest Extensions</h1>
 			<h2>Mods, Texture Packs and Sound Packs.</h2>
+			
 		</span>
 
 	</div>
@@ -115,6 +118,10 @@ function toggle(id) {
 
 <?php
   include_once "messages.php";
+?>
+<?php
+if ($dnw_content==true) // if the caller has told us not to do the following tags
+    return;
 ?>
 
 <div id="content">

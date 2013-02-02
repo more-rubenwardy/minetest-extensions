@@ -1119,7 +1119,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	$s = preg_replace("#\[url\](.*)\[\/url\]#Ui", "<a href=\"$1\" target=\"_blank\">$1</a>", $s);
 
-	$s = preg_replace("#\[img\](.*)\[\/img\]#Ui", "<img src=\"$1\" border=\"0\" style=\"max-width:860px;\" />", $s);
+	$s = preg_replace("#\[img\](.*)\[\/img\]#Ui", "<img src=\"$1\" border=\"0\" style=\"max-width:760px;\" />", $s);
 
 	$s = preg_replace("#\[email\=(.*)\](.*)\[\/email\]#Ui", "<a href=\"mailto: $1\">$2</a>", $s);
 

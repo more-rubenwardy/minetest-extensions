@@ -3,7 +3,7 @@ echo "<table width=\"100%\"><tr><th colspan=2>Mod Name</th><th>Description</th><
 $query= mysql_real_escape_string ($query);
 
 if ($mode=="tags"){
-   $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%'";
+   $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' AND tags NOT LIKE '%dns%'";
 }else if ($mode=="sb"){
   if (is_numeric($query)==true){
     echo "<!--is numeric-->";
@@ -50,7 +50,7 @@ while ($hash = mysql_fetch_assoc($res)){
       // End of Phitherek_' s change
       $overview=str_replace("\\'","'",$hash['overview']);
       echo "<td>$overview</td>";
-      echo "<td>{$hash['tags']}</td>";
+      echo "<td>".tagLinks($hash['tags'])."</td>";
       echo "<td>{$hash['likes']}</td></tr>\n";
 
       $alternate=1-$alternate;

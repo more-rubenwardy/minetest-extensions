@@ -14,6 +14,14 @@ if ($_SESSION['msg']==0){
 }
 
 if ($_SESSION['user']=="RAPHAEL"){
-   printNotice("Message to RAPHAEL from the admin","You have not specified many tags for your mods.<br>Tags group similar mods together, and help users search for and find them. For help, see the <a href=\"help/tags.php\">tags reference</a>");
+   printNotice("Message to RAPHAEL from the admin","Some of your mods do not have their basename/names spaces defined, and so have been hidden from the listings. <a href=\"http://multa.bugs3.com/minetest/forum/search.php?mode=sb&id=dns\">Hidden Mods</a>\n<p>In addition to this, you have not specified many tags for your mods.<br>Tags group similar mods together, and help users search for and find them. For help, see the <a href=\"help/tags.php\">tags reference</a>\n<p></p>");
+}
+
+if ($_SESSION['user']=="Zeg9"){
+   printNotice("Message to Zeg9 from the admin","Some of your mods do not have their basename/names spaces defined, and so have been hidden from the listings. <a href=\"http://multa.bugs3.com/minetest/forum/search.php?mode=sb&id=dns\">Hidden Mods</a>\n<p>");
+}
+
+if ($_SESSION['user']=="hansuke123"){
+   printNotice("Message to hansuke123 from the admin","One of your mods has been deleted as it is not applicable on this website");
 }
 ?>

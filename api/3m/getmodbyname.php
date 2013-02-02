@@ -1,19 +1,13 @@
 <?php
-
-$pun_decl=true;
-//define('FORUM_QUIET_VISIT', 1);
-//define('FORUM_TURN_OFF_MAINT', 1);
-define('FORUM_DISABLE_CSRF_CONFIRM', 1);
-define('FORUM_ROOT', '../../../forum/');
-require FORUM_ROOT.'include/common.php';
+$punbb_relative="../../";
 
 include "../../scripts/setup.php";
 
 $id=$_GET['id'];
 $id= mysql_real_escape_string ($id);
-$res = mysql_query("SELECT * FROM mods WHERE basename='$id'",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
+$res = mysql_query("SELECT * FROM mods WHERE basename='$id' AND tags LIKE '%mod%' AND tags NOT LIKE '%dns%'",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
 header("Content-type: text/plain");
-$row = mysql_fetch_array($res) or die("error");
+$row = mysql_fetch_array($res) or die("");
 
 
 echo "{{$row['basename']}}\n";
@@ -32,6 +26,10 @@ for($i=0; $i < strlen($deps); $i++) {
 	} else {
 	$parseddeps .= $deps[$i];	
 	}
+}
+
+if ($parseddeps == ""){
+	echo "none";
 }
 echo "{$parseddeps}\n";
 echo "[depsend]\n";

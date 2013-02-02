@@ -8,12 +8,18 @@ include "scripts/pageheader.php";
 
 echo "<h1>Admin</h1>\n";
 
+$id=$_GET['id'];
+$mode=$_GET['mode'];
+
+if ($id=="clear"){
+    session_destroy();
+}
+
 if (is_member_moderator($_SESSION['user'],$handle)==false){
    die ("You do not have admin or moderator position on this forum.");
 }
 
-$id=$_GET['id'];
-$mode=$_GET['mode'];
+
 
 if($mode=="owner"){
 
