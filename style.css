@@ -1,3 +1,23 @@
+.inbar_login {
+    float: right;
+}
+
+#notice_bar {
+    background: #FACF73;
+    color: #000000;
+    display: block;
+    width: auto;
+    margin: 0px;
+    padding: 1em 0 1em 0;
+    border: 0px;
+}
+
+#review td
+{
+    vertical-align:top;
+    padding-left:10px;
+}
+
 #mod_main{
     max-width:800px;
 }
@@ -67,6 +87,8 @@
     width:640px;
     height:280px;
     position:relative;
+    background-color:black;
+    overflow:hidden;
 }
 
 .slideItem {
@@ -110,7 +132,7 @@
     top:124px;
     width:32px;
     height:32px;
-    background: rgba(97, 173, 109, 0.4);
+    background: rgba(97, 173, 109, 0.6);
 }
 
 #slideRight {
@@ -119,5 +141,40 @@
     top:124px;
     width:32px;
     height:32px;
-    background: rgba(97, 173, 109, 0.4);
+    background: rgba(97, 173, 109, 0.6);
+}
+
+#itemBar {
+    width:620px;
+    min-height:42px;
+    padding-top:5px;
+    padding-left:20px;
+    background-color:#61AD6D;
+    background-image: url('images/feather.png');
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+#itemBar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#itemBar ul li {
+    display: inline-block;
+    padding: 0 7px 0 7px;
+    padding-top: 4px;
+    font-size: 20px;
+}
+
+#itemBar ul li a {
+    color: #ffffff;
+    display: block;
+    text-decoration: none;
+}
+
+#itemBar ul li a:hover {
+    color: #cccccc;
 }

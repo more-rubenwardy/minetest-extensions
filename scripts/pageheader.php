@@ -15,28 +15,6 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="bookmark icon" href="/favicon.ico" />
 	<title><?php echo $page_title;?> - Minetest Extensions</title>
-
-<style>
-.inbar_login {
-	float: right;
-}
-
-#notice_bar {
-	background: #FACF73;
-	color: #000000;
-	display: block;
-	width: auto;
-	margin: 0px;
-	padding: 1em 0 1em 0;
-	border: 0px;
-}
-
-#review td
-{
-    vertical-align:top;
-    padding-left:10px;
-}
-</style>
 </head>
 
 <body>
@@ -94,7 +72,7 @@ echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."register.php\">Regis
 		<div style="float:right;vertical-align:top;">
 		     <form method="get" action="<?php echo $serverpath;?>/search.php">
                           <input type="hidden" name="mode" value="sb">
-                          <input type="text" placeholder="search for something" name="id" size=11> <input type="submit" value="Search">
+                          <input type="text" placeholder="search" name="id" size=11> <input type="submit" value="Search">
                     </form>
 		</div>
 		<span class="bigheader">

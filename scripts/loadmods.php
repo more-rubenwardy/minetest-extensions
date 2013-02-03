@@ -57,7 +57,7 @@ while ($hash = mysql_fetch_assoc($res)){
 }
 
 if ($is_result==false){
-echo "<tr><td colspan=5><center><i>no search results found</i></center></td></tr>";
+echo "<tr><td colspan=5 style=\"text-align:center;\"><i>no search results found</i></td></tr>";
 }
 
 echo "</table>";
