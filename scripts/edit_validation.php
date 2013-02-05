@@ -1,62 +1,67 @@
 <?php
-   $do=true;
-$name=$_POST['mod_name'];
-if ($name==""){
-   $do=false;
-   $name=$row[1];
-}
-
-$version=$_POST['mod_version'];
-if ($version=="")
-   $version=$row[2];
-
-//3m release (by Phitherek_)
+// Load all of the posted values
 $mmmrel=$_POST['mmmrel'];
-if($mmmrel=="") {
-$mmmrel=$row[21];
-}
-//End of Phitherek_' s code
+$name=$_POST['mod_name'];
+$version=$_POST['mod_version'];
+$desc=$_POST['mod_desc'];
+$overview=$_POST['mod_ov'];
+$tags=$_POST['mod_tags'];
+$license=$_POST['mod_lic'];
+$mmmrt=$_POST['mmmrt'];
+$file=$_POST['mod_file'];
+$depend=$_POST['mod_dep'];
+$basename=$_POST['mod_base'];
 
-// Owner name instead of id (by Phitherek_)
-$owner=$owar['name'];
-// End of Phitherek_' s change
+if ($name==""){
+   $name=$row['name'];
+}else{
+    return 1;
+}
+
+if ($version=="")
+    $version=$row['version'];
+
+
+if($mmmrel=="")
+    $mmmrel=$row['3m_rele'];
+
+
 
 $desc=$_POST['mod_desc'];
 if ($desc==""){
-  echo "getting desc<br />";
-   $desc=str_replace("\\'","'",$row[4]);
+   $desc=str_replace("\\'","'",$row['description']);
 }
    
 $overview=$_POST['mod_ov'];
 if ($overview=="")
-   $overview = str_replace("\\'","'",$row[22]);
+   $overview = str_replace("\\'","'",$row['overview']);
 
 $tags=$_POST['mod_tags'];
 if ($tags=="")
-   $tags = $row[7];
+   $tags = $row['tags'];
 
 $license=$_POST['mod_lic'];
 if ($license=="")
-   $license=$row[8];
+   $license=$row['license'];
 
 // 3m repotype (by Phitherek_)
 $mmmrt=$_POST['mmmrt'];
 if($mmmrt =="") {
-$mmmrt = $row[19];
+$mmmrt = $row['repotype'];
 }
 // End of Phitherek_' s code
 
 $file=$_POST['mod_file'];
 if ($file=="")
-   $file=$row[9];
+   $file=$row['file'];
 
 $depend=$_POST['mod_dep'];
 if ($depend=="")
-   $depend=$row[10];
+   $depend=$row['depend'];
 
 $basename=$_POST['mod_base'];
 if ($basename=="")
-   $basename=$row[11];
+   $basename=$row['basename'];
    
-return $do;
+return 0;
 ?>

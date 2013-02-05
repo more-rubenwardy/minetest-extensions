@@ -5,31 +5,73 @@
        echo "<tr style=\"background-color:#000000;\" height=2><td colspan=$cols></td></tr>";
      }
 
-     $page_title="Home";
-
-     $dnw_content=true;
+     $page_title="Mods, Texture packs and Sound packs - the best mod listing and reviewing website";
      $dnd_intro_message = true;
+$dnw_content=true;
+
      include "scripts/pageheader.php";
 ?>
-
 <div id="content">
-    <div class="constrain" style="width:640px;">
+    <div class="constrain" style="max-width:1000px;width:975px;">
         <div style="clear: both;"></div>
-<?php
 
-     if (is_logged_in())
-        echo "<a href=\"addentry.php\">Add an entry</a> - ";
-      
-     echo "<a href=\"listing.php\">Index of Entries</a> - <a href=\"viewmod.php?id=random\">Random Extension</a><br /><br />";
-     
-?>
+<div id="mod_bar">
+    <div id="bar_download">
+    <a href="viewmod.php?id=random">Random Extension</a>
+    </div>
+
+    <p class="bar_p">
+        Why dont you try something new?
+    </p>
+
+    <p class="bar_p">
+        Click the above link to go randomly to one of our extensions, whether that be a mod, texture pack or a sound pack.
+    </p>
+
+    <p class="bar_p">
+        or you can <a href="listing.php">view the categories</a>.
+    </p>
 
 
+    <?php
+        function tabCol($title,$msg){
+            echo "<tr><td><b>".$title.":</b></td><td>$msg</td></tr>\n";
+        }
 
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="slider.js"></script>
+        echo "<div class='bar_title'>\n";
+        echo "Statistics\n";
+        echo "</div>\n";
 
-<div id="slider">
+        echo "<p><table id='bar_stat'><tbody>\n";
+        tabCol("Mods",getNoTopics("mod",$handle));
+        tabCol("Texture Packs",getNoTopics("texture",$handle));
+        tabCol("Visitors","380 a week");
+        tabCol("Views","unknown");
+        tabCol("Downloads","unknown");
+        echo "</tbody></table></p>\n";
+    ?>
+
+    <div class='bar_title'>
+        This Project
+    </div>
+
+    <p class="bar_p">
+        Minetest Extensions was created completely in code by Andrew "rubenwardy" Ward.
+    </p>
+
+    <p class="bar_p">
+        <a href="help/about.php">Read More</a>
+    </p>
+
+    <p class="bar_p">
+        <b>Help us by telling us what you think about this interface! <a href="http://tinyurl.com/mtmdfrm">Tell us</a></b>
+    </p>
+
+</div>
+
+<div id='mod_main'>
+
+<div class="slider" id="3">
     <div id="slide_1" class="slideItem" style="background-image:url('http://mesecons.net/screenshots/1.png');">
         <div class="slideTitle">
             <div style="float:left;">
@@ -67,26 +109,24 @@
     <div id="slideRight" onClick="buttonClick(2);"></div>
 </div>
 
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="slider.js"></script>
+
 <div id="itemBar">
     <ul>
         <li><a href="listing.php?id=mod">Mods</a></li>
         <li><a href="listing.php?id=texture">Texture Packs</a></li>
         <li><a href="search.php?id=sound">Sound</a></li>
-    </ul>
+        <?php
+        if (is_logged_in()==true){
+            echo "<li>|</li>\n";
+            echo "<li><a href=\"addentry.php\">Add an Extension</a>\n";
+        }
+?>    </ul>
 </div>
 
-
-<!--<h2>Welcome to Minetest Mods</h2>
-<p><b>Help us by telling us what you think about this interface! <a href="http://tinyurl.com/mtmdfrm">Tell us</a></b></p>
-Minetest Mods, Texture packs and Sound Packs! All the things that customise Minetest perfectly for you!
-
-<p><font size=6>
-<ul>
-<li><a href="listing.php?id=mod"><font color="#0000FF">Mods</font></a></li>
-<li><a href="listing.php?id=texture"><font color="#0000FF">Textures</font></a></li>
-<li><a href="search.php?id=sound"><font color="#0000FF">Sounds</font></a></li>
-</ul>
-</font></p>-->
+<h2>Welcome to Minetest Extensions</h2>
+</div>
 
 
 <?php

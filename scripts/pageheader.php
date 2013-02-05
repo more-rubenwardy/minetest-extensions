@@ -2,7 +2,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fi">
 <head>
-	<meta name="keywords" content="minetest minetest-c55" />
+	<meta name="keywords" content="minetest,minetest-c55,mods,extensions,textures,game<?php
+            if ($page_keywords!=""){
+                echo ",$page_keywords";
+            }
+        ?>" />
 	<meta name="description" content="<?php
           if ($page_description=="")
              $page_description="Minetest (minetest-c55) Extensions: Find mods, texture and sound packs to add content to your game.";
@@ -23,7 +27,7 @@
 	<div class="constrain">
 		<span class="inbar_main">
 			<ul>
-				<li class="navlink_normal"><a href="http://minetest.net/index.php">About</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/index.php">Home</a></li>
 				<li class="navlink_normal"><a href="http://minetest.net/news.php">News</a></li>
 				<li class="navlink_normal"><a href="http://minetest.net/download.php">Download</a></li>
 				<li class="navlink_normal"><a href="http://minetest.net/contribute.php">Contribute</a></li>
@@ -34,13 +38,10 @@
 		</span>
 		<span class="inbar_other">
 			<ul>
-				<!--<li class="navlink_special"><a href="http://c55.me/blog">Blog</a></li>
-				<li class="navlink_special"><a href="http://wiki.minetest.com/wiki/">Wiki</a></li>
-				<li class="navlink_special"><a href="http://minetest.net/forum/">Forum</a></li>
-				<li class="navlink_special"><a href="https://github.com/celeron55/minetest">Github</a></li>
-				<li class="navlink_special"><a href="http://api.minetest.net/">API</a></li>-->
 				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/index.php">Home</a></li>
-				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/user.php">User List</a></li>
+                <li class="navlink_normal"><a href="<?php echo $serverpath;?>/help/about.php">About</a></li>
+                <li class="navlink_normal"><a href="<?php echo $serverpath;?>/user.php">User List</a></li>
+                <li class="navlink_normal"><a href="<?php echo $serverpath;?>/help/">Help</a></li>
 				<?php
 				if ($forum_user['username']!="Guest"){
                                    echo "<li class=\"navlink_normal\"><a href=\"$serverpath/addentry.php\">Add a Mod</a></li>";

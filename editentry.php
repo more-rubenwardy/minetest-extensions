@@ -12,11 +12,11 @@ if (is_numeric($id)==false){
 include "scripts/pageheader.php";
 
 $res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
-$row = mysql_fetch_row($res) or die("row error");
-// Owner name instead of id, 3m_specific (by Phitherek_)
-$owr = mysql_query("SELECT name FROM users WHERE id=".$row[3], $handle);
+$row = mysql_fetch_array($res) or die("row error");
+
+$owr = mysql_query("SELECT name FROM users WHERE id=".$row['owner'], $handle);
 $owar = mysql_fetch_array($owr);
-// End of Phitherek_' s code
+
 if (is_member_moderator($_SESSION['user'],$handle) || $_SESSION['user']==$owar['name'] || $_SESSION['user']==$row[3]){
 }else{
 SQLerror("Editing Denied","You do not own that entry, and you are not a moderator");
@@ -29,24 +29,27 @@ SQLerror("Editing Denied","You do not own that entry, and you are not a moderato
 
 
 if ((include('scripts/edit_validation.php'))==1){
-    include "scripts/entry_adders_sql_safe.php";
-  mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
-  // 3m release (by Phitherek_)
-  mysql_query("UPDATE mods SET 3m_rele='$mmmrel' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:rel","");
-  // End of Phitherek_' s code
-  mysql_query("UPDATE mods SET overview='$overview' WHERE name='$name'",$handle)or SQLerror("Error on overview","");
-  mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle) or SQLerror("Error on desc","");
-  mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle)or SQLerror("Error on tags","");
-  mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle)or SQLerror("Error on license","");
-  // 3m repotype (by Phitherek_)
-  mysql_query("UPDATE mods SET repotype='$mmmrt' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:repotype","");
-  // End of Phitherek_' s code
-  mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle)or SQLerror("Error on file","");
-  mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle)or SQLerror("Error on depend","");
-  mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle)or SQLerror("Error on basename","");
+    if ((include('scripts/entry_validation.php'))==1){
 
-  header("location: viewmod.php?id=$id");
-  die("");
+        // Convert values to SQL compatible
+        include "scripts/entry_adders_sql_safe.php";
+
+        // Set all the rows data
+        mysql_query("UPDATE mods SET version='$version' WHERE name='$name'",$handle);
+        mysql_query("UPDATE mods SET 3m_rele='$mmmrel' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:rel","");
+        mysql_query("UPDATE mods SET overview='$overview' WHERE name='$name'",$handle)or SQLerror("Error on overview","");
+        mysql_query("UPDATE mods SET description='$desc' WHERE name='$name'",$handle) or SQLerror("Error on desc","");
+        mysql_query("UPDATE mods SET tags='$tags' WHERE name='$name'",$handle)or SQLerror("Error on tags","");
+        mysql_query("UPDATE mods SET license='$license' WHERE name='$name'",$handle)or SQLerror("Error on license","");
+        mysql_query("UPDATE mods SET repotype='$mmmrt' WHERE name='$name'",$handle) or SQLerror("Error on 3m_specific:repotype","");
+        mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle)or SQLerror("Error on file","");
+        mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle)or SQLerror("Error on depend","");
+        mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle)or SQLerror("Error on basename","");
+
+        // Display the extension
+        header("location: viewmod.php?id=$id");
+        die("");
+    }
 }
 // --------------------------     
 // End of loading variable
@@ -57,7 +60,9 @@ if ((include('scripts/edit_validation.php'))==1){
 
 ?>
 Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href="help/tags.php" target="_blank">Tags</a>
-<hr />
+<hr /><?php
+ echo "<p style=\"color:#ff0000;\">$message</p>\n";
+?>
 <form method="post" action="<?php echo curPageURL();?>">
 <table width="100%">
 
@@ -66,11 +71,11 @@ Help: <a href="help/markup.php" target="_blank">Description Markup</a> - <a href
 <!--Mod Name and Version-->
 <tr>
 <td width="60%">Mod Name:* <input type="text" size="50" name="mod_name" value="<?php echo $name;?>"></td>
-<!-- 3m release (by Phitherek_) -->
+
 <td width="40%">
 <table width="100%"><tr><td>Version:* <input type="text" size="10" name="mod_version" value="<?php echo $version;?>"></td><td>
 3m Release: <input type="text" size="10" name="mmmrel" value="<?php echo $mmmrel;?>"></td>
-<!-- End of Phitherek_ s change -->
+
 </table>
 </td>
 <tr>

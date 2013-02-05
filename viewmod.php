@@ -26,7 +26,7 @@ if ($id=="random"){
 $row = mysql_fetch_array($res) or SQLerrorFancy("Row Error","No results where found for a mod with the id $gen_num");
 $page_title="View mod - {$row['name']}";
 $id=$row['mod_id'];
-
+$page_keywords=$row['tags'];
 
 // Substitute owner ID with owner name (by Phitherek_):
 if (is_numeric($row['owner'])==true){
@@ -73,7 +73,7 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
 }
 ?>
 <div id="content">
-    <div class="constrain" style="max-width:1200px;width:1150px;">
+    <div class="constrain" style="max-width:1000px;width:975px;">
         <div style="clear: both;"></div>
 <?php
 
@@ -128,7 +128,7 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
         echo "</p>";
 
         echo "<div class='bar_title'>\n";
-        echo "Reviews\n";
+        echo "<a name='reviews'>Reviews</a>\n";
         echo "</div>\n";
 
         echo "<p>";
@@ -136,15 +136,23 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
         echo "</p>";
 
         echo "</div>\n\n";
+?>
+        <div id="mod_main">
 
-echo "<div id='mod_main'>";
-
+<?php
 
     require_once('scripts/formatcode.php');
     $parser = new parser;
     $parsed = $parser->p($row['description'],1);
 
     echo "<p>$parsed</p>";
+
+?>
+
+            <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+            <script src="slider.js"></script>
+
+<?php
 
 include "scripts/pagefooter.php";
 ?>

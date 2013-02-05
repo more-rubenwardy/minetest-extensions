@@ -106,10 +106,13 @@ License: <input type="text" size="60" placeholder="The entries license." name="m
 <tr>
 <table width="100%"><tr>
 <td>*
-<input type="radio" name="mod_tag_type" value="mod"> Mod
-<input type="radio" name="mod_tag_type" value="mpdpack"> Mod Pack
-<input type="radio" name="mod_tag_type" value="texture"> Texture Pack
-<input type="radio" name="mod_tag_type" value="code"> Code Mod
+    <input type="radio" name="mod_tag_type" value="mod"> Mod
+    <input type="radio" name="mod_tag_type" value="modpack"> Mod Pack
+    <input type="radio" name="mod_tag_type" value="game"> Game
+    <input type="radio" name="mod_tag_type" value="code"> Code Mod
+    <input type="radio" name="mod_tag_type" value="texture"> Texture Pack
+
+
 </td>
 <td>
 <a href="help/tags.php" target="_blank">Other Tags</a>: <input type="text" placeholder="separated by commas" size=30 name="mod_tag_msc" value="<?php 

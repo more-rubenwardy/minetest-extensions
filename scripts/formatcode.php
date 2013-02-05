@@ -1087,7 +1087,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	
 
-	// it can't be [php].+ it must be [php]\n.+
+	/*// it can't be [php].+ it must be [php]\n.+
 
 	$s = preg_replace("#\[php\]([^\r\n])#i", "[php]\r\n$1", $s);
 
@@ -1109,7 +1109,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	$s = preg_replace("#\[php\]#i", "[php]\n<?php", $s);
 
-	$s = preg_replace("#\[\/php\]#i", "?>\n[/php]", $s);
+	$s = preg_replace("#\[\/php\]#i", "?>\n[/php]", $s);*/
 
 	
 
@@ -1119,7 +1119,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	$s = preg_replace("#\[url\](.*)\[\/url\]#Ui", "<a href=\"$1\" target=\"_blank\">$1</a>", $s);
 
-	$s = preg_replace("#\[img\](.*)\[\/img\]#Ui", "<img src=\"$1\" border=\"0\" style=\"max-width:760px;\" />", $s);
+	$s = preg_replace("#\[img\](.*)\[\/img\]#Ui", "<img src=\"$1\" border=\"0\" style=\"max-width:100%;\" />", $s);
 
 	$s = preg_replace("#\[email\=(.*)\](.*)\[\/email\]#Ui", "<a href=\"mailto: $1\">$2</a>", $s);
 
@@ -1129,6 +1129,10 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	$s = preg_replace("#\[color\=(\#[0-9A-F]{0,6}|[A-z]+)\](.*)\[\/color\]#Ui", "<span style=\"color: $1;\">$2</span>", $s);
 
+    $s = preg_replace("#\[slider\=(.*)\](.*)\[\/slider\]#Ui", "<div class=\"slider\" id=\"$1\">$2<div id=\"slideLeft\" onClick=\"buttonClick(1);\"></div><div id=\"slideRight\" onClick=\"buttonClick(2);\"></div></div>", $s);
+
+    $s = preg_replace("#\[(.*)-sItem\=(.*)\](.*)\[\/sItem\]#Ui", "<div id=\"slide_$1\" class=\"slideItem\" style=\"background-image:url('$2');display:none;\"><div class=\"slideTitle\">$3</a></div></div>", $s);
+
         $s = preg_replace("#\[h\](.*)\[\/h\]#Ui", "<h2>$1</h2>", $s);
         
         $s = preg_replace("#\[hr\]#i", "<hr>", $s);
@@ -1136,7 +1140,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	// [php]...[/php] parse
 
-	$s = preg_replace("#\[php\][\n\r|\n](.*)[\n\r|\n]\[\/php\]#Uise", "'<div style=\"width: 80%; overflow: auto; text-align: left; border: 1px solid #CCCCCC; display: block; padding-left: 20px;\">'.highlight_string(html_entity_decode('\\1', ENT_QUOTES), 1).'</div>'", $s);
+	//$s = preg_replace("#\[php\][\n\r|\n](.*)[\n\r|\n]\[\/php\]#Uise", "'<div style=\"width: 80%; overflow: auto; text-align: left; border: 1px solid #CCCCCC; display: block; padding-left: 20px;\">'.highlight_string(html_entity_decode('\\1', ENT_QUOTES), 1).'</div>'", $s);
 
 	// <span> for PHP5, <font> for PHP4
 
@@ -1146,7 +1150,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 	$s = preg_replace("#\[youtube\](.*)\[\/youtube\]#Ui", "<object width=\"425\" height=\"350\"><embed src=\"http://www.youtube.com/v/$1\" type=\"application/x-shockwave-flash\" width=\"425\" height=\"350\"></embed></object>", $s);
 
 	
-         $s = preg_replace("#\[quote\]#i", "\"", $s);
+    $s = preg_replace("#\[quote\]#i", "\"", $s);
 	
 
 	if (PHP_VERSION >= 5) {
@@ -1161,7 +1165,7 @@ public function p($string, $toBr = 0, $justParse = 1, $useSmilies = 1, $simpleSm
 
 	
 
-	$s = preg_replace("#\[php\]\<#i", "</div><code><$highlight_string_type style=\"color: #000000;\">\n<", $s);
+	//$s = preg_replace("#\[php\]\<#i", "</div><code><$highlight_string_type style=\"color: #000000;\">\n<", $s);
 
 	
 

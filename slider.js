@@ -2,7 +2,11 @@
 var current_id = 1;
 var max = 3;
 
+max=$('.slider').attr("id");
+
 var looper = setInterval(slideRight, 5000);
+
+$('#slide_1').fadeIn();
 
 function slideLeft(){
     $('#slide_'+current_id).fadeOut();

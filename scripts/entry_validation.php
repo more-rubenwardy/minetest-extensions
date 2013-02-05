@@ -1,24 +1,11 @@
 <?php
-$mmmrel=$_POST['mmmrel'];
-$name=$_POST['mod_name'];
-$version=$_POST['mod_version'];
-$desc=$_POST['mod_desc'];
-$overview=$_POST['mod_ov'];
-$tags_type=$_POST['mod_tag_type'];
-$tags_msc=$_POST['mod_tag_msc'];
-$license=$_POST['mod_lic'];
-$mmmrt=$_POST['mmmrt'];
-$file=$_POST['mod_file'];
-$depend=$_POST['mod_dep'];
-$basename=$_POST['mod_base'];
-$owner=$_POST['user'];
-
 if ($mmmrel==0){
 	$mmmrel=1;
 }
 
 if ($name=="")
-   return 0;
+    return 0;
+
 
 if (strstr($name,"'")==true){
   $message="The name field may not contain '";
@@ -40,15 +27,22 @@ if ($overview==""){
    return 0;
 }
 
-if ($tags_type==""){
-    $message="entry type field required";
-   return 0;
-}
+if ($valid_mode==1){
+    if ($tags_type==""){
+        $message="entry type field required";
+       return 0;
+    }
 
 
-if ($tags_msc==""){
-    $message="more than one tag is required";
-   return 0;
+    if ($tags_msc==""){
+        $message="more than one tag is required";
+       return 0;
+    }
+}else{
+    if ($tags==""){
+        $message="more than one tag is required";
+        return 0;
+    }
 }
 
 if($mmmrt==""){
@@ -63,6 +57,15 @@ if ($file==""){
 
 if ($owner=="")
    $owner=$_SESSION['user'];
+
+if ($valid_mode==1){
+    if ($tags_type=="mod"){
+        if ($basename==""){
+            $message="You must give your mod a namespace. It tells mod managers where to install the mod (what folder)";
+            return 0;
+        }
+    }
+}
    
 return 1;
    
