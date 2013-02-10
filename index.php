@@ -42,11 +42,16 @@ $dnw_content=true;
         echo "Statistics\n";
         echo "</div>\n";
 
+        echo "<p class=\"bar_p\">\n77 <b>users</b> contributing ".getNoTopics("",$handle)." <b>extensions</b>\n</p>\n";
+
         echo "<p><table id='bar_stat'><tbody>\n";
+
         tabCol("Mods",getNoTopics("mod",$handle));
+        tabCol("Games",getNoTopics("game",$handle));
+        tabCol("Code Mods",getNoTopics("code",$handle));
         tabCol("Texture Packs",getNoTopics("texture",$handle));
-        tabCol("Visitors","380 a week");
-        tabCol("Views","unknown");
+        tabCol("Visiters","380 a week");
+        tabCol("Extension Views","unknown");
         tabCol("Downloads","unknown");
         echo "</tbody></table></p>\n";
     ?>
@@ -125,7 +130,28 @@ $dnw_content=true;
 ?>    </ul>
 </div>
 
+
+<div style="float:left;">
+<img src="images/chest.png" width="256">
+</div>
+
 <h2>Welcome to Minetest Extensions</h2>
+
+<p>
+Here, at Minetest Extensions, you will find everything you will need to make Minetest perfect for you.
+</p>
+
+<p>
+If you have any questions at all, do not hesitate to contact us on <a href="http://tinyurl.com/mtmdfrm">this project's forum topic</a>
+</p>
+
+<p>
+Please, have a look round.
+</p>
+
+
+
+
 </div>
 
 

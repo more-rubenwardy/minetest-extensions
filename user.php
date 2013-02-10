@@ -1,12 +1,13 @@
 <?php
 include "scripts/setup.php";
 
+
 $page_title="Users";
-include "scripts/pageheader.php";
 
 $id=$_GET['id'];
 
 if ($id==""){
+  include "scripts/pageheader.php";
    echo "<table width=\"100%\"><tr><th colspan=2>Username</th></tr>\n";
    $res = mysql_query("SELECT * FROM users ORDER BY level DESC",$handle) or SQLerror("MySQL Query Error","Error on getting database.users");
 $alternate=1;
@@ -22,6 +23,8 @@ while ($hash = mysql_fetch_assoc($res)){
 }
    echo "</table>";
 }else{
+  
+
   if (is_numeric($id)==false){
     die("Id is not a number!");
   }
@@ -40,6 +43,10 @@ while ($hash = mysql_fetch_assoc($res)){
   	$level="n admin";
   	break;
   }
+  
+  $page_title="{$hash['name']} - Users";
+  
+  include "scripts/pageheader.php";
   
   echo "<h1>{$hash['name']}</h1>";
   echo "{$hash['name']} is a{$level}.";

@@ -118,7 +118,7 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
             echo "Control Panel\n";
             echo "</div>\n";
 
-            echo "<p class='bar_p'><ul>$links</ul></p>\n";
+            echo "<div class='bar_p'><ul>$links</ul></div>\n";
         }
 
         echo "<p>";
