@@ -13,7 +13,7 @@ if (is_numeric($id)==false){
 include "scripts/pageheader.php";
 
 $res = mysql_query("SELECT * FROM mods WHERE mod_id=$id",$handle) or SQLerror("MySQL Query Error","Error finding entry $id");
-$row = mysql_fetch_row($res) or die("row error");
+$row = mysql_fetch_array($res) or die("row error");
 
 if (is_member_moderator($_SESSION['user'],$handle) || $_SESSION['user']==$row[3]){
 }else{
@@ -28,7 +28,7 @@ $do=true;
 $name=$_POST['mod_name'];
 if ($name==""){
    $do=false;
-   $name=$row[1];
+   $name=$row['name'];
 }
 
 if ($do==true){

@@ -9,7 +9,7 @@ function is_member_moderator($user,$handle){
             return 0;
          }
 
-         if ($user_p[4]==2){
+         if ($user_p['level']==2){
             return true;
          }else{
             return false;
@@ -81,32 +81,17 @@ function curPageURL() {
  return $pageURL;
 }
 
-function authcheck($user,$pass,$handle){
-         $pasw = sha1($pass);
-	$row=getUser($user,$handle);
-	if ($row==0){
-          return false;
-          }
-
-	//echo "'{$row[3]}' vs '$passw'";
-	if ($row[3]==$pasw){
-		return true;
-	}else{
-		return false;
-	}
-}
-
-function login($user){
-         $_SESSION['auth']="somerandomkey";
-         $_SESSION['user']=$user;
-}
-
 function is_logged_in(){
-  global $forum_user;
+        global $forum_user;
          if ($forum_user['username']!="Guest"){
             return true;
          }
          return false;
+}
+
+function login($user){
+    $_SESSION['auth']="somerandomkey";
+    $_SESSION['user']=$user;
 }
 
 function getUser($user,$handle){
@@ -116,7 +101,7 @@ function getUser($user,$handle){
         if(mysql_num_rows($res)==0){
           return 0;
         }
-	 $row = mysql_fetch_row($res) or die("");
+	 $row = mysql_fetch_array($res) or die("");
 	 return $row;
 }
 
@@ -132,38 +117,15 @@ function getNoTopics($tag,$handle){
          return mysql_num_rows($res);
 }
 
-function addUser($user,$pass,$passcon,$email,$handle){
-         if ($user=="" || $pass=="" || $passcon=="" || $email==""){
-            return 0;
-         }
-         if ($pass==$passcon){
-           if (user_exists($user,$handle))
-              return 4;
-
-            $pasw=sha1($pass);
-            if ($pasw=="")
-               return 3;
-
-            $res=mysql_query("INSERT INTO users (name,email,password) VALUES ('$user','$email','$pasw')");
-            if ($res==1){
-              return 1;
-            }else{
-              return 3;
-            }
-         }else{
-               return 2;
-         }
-}
-
 function getUserId($user,$handle){
       $qu = mysql_real_escape_string ($user);
       $res = mysql_query("SELECT * FROM users WHERE name='$qu'",$handle);
-      $row = mysql_fetch_row($res);
+      $row = mysql_fetch_array($res);
 
 	if (!$row)
 		return false;
 
-      return $row[0];
+      return $row['id'];
 }
 
 function user_exists($user,$handle){
@@ -188,13 +150,13 @@ return false;
 }
 
 function getDownload($mod){
-if ($mod[19]=="git"){
-   return $mod[9]."/zipball/master";
-}else if ($mod[19]=="archive"){
-  if (strstr($mod[7],"code")==true){
+if ($mod['repotype']=="git"){
+   return $mod['file']."/zipball/master";
+}else if ($mod['repotype']=="archive"){
+  if (strstr($mod['tags'],"code")==true){
    return "code_mod.php?url=".$mod[9];
   }else{
-    return $mod[9];
+    return $mod['file'];
   }
 }else{
 }

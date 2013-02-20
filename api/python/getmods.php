@@ -13,7 +13,7 @@ header("Content-type: text/plain");
 
 // Get projects loop
 while ($hash = mysql_fetch_assoc($res)){
-      echo "{$hash['name']}\n";
+      echo "{$hash['basename']}\n";
 }
 
 die("");

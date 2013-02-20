@@ -35,8 +35,32 @@
 <h2>Welcome to Minetest Extensions</h2>
 
 <p>
-Welcome to Minetest Extensions, the Mod, texture pack, sound pack and other things database.
+    Welcome to Minetest Extensions, the Mod, texture pack, sound pack and other things database.
+
+    <a href="#" onClick="toggle('bar_stat');">Statistics</a>
 </p>
+
+<?php
+
+    function tabCol($title,$msg){
+        echo "<tr><td><b>".$title.":</b></td><td>$msg</td></tr>\n";
+    }
+
+    echo "<p><div id='bar_stat' style=\"display:none;\">";
+
+    echo "<p>\n77 <b>users</b> contributing ".getNoTopics("",$handle)." <b>extensions</b>\n</p>\n";
+
+    echo "<table><tbody>\n";
+
+    tabCol("Mods",getNoTopics("mod",$handle));
+    tabCol("Games",getNoTopics("game",$handle));
+    tabCol("Code Mods",getNoTopics("code",$handle));
+    tabCol("Texture Packs",getNoTopics("texture",$handle));
+    tabCol("Visitors","380 a week");
+    tabCol("Extension Views","unknown");
+    tabCol("Downloads","unknown");
+    echo "</tbody></table></div></p>\n";
+?>
 
 <p>
 If you have any questions at all, do not hesitate to contact us on <a href="http://tinyurl.com/mtmdfrm">this project's forum topic</a>

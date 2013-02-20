@@ -41,11 +41,6 @@
                 <li class="navlink_normal"><a href="<?php echo $serverpath;?>/help/about.php">About</a></li>
                 <li class="navlink_normal"><a href="<?php echo $serverpath;?>/user.php">User List</a></li>
                 <li class="navlink_normal"><a href="<?php echo $serverpath;?>/help/">Help</a></li>
-				<?php
-				if ($forum_user['username']!="Guest"){
-                                   echo "<li class=\"navlink_normal\"><a href=\"$serverpath/addentry.php\">Add a Mod</a></li>";
-                                 }
-                                 ?>
 			</ul>
 		</span>
 		<span class="inbar_login">
@@ -89,6 +84,12 @@ echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."register.php\">Regis
 						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/listing.php?id=mod">Mods</a></li>
 						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/listing.php?id=texture">Texture Packs</a></li>
 						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/search.php?id=sound">Sound Packs</a></li>
+                        <?php
+                        if (is_logged_in()==true){
+                            echo "<li>|</li>\n";
+                            echo "<li><a href=\"addentry.php\">Add an Extension</a>\n";
+                        }
+                        ?>
 					</ul>
 				</div>
 			</div>

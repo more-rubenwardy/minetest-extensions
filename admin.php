@@ -44,13 +44,13 @@ if($mode=="owner"){
          addUser($user,"temp_pass","temp_pass","temp@email.co.uk",$handle);
          $ur = mysql_query("SELECT * FROM users WHERE name='$user'",$handle);
          $user = mysql_fetch_array($ur);
-         $ow_id=$user[0];
+         $ow_id=$user['id'];
          mysql_query("UPDATE mods SET owner=$ow_id WHERE mod_id=$id",$handle)or die("error on setting owner");
          header("location: viewmod.php?id=$id");
        }
      }else{
         $user = mysql_fetch_array($ur);
-        $ow_id=$user[0];
+        $ow_id=$user['id'];
         mysql_query("UPDATE mods SET owner=$ow_id WHERE mod_id=$id",$handle)or die("error on setting owner");
         header("location: viewmod.php?id=$id");
      }
@@ -61,7 +61,7 @@ if($mode=="owner"){
   if ($q){
       echo "<!--User is relative-->";
       $qr = mysql_fetch_array($q) or print("");
-      $qr=$qr[1];
+      $qr=$qr['name'];
   }else{
       echo "<!--User is not relative-->";
       $qr = $hash['owner'];
