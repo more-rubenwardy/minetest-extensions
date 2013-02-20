@@ -32,6 +32,8 @@ That is why, I am making a new one, for c55 to possibly implement <br />
 <li>Mod entry adding and editing</li>
 </ul>
 
+<h2>News</h2>
+
 
 
 <?php

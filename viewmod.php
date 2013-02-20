@@ -151,6 +151,7 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
 
             <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
             <script src="slider.js"></script>
+        </div>
 
 <?php
 

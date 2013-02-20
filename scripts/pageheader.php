@@ -22,7 +22,6 @@
 </head>
 
 <body>
-
 <div id="navbar" class="navbar">
 	<div class="constrain">
 		<span class="inbar_main">
@@ -76,11 +75,24 @@ echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."register.php\">Regis
                           <input type="text" placeholder="search" name="id" size=20> <input type="submit" value="Search">
                     </form>
 		</div>
+
 		<span class="bigheader">
 			<h1>Minetest</h1>
-			<h2>Extensions</h2>
-			
+			<h2>Extensions</h2>			
 		</span>
+
+		<div id="modbar">
+			<div class="constrain">
+				<div class="inbar_main">
+					<ul>
+						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/listing.php">All</a></li>
+						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/listing.php?id=mod">Mods</a></li>
+						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/listing.php?id=texture">Texture Packs</a></li>
+						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/search.php?id=sound">Sound Packs</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 	</div>
 </div>

@@ -7,7 +7,7 @@
               else
                  $icon="images/topicicon_read.jpg";
 
-              echo "<tr><td width=16><img width=16 height=16 src=\"$icon\" /></td><td>";
+              echo "<tr><td width=32><img width=32 height=32 src=\"$icon\" /></td><td>";
               echo "<a href=\"search.php?id=$query\">$title</a></td>";
               echo "<td>$description</td>";
 

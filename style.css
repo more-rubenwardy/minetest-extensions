@@ -1,185 +1,252 @@
 .inbar_login {
-    float: right;
+	float: right;
 }
 
+#logo{
+    height: 143px;
+}
+
+#modbar{
+	height: 32px;
+    background-color:#333333;
+	bottom: 0;
+    width:550px;
+    float:right;
+}
+
+#modbar ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+#modbar ul li {
+	display: inline-block;
+	padding: 0px 7px 0px 7px;
+	padding-top: 4px;
+	font-size: 18px;
+}
+
+#modbar ul li a {
+	color: #cccccc;
+	display: block;
+	text-decoration: none;
+}
+
+#modbar ul li a:hover {
+	color: #ffffff;
+}
+
+
 #notice_bar {
-    background: #FACF73;
-    color: #000000;
-    display: block;
-    width: auto;
-    margin: 0px;
-    padding: 1em 0 1em 0;
-    border: 0px;
+	background: #FACF73;
+	color: #000000;
+	display: block;
+	width: auto;
+	margin: 0px;
+	padding: 1em 0 1em 0;
+	border: 0px;
 }
 
 #review td
 {
-    vertical-align:top;
-    padding-left:10px;
+	vertical-align:top;
+	padding-left:10px;
 }
 
 #mod_main{
-    max-width:640px;
+	max-width:640px;
 }
 
 #mod_bar{
-    float:right;
-    width:300px;
-    background-color:#E8E8E8;
-    text-align:center;
-    padding-bottom:10px;
+	float:right;
+	width:300px;
+	background-color:#E8E8E8;
+	text-align:center;
+	padding-bottom:10px;
 }
 
 .bar_title{
-    width:100%;
-    height:42px;
-    background-color: #333333;
-    padding-top:12px;
-    color: #cccccc;
-    font-size:x-large;
+	width:100%;
+	height:42px;
+	background-color: #333333;
+	padding-top:12px;
+	color: #cccccc;
+	font-size:x-large;
 }
 #bar_download{
-    width:100%;
-    height:42px;
-    padding-top:12px;
-    font-size:x-large;
+	width:100%;
+	height:42px;
+	padding-top:12px;
+	font-size:x-large;
+
+	color:white;
+	margin-bottom:0;
+
     background-color:#61AD6D;
-    color:white;
-    margin-bottom:0;
-    background-image: url('images/feather.png');
-    background-position: bottom;
-    background-repeat: repeat-x;
 }
 
 #bar_download a {
-    color: #ffffff;
-    font-size:x-large;
-    display: block;
-    text-decoration: none;
+	color: #ffffff;
+	font-size:x-large;
+	display: block;
+	text-decoration: none;
 }
 
 #bar_download a:hover {
-    color: #cccccc;
+	color: #cccccc;
 }
 
 #bar_stat{
-    margin-left:20px;
+	margin-left:20px;
 }
 
 #mod_bar td {
-    text-align:left;
+	text-align:left;
 }
 
 .bar_p {
-    text-align:left;
-    padding-left:20px;
-    padding-right:20px;
+	text-align:left;
+	padding-left:20px;
+	padding-right:20px;
 }
 
 .bar_p ul {
-    text-align:left;
+	text-align:left;
 }
 
 .bar_p ul li {
-    text-align:left;
+	text-align:left;
 }
 
 .slider {
-    width:640px;
-    height:280px;
-    position:relative;
-    background-color:black;
-    overflow:hidden;
+	width:640px;
+	height:280px;
+	position:relative;
+	background-color:black;
+	overflow:hidden;
 }
 
 .slideItem {
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:100%;
-    height:100%;
-    max-width:640px;
-    min-height:480px;
-    background-size: cover;
-    background-position: center;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	max-width:640px;
+	min-height:480px;
+	background-size: cover;
+	background-position: center;
 }
 
 .slideTitle {
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:630px;
-    min-height:32px;
-    padding:5px;
-    padding-left: 10px;
-    color:white;
-    background: rgba(97, 173, 109, 0.4);
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:630px;
+	min-height:32px;
+	padding:5px;
+	padding-left: 10px;
+	color:white;
+	background: rgba(97, 173, 109, 0.4);
 }
 
 .slideTitle a {
-    color: #cccc00;
-    text-decoration: none;
+	color: #cccc00;
+	text-decoration: none;
 }
 
 .slideTitle a:hover {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 .slideTitle img {
-    width: 16px;
-    height: 16px;
+	width: 16px;
+	height: 16px;
 }
 
 #slideLeft {
-    position:absolute;
-    left:0px;
-    top:124px;
-    width:32px;
-    height:32px;
-    background: rgba(97, 173, 109, 0.6);
+	position:absolute;
+	left:0px;
+	top:124px;
+	width:32px;
+	height:32px;
+	background: rgba(97, 173, 109, 0.6);
 }
 
 #slideRight {
-    position:absolute;
-    left:608px;
-    top:124px;
-    width:32px;
-    height:32px;
-    background: rgba(97, 173, 109, 0.6);
+	position:absolute;
+	left:608px;
+	top:124px;
+	width:32px;
+	height:32px;
+	background: rgba(97, 173, 109, 0.6);
 }
 
 #itemBar {
-    width:620px;
-    min-height:42px;
-    color:#ffffff;
-    padding-top:5px;
-    padding-left:20px;
-    background-color:#61AD6D;
-    background-image: url('images/feather.png');
-    background-position: bottom;
-    background-repeat: repeat-x;
+	width:620px;
+	min-height:42px;
+	color:#ffffff;
+	padding-top:5px;
+	padding-left:20px;
+	background-color:#61AD6D;
 }
 
 #itemBar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    border: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
 
 #itemBar ul li {
-    display: inline-block;
-    padding: 0 7px 0 7px;
-    padding-top: 4px;
-    font-size: 20px;
+	display: inline-block;
+	padding: 0 7px 0 7px;
+	padding-top: 4px;
+	font-size: 20px;
 }
 
 #itemBar ul li a {
-    color: #ffffff;
-    display: block;
-    text-decoration: none;
+	color: #ffffff;
+	display: block;
+	text-decoration: none;
 }
 
 #itemBar ul li a:hover {
-    color: #cccccc;
+	color: #cccccc;
+}
+
+#home_reco{
+    font-size: 90%;
+    margin: 0;
+    padding: 1em 0 2em 0;
+    background: #61ad6d;
+    color: #ffffff;
+}
+
+#home_reco table{
+    width:100%;
+}
+
+#home_reco td{
+    width:33%;
+    height:180px;
+    background-size: cover;
+    background-position: center;
+    vertical-align:top;
+    margin:20px;
+    padding:20px;
+}
+
+#home_reco td a{
+    color:#ffffff;
+    font-size:large;
+}
+
+#hotlist {
+    font-size: 90%;
+    margin: 0;
+    padding: 1em 0 2em 0;
+    background: #ffffff;
 }
