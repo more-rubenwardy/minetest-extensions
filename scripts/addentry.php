@@ -38,8 +38,8 @@ if (entry_exists($name,$handle))
 require_once "entry_adders_sql_safe.php";
 
 // Insert the data into table
-mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,dislikes,license,file,depend,basename,date_released,repotype,3m_rele,overview)
-VALUES ('$name','$version',$ownerid,'$desc','$tags',0,0,'$license','$file','$depend','$basename','$date','$mmmrt','$mmmrel','$overview')");
+mysql_query("INSERT INTO mods (name,version,owner,description,tags,likes,license,file,depend,basename,date_released,repotype,3m_rele,overview)
+VALUES ('$name','$version',$ownerid,'$desc','$tags',0,'$license','$file','$depend','$basename','$date','$mmmrt','$mmmrel','$overview')");
 
 // Get the id
 $the_id=mysql_insert_id($handle);
