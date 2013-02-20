@@ -73,12 +73,12 @@ echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."register.php\">Regis
 		<div style="float:right;vertical-align:top;">
 		     <form method="get" action="<?php echo $serverpath;?>/search.php">
                           <input type="hidden" name="mode" value="sb">
-                          <input type="text" placeholder="search" name="id" size=11> <input type="submit" value="Search">
+                          <input type="text" placeholder="search" name="id" size=20> <input type="submit" value="Search">
                     </form>
 		</div>
 		<span class="bigheader">
-			<h1>Minetest Extensions</h1>
-			<h2>Mods, Texture Packs and Sound Packs.</h2>
+			<h1>Minetest</h1>
+			<h2>Extensions</h2>
 			
 		</span>
 

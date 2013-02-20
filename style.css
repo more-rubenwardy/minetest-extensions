@@ -71,17 +71,17 @@
 }
 
 .bar_p {
-    text-align:justify;
+    text-align:left;
     padding-left:20px;
     padding-right:20px;
 }
 
 .bar_p ul {
-    text-align:justify;
+    text-align:left;
 }
 
 .bar_p ul li {
-    text-align:justify;
+    text-align:left;
 }
 
 .slider {
