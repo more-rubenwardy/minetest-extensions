@@ -9,7 +9,7 @@ $id=$_GET['id'];
 if ($id==""){
   include "scripts/pageheader.php";
    echo "<table width=\"100%\"><tr><th colspan=2>Username</th></tr>\n";
-   $res = mysql_query("SELECT * FROM users ORDER BY level DESC",$handle) or SQLerror("MySQL Query Error","Error on getting database.users");
+   $res = mysql_query("SELECT * FROM users",$handle) or SQLerror("MySQL Query Error","Error on getting database.users");
 $alternate=1;
 // Get projects loop
 while ($hash = mysql_fetch_assoc($res)){
@@ -30,26 +30,12 @@ while ($hash = mysql_fetch_assoc($res)){
   }
   $res = mysql_query("SELECT * FROM users WHERE id=$id",$handle) or SQLerror("MySQL Query Error","Error on getting database.users");
   $hash = mysql_fetch_assoc($res);
-  
-  switch($hash['level'])
-  {
-  case 0:
-  	$level=" normal member";
-  	break;
-  case 1:
- 	$level=" vertified member";
-  	break;
-  case 2:
-  	$level="n admin";
-  	break;
-  }
-  
+
   $page_title="{$hash['name']} - Users";
   
   include "scripts/pageheader.php";
   
   echo "<h1>{$hash['name']}</h1>";
-  echo "{$hash['name']} is a{$level}.";
   echo "<br /><p><a href=\"user.php\">Back to User List</a></p><br />";
   
   $query=$id;

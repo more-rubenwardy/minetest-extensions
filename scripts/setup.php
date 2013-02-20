@@ -4,6 +4,11 @@ require_once "settings.php";
 session_start();
 
 function is_member_moderator($user,$handle){
+        global $forum_user;
+
+        if ($forum_user['username']==$user){
+            return ($forum_user['group_id']==1);
+        }else{
          $user_p=getUser($user,$handle);
          if (!$user_p){
             return 0;
@@ -14,6 +19,9 @@ function is_member_moderator($user,$handle){
          }else{
             return false;
          }
+        }
+
+
 }
 
 function SQLerror($title,$msg){
@@ -51,7 +59,7 @@ require FORUM_ROOT.'include/common.php';
 
 if ($forum_user['username']!="Guest"){
    if (user_exists($forum_user['username'],$handle)==false){
-     addUser($forum_user['username'],"x","x",$forum_user['email'],$handle);
+     addUser($forum_user['username'],$forum_user['group_id'],$handle);
    }
    login($forum_user['username']);
 }else{
@@ -92,6 +100,21 @@ function is_logged_in(){
 function login($user){
     $_SESSION['auth']="somerandomkey";
     $_SESSION['user']=$user;
+}
+
+function addUser($user,$level,$handle){
+    if ($user==""){
+        return 0;
+    }
+        if (user_exists($user,$handle))
+            return 4;
+
+        $res=mysql_query("INSERT INTO users (name,level) VALUES ('$user','$level')");
+        if ($res==1){
+            return 1;
+        }else{
+            return 3;
+        }
 }
 
 function getUser($user,$handle){
@@ -174,5 +197,15 @@ function tagLinks($tags){
        
         return $result;
     }
+
+function progressBar($percent,$length,$caption){
+    echo "<div class=\"progressbar\" style=\"width: ".$length."px;\">";
+
+    echo "<div class=\"progressbar_inner\" style=\"width: ".(($percent/100)*$length)."px;\"></div>";
+
+    echo "<div class=\"progress_caption\">$caption</div>";
+
+    echo "</div>";
+}
 
 ?>

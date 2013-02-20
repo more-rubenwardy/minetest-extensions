@@ -8,6 +8,8 @@ include "scripts/pageheader.php";
 
 echo "<h1>Admin</h1>\n";
 
+progressBar(25,400,"25%");
+
 $id=$_GET['id'];
 $mode=$_GET['mode'];
 

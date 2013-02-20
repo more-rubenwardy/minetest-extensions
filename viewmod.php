@@ -112,6 +112,10 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
         tabCol("Tags",tagLinks($row['tags']));
         echo "</tbody></table></p>\n";
 
+        echo "<div style=\"margin-left:20px;margin-bottom:20px;\">";
+        progressBar($row['progress'],260,$row['progress']."% completed");
+        echo "</div>";
+
 
         if ($links!=""){
             echo "<div class='bar_title'>\n";

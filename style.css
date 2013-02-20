@@ -251,3 +251,21 @@
     padding: 1em 0 2em 0;
     background: #ffffff;
 }
+
+.progressbar{
+    background: #cccccc;
+    height:20px;
+    display:block;
+}
+.progressbar_inner{
+    background: #61ad6d;
+    height:20px;
+    display:block
+}
+
+.progress_caption{
+    position:relative;
+    top:-18px;
+    text-align:center;
+    width:100%;
+}
