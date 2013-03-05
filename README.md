@@ -18,4 +18,4 @@ Database and Setting this up
 ============================
 The database structure.
 
-See the wiki on github: https://github.com/downloads/rubenwardy/minetest-forum/wiki
+See the wiki on github: https://github.com/rubenwardy/minetest-extensions/wiki
