@@ -8,7 +8,10 @@ $act=$_GET['action'];
 
 if ($act=="like"){
 	echo "Liking";
-    likeMod($id,$_SESSION['user'],$handle);
+    likeMod($id,$_SESSION['user'],$handle,true);
+}else if ($act=="update"){
+    updateLikes($id,$handle);
+    header("location: viewmod.php?id=$id");
 }
 
 $res=0;
@@ -45,14 +48,7 @@ $dnw_content=true;
 include "scripts/pageheader.php";
 
 
-if (is_member_moderator($_SESSION['user'],$handle)){
-
-$links="<li><a href=\"admin.php?mode=owner&id=$id\">Change Owner</a></li>";
-$links.="<li><a href=\"editentry.php?id=$id\">Edit</a></li>";
-$links.="<li><a href=\"3mrelinc.php?id=$id\">Increase 3m Release</a></li>";
-$links.="<li><a href=\"deleteentry.php?id=$id\">Delete</a></li>";
-
-}elseif (getUserId($_SESSION['user'],$handle)==$row['owner']){
+if (is_member_moderator($_SESSION['user'],$handle) || getUserId($_SESSION['user'],$handle)==$row['owner']){
 
 $links="<li><a href=\"editentry.php?id=$id\">Edit</a></li>";
 $links.="<li><a href=\"3mrelinc.php?id=$id\">Increase 3m Release</a></li>";
@@ -85,7 +81,7 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
 
         if (is_logged_in()==true){
             $like_ext="";
-            if (checkLike($_SESSION['user'],$id,5,$handle)==true)
+            if (likeMod($id,$_SESSION['user'],$handle,false)==true)
                 $like_ext="_high";
 
             echo "<p><a href=\"viewmod.php?id=$id&action=like\"><img src=\"images/like_mod$like_ext.png\" alt=\"like\" /></a></p>";
@@ -123,6 +119,16 @@ echo "<h1>Similar Code Part of 0.4.4</h1>Only use this for versions before this.
             echo "</div>\n";
 
             echo "<div class='bar_p'><ul>$links</ul></div>\n";
+        }
+        if (is_member_moderator($_SESSION['user'],$handle)){
+            echo "<div class='bar_title'>\n";
+            echo "Admin Scripts\n";
+            echo "</div>\n";
+
+            echo "<div class='bar_p'><ul>";
+            echo "<li><a href=\"admin.php?mode=owner&id=$id\">Change Owner</a></li>";
+            echo "<li><a href=\"viewmod.php?id=$id&action=update\">Update Like</a></li>";
+            echo "</ul></div>\n";
         }
 
         echo "<p>";

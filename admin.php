@@ -8,8 +8,6 @@ include "scripts/pageheader.php";
 
 echo "<h1>Admin</h1>\n";
 
-progressBar(25,400,"25%");
-
 $id=$_GET['id'];
 $mode=$_GET['mode'];
 
@@ -73,6 +71,12 @@ if($mode=="owner"){
   echo "<input type=\"text\" name=\"owner\" size=50 value=\"{$qr}\"><br /><br />";
   echo "<input type=\"checkbox\" name=\"override\"> Create account if it does not exist.<br />";
   echo "<br /><input type=\"submit\" value=\"Change\"></form></center>";
+}else if ($mode=="likes"){
+    $res = mysql_query("SELECT * FROM mods",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.tags for '$query'");
+    while ($hash = mysql_fetch_assoc($res)){
+        updateLikes($hash['mod_id'],$handle);
+    }
+    echo "script complete";
 }else{
       echo "Welcome to the admin console.";
 }

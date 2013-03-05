@@ -202,10 +202,16 @@ function progressBar($percent,$length,$caption){
     echo "<div class=\"progressbar\" style=\"width: ".$length."px;\">";
 
     echo "<div class=\"progressbar_inner\" style=\"width: ".(($percent/100)*$length)."px;\"></div>";
-
     echo "<div class=\"progress_caption\">$caption</div>";
 
     echo "</div>";
+}
+
+function updateLikes($id,$handle){
+    $res = mysql_query("SELECT * FROM votes WHERE mod_id=$id AND liked=true",$handle);
+    $result =  mysql_num_rows($res);
+
+    mysql_query("UPDATE mods SET likes=$result WHERE mod_id=$id",$handle);
 }
 
 ?>

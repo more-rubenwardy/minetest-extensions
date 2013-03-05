@@ -88,6 +88,12 @@ If you have any questions at all, do not hesitate to contact us on <a href="http
     <div class="constrain">
          <div style="clear: both;"></div>
 
+	<h3><a href="viewmod.php?id=random">Random Extension</a></h3>
+	<p>
+	Why dont you try something new? Click the above link to go randomly to one of our extensions.
+	</p>
+	<br><br>
+
         <h3>Hottest Extensions</h3>
         <table style="border-spacing: 0; margin: 0; padding: 0; border: 0; width: 100%;">
             <tr>

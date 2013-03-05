@@ -31,5 +31,5 @@ $emailver_mod=true; // Require Email Vertification to post
 $emailver_login=false;  // Require Email Vertification to log in
 
 $mt_lock_down=false; // if true, only admins can access forum
-$mt_lock_msg="Message from Rubenwardy: Updating database";
+$mt_lock_msg="Message from Rubenwardy: Updating database and rating systems";
 ?>

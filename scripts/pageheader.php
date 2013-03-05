@@ -26,10 +26,7 @@
 	<div class="constrain">
 		<span class="inbar_main">
 			<ul>
-				<li class="navlink_normal"><a href="http://minetest.net/index.php">Home</a></li>
-				<li class="navlink_normal"><a href="http://minetest.net/news.php">News</a></li>
-				<li class="navlink_normal"><a href="http://minetest.net/download.php">Download</a></li>
-				<li class="navlink_normal"><a href="http://minetest.net/contribute.php">Contribute</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/index.php">Back to Minetest</a></li>
 			</ul>
 		</span>
 		<span class="inbar_separator">
