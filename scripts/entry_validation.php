@@ -3,6 +3,10 @@ if ($mmmrel==0){
 	$mmmrel=1;
 }
 
+if (isset($perc)==false){
+    $perc=100;
+}
+
 if ($name=="")
     return 0;
 

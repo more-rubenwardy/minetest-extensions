@@ -126,6 +126,8 @@ echo $tags_msc;
 </tr></table>
 </tr>
 
+<tr><td colspan="2">Percentage Complete: <input type="text" size="10" placeholder="100" name="mod_per" value="<?php echo $perc;?>">%</td></tr>
+
 <tr>
 <td colspan=2>
 <br /><br /><center>

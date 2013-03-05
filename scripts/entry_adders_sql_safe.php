@@ -10,6 +10,7 @@ $depend=mysql_real_escape_string($depend);
 $basename=mysql_real_escape_string($basename);
 $mmmrt=mysql_real_escape_string($mmmrt);
 $mmmrel=mysql_real_escape_string($mmmrel);
+$perc=mysql_real_escape_string($perc);
 $overview=mysql_real_escape_string(str_replace("'","",str_replace("\"","",$overview)));
 
 $tags_type=mysql_real_escape_string($tags_type);

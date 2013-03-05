@@ -45,6 +45,7 @@ if ((include('scripts/edit_validation.php'))==1){
         mysql_query("UPDATE mods SET file='$file' WHERE name='$name'",$handle)or SQLerror("Error on file","");
         mysql_query("UPDATE mods SET depend='$depend' WHERE name='$name'",$handle)or SQLerror("Error on depend","");
         mysql_query("UPDATE mods SET basename='$basename' WHERE name='$name'",$handle)or SQLerror("Error on basename","");
+        mysql_query("UPDATE mods SET progress='$perc' WHERE name='$name'",$handle)or SQLerror("Error on percentage","");
 
         // Display the extension
         header("location: viewmod.php?id=$id");
@@ -125,6 +126,8 @@ Overview:* <input type="text" size=100 name="mod_ov" value="<?php echo $overview
 Tags: <input type="text" size=100 name="mod_tags" value="<?php echo $tags;?>">
 </td>
 </tr>
+
+    <tr><td colspan="2">Percentage Complete: <input type="text" size="10" placeholder="100" name="mod_per" value="<?php echo $perc;?>">%</td></tr>
 
 <tr>
 <td colspan=2>
