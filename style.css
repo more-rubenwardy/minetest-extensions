@@ -224,6 +224,7 @@
     padding: 1em 0 2em 0;
     background: #61ad6d;
     color: #ffffff;
+    clear:both;
 }
 
 #home_reco table{

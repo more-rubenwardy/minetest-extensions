@@ -214,4 +214,20 @@ function updateLikes($id,$handle){
     mysql_query("UPDATE mods SET likes=$result WHERE mod_id=$id",$handle);
 }
 
+function updateUser($id,$handle){
+    $res = mysql_query("SELECT * FROM votes WHERE owner=$id",$handle);
+    $votes =  mysql_num_rows($res);
+
+    $res = mysql_query("SELECT * FROM mods WHERE owner=$id",$handle);
+    $mods =  mysql_num_rows($res);
+
+    mysql_query("UPDATE users SET mods=$mods WHERE id=$id",$handle);
+
+    $res = mysql_query("SELECT * FROM reviews WHERE owner_id=$id",$handle);
+    $reviews =  mysql_num_rows($res);
+
+    return ($votes!=0 || $mods!=0 || $reviews!=0);
+
+}
+
 ?>

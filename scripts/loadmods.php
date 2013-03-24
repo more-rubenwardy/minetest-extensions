@@ -1,15 +1,21 @@
 <?php
+$starttime = microtime(true);
+
 echo "<table width=\"100%\"><tr><th colspan=2>Mod Name</th><th>Description</th><th width=200>Tags</th><th>Likes</th></tr>\n";
 $query= mysql_real_escape_string ($query);
 
 if ($mode=="tags"){
-   $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' AND tags NOT LIKE '%dns%'";
+    if ($query=="dns"){
+        $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%'";
+    }else{
+        $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' AND tags NOT LIKE '%dns%'";
+    }
 }else if ($mode=="sb"){
   if (is_numeric($query)==true){
     echo "<!--is numeric-->";
      $qu_str="SELECT * FROM mods WHERE owner=$query";
   }else{
-     $qu_str="SELECT * FROM mods WHERE tags LIKE '%$query%' OR name LIKE '%$query%' OR overview LIKE '%$query%'";
+     $qu_str="SELECT * FROM mods WHERE tags NOT LIKE '%dns%' AND (tags LIKE '%$query%' OR name LIKE '%$query%' OR overview LIKE '%$query%')";
   }
 }
 
@@ -19,8 +25,9 @@ $res = mysql_query($qu_str." ORDER BY likes DESC",$handle) or SQLerror("MySQL Qu
 $alternate=1;
 // Get projects loop
 $is_result=false;
+$count=0;
 while ($hash = mysql_fetch_assoc($res)){
-
+	$count++;
       $is_result=true;
   
       if ($alternate==0){
@@ -56,9 +63,13 @@ while ($hash = mysql_fetch_assoc($res)){
       $alternate=1-$alternate;
 }
 
-if ($is_result==false){
-echo "<tr><td colspan=5 style=\"text-align:center;\"><i>no search results found</i></td></tr>";
-}
+$endtime = microtime(true);
+$duration = $endtime - $starttime; //calculates total time taken
+
+if ($is_result==false)
+	echo "<tr><td colspan=5 style=\"text-align:center;\"><i>no search results found</i></td></tr>";
+else
+	echo "<tr><td colspan=5 style=\"text-align:center;\"><i>$count results in $duration seconds</i></td></tr>";
 
 echo "</table>";
 ?>
