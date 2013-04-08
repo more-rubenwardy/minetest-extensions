@@ -12,8 +12,8 @@ $row = mysql_fetch_array($res) or SQLerrorFancy("Row Error","No results where fo
 if (!$row)
     SQLerrorFancy("Result error","No results where found for a review with the id $id");
 
-$mres = mysql_query("SELECT * FROM mods WHERE mod_id={$row['mod_id']}",$handle) or SQLerrorFancy("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
-$mod = mysql_fetch_array($mres) or SQLerrorFancy("Row Error","No results where found for a mod with the id $gen_num");
+$mres = mysql_query("SELECT * FROM mods WHERE mod_id={$row['mod_id']}",$handle) or SQLerrorFancy("MySQL Query Error","Error on searching database.mods.mod_id for '{$row['mod_id']}'");
+$mod = mysql_fetch_array($mres) or SQLerrorFancy("Row Error","No results where found for a mod with the id {$row['mod_id']}");
 
 if (!$mod)
     SQLerrorFancy("Result error","No results where found for a mod with the id {$row['mod_id']}");

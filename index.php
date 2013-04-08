@@ -35,35 +35,12 @@ include "scripts/pageheader.php";
 <h2>Welcome to Minetest Extensions</h2>
 
 <p>
-    Welcome to Minetest Extensions, the Mod, texture pack, sound pack and other things database.
-
-    <a href="#" onClick="toggle('bar_stat');">Statistics</a>
+    Minetest's full potential can only be obtained by installing mods, and other stuff. So shall we get started?
 </p>
-
-<?php
-
-function tabCol($title,$msg){
-    echo "<tr><td><b>".$title.":</b></td><td>$msg</td></tr>\n";
-}
-
-echo "<p><div id='bar_stat' style=\"display:none;\">";
-
-echo "<p>\n77 <b>users</b> contributing ".getNoTopics("",$handle)." <b>extensions</b>\n</p>\n";
-
-echo "<table><tbody>\n";
-
-tabCol("Mods",getNoTopics("mod",$handle));
-tabCol("Games",getNoTopics("game",$handle));
-tabCol("Code Mods",getNoTopics("code",$handle));
-tabCol("Texture Packs",getNoTopics("texture",$handle));
-tabCol("Visitors","380 a week");
-tabCol("Extension Views","unknown");
-tabCol("Downloads","unknown");
-echo "</tbody></table></div></p>\n";
-?>
-
 <p>
-    If you have any questions at all, do not hesitate to contact us on <a href="http://tinyurl.com/mtmdfrm">this project's forum topic</a>
+    Here's how to install:
+    <a href="http://minetest.net/wiki/doku.php?id=installing_mods">mods</a>,
+    <a href="http://forum.minetest.net/viewtopic.php?id=1592">texture packs</a>
 </p>
 
 </div>
@@ -72,7 +49,12 @@ echo "</tbody></table></div></p>\n";
 <div id="home_reco">
     <div class="constrain">
         <div style="clear: both;"></div>
-        <h3>Featured</h3>
+		<h3><a style="color:white;" href="viewmod.php?id=random">Random Extension</a></h3>
+		<p>
+			Why dont you try something new? Click the above link to go randomly to one of our extensions.
+		</p>
+
+        <!--<h3>Featured</h3>
 
         <table>
             <tr>
@@ -80,7 +62,7 @@ echo "</tbody></table></div></p>\n";
                 <td style="background-image:url('http://multa.bugs3.com/minetest/my_mods/food/banner.png');"><a href="viewmod.php?id=12">Food</a></td>
                 <td style="background-image:url('http://www.zimg.eu/i/944678586');"><a href="viewmod.php?id=16">Farming</a></td>
             </tr>
-        </table>
+        </table>-->
     </div>
 </div>
 
@@ -88,11 +70,11 @@ echo "</tbody></table></div></p>\n";
     <div class="constrain">
         <div style="clear: both;"></div>
 
-        <h3><a href="viewmod.php?id=random">Random Extension</a></h3>
+        <!--<h3><a href="viewmod.php?id=random">Random Extension</a></h3>
         <p>
             Why dont you try something new? Click the above link to go randomly to one of our extensions.
         </p>
-        <br><br>
+        <br><br>-->
 
         <h3>Hottest Extensions</h3>
         <table style="border-spacing: 0; margin: 0; padding: 0; border: 0; width: 100%;">
@@ -125,6 +107,37 @@ echo "</tbody></table></div></p>\n";
                     </p>
                 </td>
             </tr></table>
+
+
+        <p>
+            <a href="#statistics" onClick="toggle('bar_stat');">Statistics</a>
+        </p>
+
+        <?php
+
+        function tabCol($title,$msg){
+            echo "<tr><td><b>".$title.":</b></td><td>$msg</td></tr>\n";
+        }
+
+        echo "<p><div id='bar_stat' style=\"display:none;\">";
+
+        echo "<p>\n77 <b>users</b> contributing ".getNoTopics("",$handle)." <b>extensions</b>\n</p>\n";
+
+        echo "<table id='statistics'><tbody>\n";
+
+        tabCol("Mods",getNoTopics("mod",$handle));
+        tabCol("Games",getNoTopics("game",$handle));
+        tabCol("Code Mods",getNoTopics("code",$handle));
+        tabCol("Texture Packs",getNoTopics("texture",$handle));
+        tabCol("Visitors","380 a week");
+        tabCol("Extension Views","unknown");
+        tabCol("Downloads","unknown");
+        echo "</tbody></table></div></p>\n";
+        ?>
+
+        <p>
+            If you have any questions at all, do not hesitate to contact us on <a href="http://tinyurl.com/mtmdfrm">this project's forum topic</a>
+        </p>
 
         <?php
         include "scripts/pagefooter.php";

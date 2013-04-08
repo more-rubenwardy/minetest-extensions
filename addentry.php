@@ -44,7 +44,7 @@ Overview:* <input type="text" size="70" name="mod_ov" placeholder="a short one l
 
 <!--Description-->
 <td colspan="2">
-<p>Description:* <Br /><textarea name="mod_desc" cols="105" placeholder="The Entries Description. See help > description mark up link at top of page. this is like an article" rows="25"><?php
+<p>Description:* <Br /><textarea name="mod_desc" cols="105" rows="25" placeholder="The Entries Description. See help > description mark up link at top of page. this is like an article"><?php
 if ($desc==""){
 ?><!--This is a template on how you should layout mod pages.
 The description should feature all these things, but not necessarily in this order

@@ -173,15 +173,15 @@ return false;
 }
 
 function getDownload($mod){
-if ($mod['repotype']=="git"){
-   return $mod['file']."/zipball/master";
-}else if ($mod['repotype']=="archive"){
-  if (strstr($mod['tags'],"code")==true){
-   return "code_mod.php?url=".$mod[9];
-  }else{
-    return $mod['file'];
-  }
-}else{
+	if ($mod['repotype']=="git"){
+		return $mod['file']."/zipball/master";
+	}else if ($mod['repotype']=="archive"){
+		if (strstr($mod['tags'],"code")==true){
+			return "code_mod.php?url=".$mod[9];
+		}else{
+			return $mod['file'];
+		}
+	}else{
 }
 
 return "";

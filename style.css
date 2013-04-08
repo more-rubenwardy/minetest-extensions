@@ -270,3 +270,23 @@
     text-align:center;
     width:100%;
 }
+
+.like_button{
+    display:block;
+    width:93px;
+    height:32px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    text-align: center;
+    vertical-align: middle;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.big_link{
+    display:block;
+    width:61px;
+    height:24px;
+    padding-left:32px;
+    padding-top:8px;
+}
