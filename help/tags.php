@@ -1,9 +1,9 @@
 <?php
 $punbb_relative="../";
 
-include "../scripts/setup.php";
+include "../common/setup.php";
 $page_title="Tags - Help";
-include "../scripts/pageheader.php";
+include "../common/pageheader.php";
 
 function seperator($cols){
        echo "<tr style=\"background-color:#000000;\" height=2><td colspan=$cols></td></tr>";
@@ -63,5 +63,5 @@ And make up your own for search box searching.
 + Which versions your mod/texture pack works on. You may add more than one of these tags
 
 <?php
-     include "../scripts/pagefooter.php";
+     include "../common/pagefooter.php";
 ?>

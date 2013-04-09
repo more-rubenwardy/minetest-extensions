@@ -1,9 +1,9 @@
 <?php
 $punbb_relative="../";
 
-include "../scripts/setup.php";
+include "../common/setup.php";
 $page_title="Mark Up - Help";
-include "../scripts/pageheader.php";
+include "../common/pageheader.php";
 ?>
 
 <p><table style="text-align: center; width: 500px;" border=1 id="smilies">
@@ -254,5 +254,5 @@ include "../scripts/pageheader.php";
 	</table>
 
 <?php
-include "../scripts/pagefooter.php";
+include "../common/pagefooter.php";
 ?>

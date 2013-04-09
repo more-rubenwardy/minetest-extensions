@@ -1,9 +1,9 @@
 <?php
 $punbb_relative="../";
 
-include "../scripts/setup.php";
+include "../common/setup.php";
 $page_title="Articles - Help";
-include "../scripts/pageheader.php";
+include "../common/pageheader.php";
 ?>
 
 <h1>Article Requirements</h1>
@@ -17,5 +17,5 @@ All entry descriptions must contain the following things:
 </ul>
 
 <?php
-include "../scripts/pagefooter.php";
+include "../common/pagefooter.php";
 ?>

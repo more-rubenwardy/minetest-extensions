@@ -14,8 +14,8 @@
           echo $page_description;
         ?>" />
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <link rel="stylesheet" href="<?php echo $serverpath;?>/mineteststyle.css" type="text/css" />
-	<link rel="stylesheet" href="<?php echo $serverpath;?>/style.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo $serverpath;?>/include/template/mineteststyle.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo $serverpath;?>/include/template/style.css" type="text/css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="bookmark icon" href="/favicon.ico" />
 	<title><?php echo $page_title;?> - Minetest Extensions</title>
@@ -43,7 +43,7 @@
 		<span class="inbar_login">
 			<ul>
 <?php
-if ($forum_user['username']!="Guest"){
+if (logged_in()){
 echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."profile.php?id={$forum_user['id']}\">{$forum_user['username']}</a></li>";
 echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."login.php?action=out&id={$forum_user['id']}\">Log Out</a></li>";
 }else{
@@ -82,7 +82,7 @@ echo "<li class=\"navlink_special\"><a href=\"".FORUM_ROOT."register.php\">Regis
 						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/listing.php?id=texture">Texture Packs</a></li>
 						<li class="navlink_normal"><a href="<?php echo $serverpath;?>/search.php?id=sound">Sound Packs</a></li>
                         <?php
-                        if (is_logged_in()==true){
+                        if (logged_in()){
                             echo "<li>|</li>\n";
                             echo "<li><a href=\"addentry.php\">Add an Extension</a>\n";
                         }
@@ -106,7 +106,7 @@ function toggle(id) {
 </script>
 
 <?php
-  include_once "messages.php";
+  //include_once "messages.php";
 ?>
 <?php
 if ($dnw_content==true) // if the caller has told us not to do the following tags

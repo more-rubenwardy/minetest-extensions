@@ -1,9 +1,9 @@
 <?php
 $punbb_relative="../";
 
-include "../scripts/setup.php";
+include "../common/setup.php";
 $page_title="About - Help";
-include "../scripts/pageheader.php";
+include "../common/pageheader.php";
 ?>
 
 <h1>About this Project</h1>
@@ -37,5 +37,5 @@ That is why, I am making a new one, for c55 to possibly implement <br />
 
 
 <?php
-include "../scripts/pagefooter.php";
+include "../common/pagefooter.php";
 ?>

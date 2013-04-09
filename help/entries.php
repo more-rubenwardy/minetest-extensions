@@ -1,9 +1,9 @@
 <?php
 $punbb_relative="../";
 
-include "../scripts/setup.php";
+include "../common/setup.php";
 $page_title="Adding and Entry - Help";
-include "../scripts/pageheader.php";
+include "../common/pageheader.php";
 ?>
 
 <h1>Entries</h1>
@@ -62,5 +62,5 @@ You must select an entry type using the select boxes
 </p>
 
 <?php
-include "../scripts/pagefooter.php";
+include "../common/pagefooter.php";
 ?>
