@@ -23,6 +23,14 @@
 		return $user;
 	}
 
+	// Calls above function for current user
+	function pingCurUser($handle){
+		global $current_user,$current_user_id,$forum_user;
+		$current_user = pingUser($forum_user['username'],$handle);
+		$current_user_id = $current_user['uID'];
+		return $current_user;
+	}
+
 	// Goes to log in form if no user is logged in
 	function require_login(){
 		if (logged_in()==false){

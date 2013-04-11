@@ -5,7 +5,7 @@
 	// Load the configuration file
 	require_once "settings.php";
 
-	require_once "include/error.php";
+	require_once "error.php";
 
 	// Connect to database
 	$handle = mysql_pconnect($sql_url,$sql_user,$sql_pass) or SQLerror("MySQL Database", "Error connecting to the MySQL database");
@@ -21,15 +21,19 @@
 	require FORUM_ROOT.'include/common.php';
 
 	// Format
-	function PageHeader($title,$desc="",$key="",$_dns_content=""){
+	function PageHeader($title,$desc="",$key="",$_dnw_content=false){
 		global $serverpath;
 		global $forum_user;
 
 		$page_title=$title;
 		$page_description=$desc;
 		$page_keywords=$key;
-		$dns_content=$_dns_content;
+		$dnw_content=$_dnw_content;
 		include_once "template/header.php";
+	}
+
+	function PageFooter(){
+		include_once "template/footer.php";
 	}
 
 	// Run include modules

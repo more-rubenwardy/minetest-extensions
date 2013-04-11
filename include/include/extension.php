@@ -61,10 +61,10 @@
 	function updateLikes($id,$handle){
 		int_assert($id);
 
-		$res = mysql_query("SELECT * FROM votes WHERE mId=$id AND liked=true",$handle);
+		$res = mysql_query("SELECT * FROM votes WHERE mID=$id AND liked=true",$handle);
 		$result =  mysql_num_rows($res);
 
-		mysql_query("UPDATE mods SET likes=$result WHERE mId=$id",$handle);
+		mysql_query("UPDATE mods SET _likes=$result WHERE mID=$id",$handle);
 	}
 
 

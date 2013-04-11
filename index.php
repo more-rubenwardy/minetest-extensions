@@ -6,7 +6,7 @@ function writeList($tag,$handle){
 		$owner = getUser($mod['uID'],$handle);
 
 		if ($owner)
-			echo "<li><a href=\"viewmod.php?id={$mod['mod_id']}\">{$mod['name']}</a> by {$owner['name']}</li>\n";
+			echo "<li><a href=\"viewmod.php?id={$mod['uID']}\">{$mod['name']}</a> by {$owner['name']}</li>\n";
 	},$handle,"tags");
 }
 

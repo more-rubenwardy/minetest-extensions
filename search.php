@@ -56,3 +56,7 @@ searchMods($query,function($hash,$handle){
 	// Flip alternate
 	$alternate=!$alternate;
 },$handle,$mode);
+
+echo "</table>";
+
+PageFooter();

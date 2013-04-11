@@ -7,17 +7,19 @@
 
 
 function likeMod($id,$user,$handle,$change){
+	int_assert($id);
+
     $mod = mysql_query("SELECT * FROM mods WHERE mID=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.mods.mod_id for '$id'");
     $mod = mysql_fetch_array($mod);
 
     $user_d = getUser($user,$handle);
-    $owner_id= $user_d["id"];
+    $owner_id= $user_d['uID'];
     $vote = mysql_query("SELECT * FROM votes WHERE uID=$owner_id AND mID=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.votes");
     $vote = mysql_fetch_array($vote);
 
     if (!$vote){
         if ($change){
-            mysql_query("INSERT INTO votes (mID,owner,liked) VALUES ($id,$owner_id,true)",$handle) or SQLerror("MySQL Query Error","Error on adding like");
+            mysql_query("INSERT INTO votes (mID,uID,liked) VALUES ($id,$owner_id,true)",$handle) or SQLerror("MySQL Query Error","Error on adding like");
             header("location: viewmod.php?id=$id");
             updateLikes($id,$handle);
         }else{

@@ -10,3 +10,12 @@ function curPageURL() {
 	}
 	return $pageURL;
 }
+
+function progressBar($percent,$length,$caption){
+	echo "<div class=\"progressbar\" style=\"width: ".$length."px;\">";
+
+	echo "<div class=\"progressbar_inner\" style=\"width: ".(($percent/100)*$length)."px;\"></div>";
+	echo "<div class=\"progress_caption\">$caption</div>";
+
+	echo "</div>";
+}
